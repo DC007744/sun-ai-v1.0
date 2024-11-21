@@ -1,0 +1,10 @@
+Training date: Nov 06 2024
+Training initiated by: admin
+For customer ID: 4121
+Training start time: 06:32:45 PM
+Training end time: 06:32:45 PM
+Total training duration: 0.00 minutes
+New model accuracy (R2 Score): 87.21 %
+MAE (error margin +/-): 2.1904915913457677
+MSE: 16.96631015806826
+RMSE: 4.119018106062203
