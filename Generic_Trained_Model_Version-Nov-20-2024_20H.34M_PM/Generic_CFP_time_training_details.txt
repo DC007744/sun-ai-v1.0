@@ -1,0 +1,10 @@
+Training date: Nov 20 2024
+Training initiated by: User_4294
+For customer ID: Generic
+Training start time: 08:34:18 PM
+Training end time: 08:48:58 PM
+Total training duration: 14.67 minutes
+New model accuracy (R2 Score): 93.23 %
+MAE (error margin +/-): 4.231886826529887
+MSE: 45.823422803647105
+RMSE: 6.7693000231668785
