@@ -1,0 +1,10 @@
+Training date: Nov 06 2024
+Training initiated by: Dipesh
+For customer ID: 4273
+Training start time: 11:05:23 PM
+Training end time: 11:15:02 PM
+Total training duration: 9.66 minutes
+New model accuracy (R2 Score): 87.72 %
+MAE (error margin +/-): 4.264277677078206
+MSE: 66.57788753722843
+RMSE: 8.1595274089391
