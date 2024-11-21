@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun AI Tools</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header, footer {
+            width: 100%;
+            background-color: #0a1a24;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            justify-content: center; /* Center content horizontally */
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            justify-content: center;
+        }
+        .hamburger {
+            position: absolute;
+            left: 10px;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+        }
+        .logo {
+            height: 80px; /* Double the height */
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .menu a {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .menu a:hover {
+            background-color: #555;
+        }
+        .menu a .icon {
+            margin-right: 10px;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding-top: 100px; /* Adjust for fixed header */
+            padding-bottom: 40px; /* Adjust for fixed footer */
+            box-sizing: border-box;
+            text-align: center;
+        }
+        h1 {
+            margin-top: -60px;
+            margin-bottom: 0px;
+            font-size: 2.5em;
+            color: #333;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #666;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .button-container form {
+            margin: 0;
+        }
+        .button-container input[type="submit"] {
+            width: 300px;
+            height: 150px;
+            font-size: 16px;
+            color: white; /* Text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease, border 0.3s ease; /* Add transition for smooth hover effect */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        .btn-1 {
+            background-image: url('{{ url_for('static', filename='images/btn-1.png') }}');
+        }
+        .btn-2 {
+            background-image: url('{{ url_for('static', filename='images/btn-2.png') }}');
+        }
+        .btn-3 {
+            background-image: url('{{ url_for('static', filename='images/btn-3.png') }}');
+        }
+        .btn-4 {
+            background-image: url('{{ url_for('static', filename='images/btn-4.png') }}');
+        }
+        .btn-5 {
+            background-image: url('{{ url_for('static', filename='images/btn-5.png') }}');
+        }
+        .btn-6 {
+            background-image: url('{{ url_for('static', filename='images/btn-6.png') }}');
+        }
+        .button-container input[type="submit"]:hover {
+            border: 3px solid black; /* Thick black border */
+            transform: scale(1.05); /* Slightly larger size */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <img src="{{ url_for('static', filename='images/Sun AI Logo.png') }}" alt="Sun AI Logo" class="logo">
+        <nav class="menu" id="menu">
+            <a href="{{ url_for('home') }}">
+                <span class="icon">🏠</span> Home
+            </a>
+            <a href="{{ url_for('about') }}">
+                <span class="icon">ℹ</span> About Sun AI
+            </a>
+            <a href="{{ url_for('logout') }}">
+                <span class="icon">🚪</span> Logout
+            </a>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to Sun AI</h1>
+        <h2>Sunjewels's AI-Powered Efficiency Tools</h2>
+        <div class="button-container">
+            <form action="{{ url_for('ai_production_cost_estimate') }}" method="get">
+                <input type="submit" value="AI Production Cost Estimator" class="btn-1">
+            </form>
+            <form action="#" method="get">
+                <input type="submit" value="Bespoke Product Cost Estimator" class="btn-2">
+            </form>
+            <form action="#" method="get">
+                <input type="submit" value="SKU File Generator" class="btn-3">
+            </form>
+            <form action="#" method="get">
+                <input type="submit" value="CAD Documentation Automation" class="btn-4">
+            </form>
+            <form action="#" method="get">
+                <input type="submit" value="Tool 5" class="btn-5">
+            </form>
+            <form action="#" method="get">
+                <input type="submit" value="Tool 6" class="btn-6">
+            </form>
+        </div>
+    </main>
+    <footer>
+        @ 2024 Sunjewels. All Rights Reserved.
+    </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            var isClickInside = document.querySelector('.hamburger').contains(event.target) || document.querySelector('.menu').contains(event.target);
+            var menu = document.getElementById('menu');
+            if (!isClickInside && menu.style.display === 'block') {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

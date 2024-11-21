@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun AI - About Us</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header, footer {
+            width: 100%;
+            background-color: #0a1a24;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .logo {
+            height: 80px;
+        }
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .header-buttons a {
+            display: inline-block;
+            background-color: #0a1a24;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .header-buttons a:hover {
+            color: #a8a619;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            justify-content: center;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding-top: 100px;
+            padding-bottom: 40px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/Sun AI Logo.png') }}" alt="Sun AI Logo" class="logo">
+        {% if not logged_in %}
+        <div class="header-buttons">
+            <a href="{{ url_for('about') }}" style="margin-right: -25px;">About</a>
+            <a href="{{ url_for('hello') }}" style="margin-right: -25px;">Login</a>
+            <a href="{{ url_for('sign_up') }}" style="margin-right: 60px;">Sign Up</a>
+        </div>
+        {% endif %}
+    </header>
+    <main>
+        <h1>About Us</h1>
+    </main>
+    <footer>
+        @ 2024 Sunjewels. All Rights Reserved.
+    </footer>
+</body>
+</html>

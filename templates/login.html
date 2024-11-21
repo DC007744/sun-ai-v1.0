@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun AI - Login</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header, footer {
+            width: 100%;
+            background-color: #0a1a24;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .logo {
+            height: 80px;
+        }
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .header-buttons a {
+            display: inline-block;
+            background-color: #0a1a24;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .header-buttons a:hover {
+            color: #a8a619;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            justify-content: center;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding-top: 100px; /* Adjust for fixed header */
+            padding-bottom: 40px; /* Adjust for fixed footer */
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .login-container input[type="text"], .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .login-container input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/Sun AI Logo.png') }}" alt="Sun AI Logo" class="logo">
+        {% if not logged_in %}
+        <div class="header-buttons">
+            <a href="{{ url_for('about') }}" style="margin-right: -25px;">About</a>
+            <a href="{{ url_for('hello') }}" style="margin-right: -25px;">Login</a>
+            <a href="{{ url_for('sign_up') }}" style="margin-right: 20px;">Sign Up</a>
+        </div>
+        {% endif %}
+    </header>
+    <main>
+        <div class="login-container">
+            <h1>Login</h1>
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login" style="margin-top: 20px; font-size: 0.9em;">
+            </form>
+        </div>
+    </main>
+    <footer>
+        @ 2024 Sunjewels. All Rights Reserved.
+    </footer>
+</body>
+</html>

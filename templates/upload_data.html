@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun AI - Production Cost Estimator</title>
+
+    <!-- Include CSS classes -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header, footer {
+            width: 100%;
+            background-color: #0a1a24;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        header .logo {
+            height: 65px;
+            margin-left: 10px;
+            margin-right: 180px;
+            margin-top: 2px;
+        }
+
+        .title {
+            font-size: 2.0em;
+            color: white;
+            text-align: center;
+            flex-grow: 1;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+            margin-right: 10px;
+        }
+        .header-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: #0a1a24;
+            color: white;
+            border: 2px solid transparent;
+            transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+            border-color: #19303c;
+        }
+        .header-buttons a:hover {
+            background-color: white;
+            color: #0a1a24;
+            border: 2px solid #9aa2a6;
+        }
+
+        .submit-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .menu a {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .menu a:hover {
+            background-color: #555;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding-top: 100px; /* Adjust for fixed header */
+            padding-bottom: 60px; /* Adjust for fixed footer */
+            box-sizing: border-box;
+            text-align: center;
+            overflow:auto;
+        }
+        .container {
+            max-width: 625px;
+            width: 100%;
+            background: #ffffff; /* Change background color to white */
+            padding: 20px; /* Increase padding */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slightly darker shadow */
+            margin-bottom: 20px;
+        }
+        .form-title-container {
+            background-color: #f4f4f4;
+            padding-top: 10px; /* Increase padding */
+            padding-bottom: 10px; /* Increase padding */
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 20px; /* Add margin to separate from form */
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            padding-right: 30px;
+        }
+        .form-group label {
+            width: 40%;
+            margin-right: -20px;
+            text-align: left;
+            padding-left: 30px;
+        }
+        .form-group select,
+        .form-group input[type="file"] {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+        }
+        .form-group select:hover,
+        .form-group input[type="file"]:hover,
+        .form-group input[type="text"]:hover {
+            background-color: #f9f9f9; /* Subtle off-white color on hover */
+        }
+        .form-group button {
+            background-color: #28a745;
+            font-size: medium;
+            font-weight: bold;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-left: 30px;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+        .form-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700; /* Bold */
+            font-style: italic; /* Italic */
+            text-align: center;
+            margin: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 15px;
+            height: 15px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px; /* Adjust this margin to align properly with your dropdown */
+            position: absolute;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .form-control:disabled {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+        }
+        
+        .form-group-checkbox {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-bottom: 15px;
+        }
+        .prediction-container {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Greyed-out overlay */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            text-align: center;
+            padding-top: 200px; /* Adjust for centering */
+        }
+
+        /* Loading spinner */
+        .loading-overlay .spinner {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <img src="{{ url_for('static', filename='images/Sun AI Logo.png') }}" alt="Sun AI Logo" class="logo">
+        <h1 class="title">Edit Dataset</h1>
+        <div class="header-buttons">
+            <a href="{{ url_for('retrain_model') }}"><i class="fas fa-external-link-alt" style="margin-right: 7px;"></i>Go to Dashboard</a>
+            <a href="#">Edit dataset</a>
+        </div>
+        <nav class="menu" id="menu">
+            <a href="{{ url_for('home') }}">🏠 Home</a>
+            <a href="{{ url_for('about') }}">ℹ About Sun AI</a>
+            <a href="{{ url_for('logout') }}">🚪 Logout</a>
+        </nav>
+    </header>
+    <main>
+        <h2 style="margin-top: -50px;">Fill up and submit the below form to get an estimated bill of materials (E-BOM)</h2>
+        <div class="container">
+            <div class="form-title-container">
+                <h2 class="form-title">Generate E-BOM</h2>
+            </div>
+            <div><p> </p></div>
+            <form id="bomForm" action="/ai_production_cost_estimate" method="post" enctype="multipart/form-data" onsubmit="resetForm(event)">
+                <div class="form-group">
+                    <label for="file">Upload CAD file:</label>
+                    <input type="file" id="file" name="file" accept=".3dm, .stl" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <button style="margin-top: 20px;" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>    
+        @ 2024 Sunjewels. All Rights Reserved.
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <p style="color: white; font-size: 1.5em; margin-top: 20px;">Processing, please wait...</p>
+    </div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        
+        // ------- Function to toggle the menu -------
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+    
+            document.addEventListener('click', function(event) {
+                var isClickInside = document.querySelector('.hamburger').contains(event.target) || document.getElementById('menu').contains(event.target);
+                var menu = document.getElementById('menu');
+                if (!isClickInside && menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                }
+            });
+    
+            // Initialize Select2 on all select elements
+            $('#file').select2();
+        });
+    </script>        
+</body>
+</html>

@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun AI - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header,
+        footer {
+            width: 100%;
+            background-color: #0a1a24;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        header .logo {
+            height: 65px;
+            margin-left: 10px;
+            margin-right: 150px;
+        }
+
+        .title {
+            font-size: 2.0em;
+            color: white;
+            text-align: center;
+            /* Ensures the text is centered */
+            flex-grow: 1;
+            /* Allows the title to expand and fill the container */
+            width: 100%;
+            /* Makes the title container take full width */
+            justify-content: center;
+            /* Center aligns children horizontally */
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+            margin-right: 10px;
+            /* Ensure some spacing on the right */
+            justify-content: flex-end;
+            /* Align buttons to the right */
+            white-space: nowrap;
+            /* Prevents wrapping of text within the buttons */
+        }
+
+        .header-buttons a {
+            display: inline-block;
+            padding: 11px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: #0a1a24;
+            color: white;
+            border: 2px solid transparent;
+            transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+            border-color: #5f7581;
+        }
+
+        .header-buttons a:hover {
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: 2px solid transparent;
+        }
+
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .menu a {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            background-color: #555;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding-top: 100px;
+            /* Adjust for fixed header */
+            padding-bottom: 60px;
+            /* Adjust for fixed footer */
+            box-sizing: border-box;
+            text-align: center;
+            overflow: auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            /* Change background color to white */
+            padding: 20px;
+            /* Increase padding */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* Slightly darker shadow */
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            min-width: 1100px;
+            max-width: 1200px;
+            margin-bottom: 120px;
+            margin-top: -40px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            flex: 1;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            margin: 0 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: -20px;
+        }
+
+        .card-blue {
+            background-color: #1E3A5F;
+            margin-right: 60px;
+        }
+
+        .card-green {
+            background-color: #66ad51;
+            margin-right: 60px;
+        }
+
+        .card-orange {
+            background-color: #598faa;
+        }
+
+        .info-icon {
+            position: relative;
+            top: -60px;
+            bottom: 0px;
+            right: -150px;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.738);
+            background-color: transparent;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-icon:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .warning {
+            font-size: 0.8em;
+            color: red;
+            margin-top: 10px;
+        }
+
+        .retrain-warning {
+            font-size: 0.8em;
+            color: darkorange;
+            font-weight: bold;
+            margin-top: -60px;
+            margin-bottom: 40px;
+            margin-left: -830px;
+        }
+
+        .dots-animation {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgb(219, 148, 61);
+            animation: blink 1.4s infinite both;
+        }
+
+        .dots-animation:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dots-animation:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .ripple {
+            position: relative;
+            animation: ripple-effect 1s infinite;
+        }
+
+        @keyframes ripple-effect {
+            0% {
+                box-shadow: 0 0 5px 3px rgba(255, 140, 0, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 10px 6px rgba(255, 140, 0, 0.8);
+            }
+
+            100% {
+                box-shadow: 0 0 5px 3px rgba(255, 140, 0, 0.4);
+            }
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1001;
+            /* Ensure loader appears above the modal */
+            display: none;
+            /* Initially hidden */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Ensure modal content has a lower z-index */
+        .modal-content {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .form-title1,
+        .form-title3,
+        .form-title4,
+        .form-title5 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            /* Bold */
+            text-align: center;
+            margin: 0;
+            margin-top: -30px;
+            margin-bottom: 50px;
+            color: #333;
+            border: 3px solid #ffffff;
+            /* Fancy border */
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            background-color: #f9f9f9;
+            /* Background color */
+        }
+
+        .form-title1 {
+            font-size: 2.0em;
+        }
+
+        .form-title2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            /* Bold */
+            font-style: italic;
+            /* Italic */
+            text-align: left;
+            margin: 0;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.7em;
+        }
+
+        .table-container {
+            width: 100%;
+            max-height: 230px;
+            /* Adjust the height as needed */
+            min-height: 230px;
+            overflow-y: auto;
+            /* Enables vertical scrolling */
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            /* Ensures the table fills the container width */
+            border-collapse: collapse;
+            table-layout: fixed
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+            width: 200px;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .retrain-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            position: absolute;
+            top: 120px;
+            right: 40px;
+            transition: background-color 0.3s ease;
+        }
+
+        .retrain-button:hover {
+            background-color: #45a049;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            max-height: 444px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 40px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .editable-input {
+            width: 100px;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 20px 0.;
+        }
+
+        .modal-body .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            min-height: 300px;
+            max-height: 300px;
+            /* Set a maximum height */
+            overflow-y: auto;
+            /* Allows scrolling */
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .modal-footer button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-footer .cancel-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .modal-footer .cancel-btn:hover {
+            background-color: #e53935;
+        }
+
+        .modal-footer .confirm-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .modal-footer .confirm-btn:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-indent: 600px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 15px; /* Space between buttons */
+            margin-top: -10px; /* Adjust alignment with heading */
+        }
+
+        /* .feedback-button {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            color: #083f61;
+            font-size: 1.0em;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        } */
+
+        /* .feedback-button i {
+            margin-right: 5px;
+            /* Space between icon and text
+        } */
+
+        /* .feedback-button:hover {
+            color: #4CAF50;
+        } */
+
+        /* .download-button {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            color: #083f61;
+            font-size: 1.0em;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .download-button:hover {
+            color: #4CAF50;
+        } */
+
+        .tooltip .tooltiptext {
+            bottom: 150%;
+            /* Adjust based on the new layout */
+            margin-left: -60px;
+            /* Center tooltip */
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            /* At the bottom of the tooltip */
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+
+        /* Filter, Feedback, & Download button CSS */
+        /* Flex container for title and buttons */
+        .title-and-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 0; /* Adjust if needed */
+        }
+
+        /* Adjustments to align the title and buttons in a single row */
+        .form-title2 {
+            font-size: 1.7em;
+            font-weight: bold;
+            margin: 0;
+            text-align: left;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .filter-button, .feedback-button, .download-button {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            color: #083f61;
+            font-size: 1em;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .filter-button i, .feedback-button i, .download-button i {
+            margin-right: 5px;
+        }
+
+        .filter-button:hover, .feedback-button:hover, .download-button:hover {
+            color: #4CAF50;
+        }
+
+        /* Filter dropdown style */
+        .filter-dropdown {
+            padding: 8px;
+            font-size: 1em;
+            margin: 0 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* Add styles for the settings button and menu */
+        .settings-button {
+            font-size: 1.2em;
+            display: inline-block;
+            padding: 9px;
+            cursor: pointer;
+            background-color: #0a1a24;
+            color: white;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+        }
+
+        .settings-button:hover {
+            background-color: #4CAF50;
+        }
+
+        .settings-menu {
+            display: none;
+            position: absolute;
+            top: 65px;
+            right: 30px;
+            background-color: #0a1a24;
+            /* Light grey background for a subtle look */
+            color: #333;
+            /* Darker text for good contrast */
+            border: 1px solid #ccc;
+            /* Light border for subtle separation */
+            padding: 0;
+            /* No padding around the edges */
+            border-radius: 4px;
+            /* Rounded corners */
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+            /* Soft shadow for depth */
+            z-index: 1000;
+            width: 200px;
+            /* Fixed width for consistent appearance */
+        }
+
+        .settings-menu a {
+            display: flex;
+            align-items: center;
+            /* Center items vertically */
+            padding: 10px 15px;
+            /* Padding for spacing */
+            text-decoration: none;
+            color: #ffffffd2;
+            font-size: 14px;
+            /* Smaller font size */
+            border-bottom: 1px solid #ddd;
+            /* Separator between items */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .settings-menu a:last-child {
+            border-bottom: none;
+            /* Remove border from the last item */
+        }
+
+        .settings-menu a:hover {
+            background-color: #e9e8e8;
+            /* Slightly darker background on hover for visibility */
+            color: #000;
+            /* Black text for emphasis */
+        }
+
+        .settings-menu a i {
+            /* Styling for icons if used */
+            margin-right: 10px;
+            /* Space between icon and text */
+            font-size: 16px;
+            /* Larger font size for icons */
+            width: 20px;
+            /* Fixed width for alignment */
+        }
+
+        .edit-button {
+            background: none;
+            border: none;
+            color: #666;
+            /* Soft gray color */
+            cursor: pointer;
+            padding: 5px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .edit-button:hover {
+            color: #333;
+            /* Darker gray on hover for better visibility */
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <img src="{{ url_for('static', filename='images/Sun AI Logo.png') }}" alt="Sun AI Logo" class="logo">
+        <h1 class="title">Dashboard</h1>
+        <div class="header-buttons">
+            <a href="#" id="retrain-now">Retrain Now</a>
+            <a href="#" id="edit-dataset">Edit Dataset</a>
+            <!-- Add the settings button -->
+            <div class="settings-button" id="settings-button">
+                <i class="fas fa-cog"></i>
+            </div>
+
+            <!-- Settings menu -->
+            <div class="settings-menu" id="settings-menu" style="border-radius: 2px; border-color: #555;">
+                <a style="border:none;" href="#">Model selection</a>
+                <a style="border:none;" href="#">User management</a>
+                <a style="border:none;" href="#">Update metal densities</a>
+                <a style="border:none;" href="#">Add a new customer</a>
+            </div>
+        </div>
+        <nav class="menu" id="menu">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About Sun AI</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </header>
+    <main>
+
+        <div class="card-container">
+            <div class="card card-blue" id="retrained-card">
+                <div class="card-title">Model last retrained on:</div>
+                <div class="card-value" id="last-retrained">{{ last_retrained_date }}</div>
+                <!-- Info icon with tooltip -->
+                <div class="info-icon tooltip">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="tooltiptext" style="margin-left: -200px; min-width: 400px;">
+                        This is the last time the model was retrained. As per the current settings, the model will auto-retrain quarterly.
+                    </span>
+                </div>
+            </div>
+            <div class="card card-green">
+                <div class="card-title">Next suggested retraining date:</div>
+                <div class="card-value" id="next-retraining">{{ next_retraining_date }}</div>
+                <!-- Info icon with tooltip -->
+                <div class="info-icon tooltip">
+                    <i class="fas fa-info-circle"></i>
+                    <!-- Next scheduled auto-retraining date. If you wish to manually retrain the model, click on the "Retrain now" button. -->
+                    <span class="tooltiptext" style="margin-left: -225px; min-width: 450px;">
+                        This is the next suggested date on which you should consider retraining the model.
+                    </span>
+                </div>
+            </div>
+            <div class="card card-orange">
+                <div class="card-title">Dataset last updated on:</div>
+                <div class="card-value" id="dataset-updated">{{ last_dataset_updated_date }}</div>
+                <!-- Info icon with tooltip -->
+                <div class="info-icon tooltip">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="tooltiptext" style="margin-left: -222px; min-width: 420px;">
+                        This is the last time the dataset was updated. You can update it anytime by clicking on the "Edit Dataset" button.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div id="retrain-warning-message" class="retrain-warning"
+            style="color: #f0f0f0; padding: 10px; margin-top: -35px; margin-bottom: 5px;">.</div>
+        <h2 class="form-title1" id="avg-pred-accuracy">Average CFP cost prediction accuracy: {{ avg_pred_calculated }}</h2>
+        <div id="warning-message" class="warning"></div>
+        <div class="container">
+            <div class="form-title-container">
+                <div class="title-and-buttons">
+                    <h2 class="form-title2">Recent predictions:</h2>
+            
+                    <div class="button-container">
+                        <!-- Filter button with tooltip -->
+                        <span class="tooltip">
+                            <button id="filter-button" class="filter-button" aria-label="Filter recent predictions">
+                                <i class="fas fa-filter"></i> Filter
+                            </button>
+                            <span class="tooltiptext" style="padding: 7px;">Filter the recent predictions</span>
+                        </span>
+            
+                        <!-- Feedback button with tooltip -->
+                        <span class="tooltip">
+                            <button id="feedback-button" class="feedback-button" aria-label="Provide your feedback to AI">
+                                <i class="fas fa-share"></i> Give Feedback
+                            </button>
+                            <span class="tooltiptext" style="padding: 7px;">Provide the actual time and cost values to AI. This will help AI become better at predictions over time.</span>
+                        </span>
+            
+                        <!-- Download button with tooltip -->
+                        <span class="tooltip">
+                            <button id="download-button" class="download-button" aria-label="Download Excel">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <span class="tooltiptext" style="padding: 7px;">Download as Excel</span>
+                        </span>
+                    </div>
+                </div>
+            </div>                        
+
+            <div class="table-container">
+                <table id="predictions-table">
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>User Name</th>
+                            <th>Customer</th>
+                            <th>Design Reference</th>
+                            <th>Product Type</th>
+                            <th>Predicted Labour Time (mins)</th>
+                            <!-- <th>Actual Labour Time (mins)</th> -->
+                            <th>Predicted CFP Time (mins)</th>
+                            <!-- <th>Actual Labour Cost (USD)</th> -->
+                            <th>Predicted Labour CFP Cost (USD)</th>
+                            <!-- <th>Actual Labour CFP Cost (USD)</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in recent_predictions %}
+                        <tr>
+                            <td>{{ row[0] }}</td>
+                            <td>{{ row[1] }}</td>
+                            <td>{{ row[2] }}</td>
+                            <td>{{ row[3] }}</td>
+                            <td>{{ row[4] }}</td>
+                            <td>{{ row[5] }}</td>
+                            <td>{{ row[6] }}</td>
+                            <td>{{ row[7] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        </div>
+    </main>
+    <footer>
+        @ 2024 Sunjewels. All Rights Reserved.
+    </footer>
+
+    <!-- Modal structure -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirm Navigation</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>You will be redirected to the dataset page where you can view and update <strong>sensitive backend
+                        data</strong>. Are you sure you want to proceed?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancel</button>
+                <button class="confirm-btn">Proceed</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Retrain Confirmation Modal structure -->
+    <div id="retrain-confirmation-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirm Retrain</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Select the customer for whom you want to retrain the model:</p>
+                <select id="customer-id-dropdown" style="width: 100%; padding: 10px; margin-top: 10px;">
+                    <!-- Options will be dynamically added here -->
+                </select>
+                <p style="margin-top: 20px;"><strong>NOTE</strong>: Time taken to retrain the model depends on the size of your latest dataset and can range from a few minutes to a few days.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancel</button>
+                <button class="confirm-btn" id="start-retraining-btn">Start Retraining</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Modal structure -->
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content" style="min-width:1100px; min-height:300px;">
+            <div class="modal-header">
+                <h2 style="text-align: center; flex-grow: 1;">Give your feedback to AI</h2>
+                <span class="close" id="close-feedback-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <!-- Add Loader here -->
+                <div id="loader" class="loader" style="display:none;"></div>
+                <div class="table-container">
+                    <table id="predictions-feedback-table">
+                        <thead>
+                            <tr>
+                                <th>Edit</th>
+                                <th>Date & Time</th>
+                                <th>User Name</th>
+                                <th>Customer</th>
+                                <th>Design Reference</th>
+                                <th>Product Type</th>
+                                <th>Predicted Labour Time (mins)</th>
+                                <th>Actual Labour Time (mins)</th>
+                                <th>Predicted CFP Time (mins)</th>
+                                <th>Actual CFP Time (mins)</th>
+                                <th>Predicted CFP Cost (USD)</th>
+                                <th>Actual CFP Cost (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in feedback_data %}
+                            <tr>
+                                <td>
+                                    <button class="edit-button" data-id="{{ loop.index }}">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </button>
+                                </td>
+                                <td>{{ row[0] }}</td>
+                                <td>{{ row[1] }}</td>
+                                <td>{{ row[2] }}</td>
+                                <td>{{ row[3] }}</td>
+                                <td>{{ row[4] }}</td>
+                                <td>{{ row[5] }}</td>
+                                <td class="editable-actual-labour-time">{{ row[6] }}</td>
+                                <td>{{ row[7] }}</td>
+                                <td class="editable-actual-cfp-time">{{ row[8] }}</td>
+                                <td>{{ row[9] }}</td>
+                                <td class="editable-actual-cfp-cost">{{ row[10] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Modal structure -->
+    <div id="filter-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Filter</h2>
+                <span class="close" id="close-filter-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Show the latest
+                    <select id="filter-dropdown" class="filter-dropdown">
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="80">80</option>
+                        <option value="100">100</option>
+                    </select> predictions
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancel</button>
+                <button class="confirm-btn" id="apply-filter-btn">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        if (window.jQuery) {
+            console.log("jQuery loaded successfully.");
+        } else {
+            console.error("jQuery failed to load.");
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+
+            document.addEventListener('click', function (event) {
+                var isClickInside = document.querySelector('.hamburger').contains(event.target) || document.getElementById('menu').contains(event.target);
+                var menu = document.getElementById('menu');
+                if (!isClickInside && menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                }
+            });
+
+            // Check URL for existing 'limit' parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            if (!urlParams.has('limit')) {
+                // Set the default filter only if 'limit' is not present
+                setDefaultFilter();
+            }
+
+            // Event listener for the "Filter" button to open the filter modal
+            document.getElementById('filter-button').addEventListener('click', function () {
+                document.getElementById("filter-modal").style.display = "block";
+            });
+
+            // Event listener to close the filter modal
+            document.getElementById('close-filter-modal').addEventListener('click', function () {
+                document.getElementById("filter-modal").style.display = "none";
+            });
+
+            // Close modal if clicking outside of it
+            window.addEventListener('click', function (event) {
+                if (event.target === document.getElementById("filter-modal")) {
+                    document.getElementById("filter-modal").style.display = "none";
+                }
+            });
+
+            // Apply filter based on dropdown value and refresh the page with the selected limit
+            document.getElementById('apply-filter-btn').addEventListener('click', function () {
+                var filterValue = document.getElementById('filter-dropdown').value;
+                applyFilter(filterValue);
+                document.getElementById("filter-modal").style.display = "none";
+            });
+
+            // Function to fetch filtered data based on the limit
+            function applyFilter(limit) {
+                // Reload the page with the selected limit as a query parameter
+                window.location.href = `/retrain_model?limit=${limit}`;
+            }
+
+            // Set default filter to show last 25 predictions
+            function setDefaultFilter() {
+                applyFilter(20);
+            }
+
+            // -------------- Give Feedback Modal ----------------
+
+            // Event listener for the "Give Feedback" button
+            document.getElementById('feedback-button').addEventListener('click', function () {
+                var feedbackModal = document.getElementById("feedback-modal");
+                feedbackModal.style.display = "block";
+            });
+
+            // Event listener for closing the feedback modal
+            document.getElementById('close-feedback-modal').addEventListener('click', function () {
+                var feedbackModal = document.getElementById("feedback-modal");
+                feedbackModal.style.display = "none";
+            });
+
+            // Close modal if clicked outside
+            window.addEventListener('click', function (event) {
+                var feedbackModal = document.getElementById("feedback-modal");
+                if (event.target == feedbackModal) {
+                    feedbackModal.style.display = "none";
+                }
+            });
+
+            // Dynamic variables for headers
+            var avg_pred_accuracy = "{{avg_pred_calculated}}";
+            // var last_retrained_date = "4th Aug 2024";
+            //var next_retraining_date = "3rd Nov 2024";
+            // var dataset_updated_date = "4th Jul 2024";
+
+            // Set dynamic average prediction accuracy
+            var accuracy_value = parseFloat(avg_pred_accuracy);
+            var accuracy_element = document.getElementById('avg-pred-accuracy');
+            var warning_element = document.getElementById('warning-message');
+            var retrain_warning_element = document.getElementById('retrain-warning-message');
+            var retrained_card = document.getElementById('retrained-card');
+
+            if (isNaN(accuracy_value)) {
+                accuracy_element.textContent = "Average CFP cost prediction accuracy: N/A";
+                accuracy_element.style.borderColor = "#FFFFFF"; // White
+            } else {
+                accuracy_element.textContent = "Average CFP cost prediction accuracy: " + avg_pred_accuracy + " %";
+
+                if (accuracy_value >= 80) {
+                    accuracy_element.style.borderColor = "#4CAF50"; // Green
+                    warning_element.innerHTML = '<div style="margin-top: -60px; margin-bottom: 60px; background-color: #F1F0F0; padding: 10px; border: none; display: flex; align-items: center; gap: 10px;"><i class="fas fa-check-circle" style="color: #4CAF50;"></i><div style="color: #000000;"> <strong>Model Performance:</strong> Excellent </div></div>';
+                } else if (accuracy_value >= 70 && accuracy_value <= 80) {
+                    accuracy_element.style.borderColor = "#FFD700"; // Yellow
+                    warning_element.innerHTML = '<div style="margin-top: -55px; margin-bottom: 60px; background-color: #F1F0F0; padding: 10px; border: none; display: flex; align-items: center; gap: 10px;"><i class="fas fa-check-circle" style="color: #E6C809;"></i><div style="color: #000000;"> <strong>Model Performance:</strong> Good. Expect decently accurate predictions based on the current accuracy.</div></div>';
+                } else if (accuracy_value >= 60 && accuracy_value < 70) {
+                    accuracy_element.style.borderColor = "#FFA500"; // Orange
+                    warning_element.innerHTML = '<div style="margin-top: -35px; margin-bottom: 60px; background-color: #FFF3CD; padding: 10px; border-radius: 5px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-exclamation-triangle" style="color: #856404;"></i><div style="color: #856404;"><strong>ALERT!</strong> Model accuracy has decreased and will make average predictions. Consider updating the dataset within the next few weeks and retraining the model with the latest order data.</div></div>';
+                } else if (accuracy_value < 60) {
+                    accuracy_element.style.borderColor = "#FF0000"; // Red
+                    warning_element.innerHTML = '<div style="margin-top: -35px; margin-bottom: 60px; background-color: #ed5045; padding: 10px; border-radius: 5px; display: flex; align-items: center; gap: 10px;"><i class="fas fa-exclamation-triangle" style="color: #000000;"></i><div style="color: #000000;"><strong>WARNING!</strong> Model accuracy has significantly dropped. It is recommended to update the dataset and retrain the model with the latest order data at the earliest.</div></div>';
+                }
+            }
+
+            // Set dynamic dates
+            //document.getElementById('last-retrained').textContent = last_retrained_date;
+            //document.getElementById('next-retraining').textContent = next_retraining_date;
+            //document.getElementById('dataset-updated').textContent = dataset_updated_date;
+
+            // Confirmation modal for Edit Dataset button
+            var modal = document.getElementById("confirmation-modal");
+            var editDatasetBtn = document.getElementById("edit-dataset");
+            var span = document.getElementsByClassName("close")[0];
+            var cancelBtn = document.querySelector(".cancel-btn");
+            var confirmBtn = document.querySelector(".confirm-btn");
+
+            editDatasetBtn.onclick = function (event) {
+                event.preventDefault();
+                modal.style.display = "block";
+            }
+
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            cancelBtn.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            confirmBtn.onclick = function () {
+                window.location.href = "{{ url_for('edit_dataset') }}";
+            }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            // Event listener for "Retrain Now" button
+            document.getElementById('retrain-now').addEventListener('click', function (event) {
+                event.preventDefault();
+                const dropdown = document.getElementById("customer-id-dropdown");
+
+                // Clear any existing options in dropdown
+                dropdown.innerHTML = '';
+
+                // Fetch customer IDs dynamically from the server
+                fetch('/get_customer_ids')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Check if customer IDs were retrieved successfully
+                        if (data.customer_ids) {
+                            // Populate dropdown with retrieved customer IDs
+                            data.customer_ids.forEach(id => {
+                                const option = document.createElement('option');
+                                option.value = id;
+                                option.textContent = `Customer ID: ${id}`;
+                                dropdown.appendChild(option);
+                            });
+                        } else {
+                            alert("Error retrieving customer IDs.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error fetching customer IDs:", error);
+                        alert("An error occurred while fetching customer IDs.");
+                    });
+
+                // Show the retrain confirmation modal
+                document.getElementById("retrain-confirmation-modal").style.display = "block";
+            });
+
+            // Event listener for the Start Retraining button in the modal
+            document.getElementById('start-retraining-btn').addEventListener('click', function () {
+                const selectedCustomerId = document.getElementById("customer-id-dropdown").value;
+                const retrainModal = document.getElementById("retrain-confirmation-modal");
+
+                retrainModal.style.display = "none";
+                if(selectedCustomerId == "Generic"){
+                    retrain_warning_element.innerHTML = '<div style="margin-top: -85px; margin-bottom: 65px; background-color: #F1F0F0; padding: 10px; border-radius: 5px; display: flex; align-items: center; gap: 10px;"><span class="dots-animation"></span><span class="dots-animation"></span><span class="dots-animation"></span><div style="color: #000000;"> <strong>Retraining in progress for generic model ' + '...</strong></div></div>';
+                }
+                else {
+                    retrain_warning_element.innerHTML = '<div style="margin-top: -85px; margin-bottom: 65px; background-color: #F1F0F0; padding: 10px; border-radius: 5px; display: flex; align-items: center; gap: 10px;"><span class="dots-animation"></span><span class="dots-animation"></span><span class="dots-animation"></span><div style="color: #000000;"> <strong>Retraining in progress for Customer ' + selectedCustomerId + '...</strong></div></div>';
+                }
+
+                // Start the ripple effect on the retrained card
+                retrained_card.classList.add('ripple');
+
+                // Start retraining process with the selected customer ID
+                fetch('/retrain_model', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ customer_id: selectedCustomerId })
+                }).then(response => {
+                    if (response.ok) {
+                        retrained_card.classList.remove('ripple');
+                        alert('Model retrained successfully for Customer ' + selectedCustomerId + '!');
+                        retrain_warning_element.innerHTML = '<div style="background-color: #FFFFFF;"></div>';
+                    } else {
+                        alert('Error retraining model.');
+                        retrain_warning_element.innerHTML = '<div style="margin-top: -80px; margin-right: -25px; margin-bottom: 60px; padding: 10px; border-radius: 5px; display: flex; align-items: center; gap: 10px; border: 2px solid red; background-color: transparent;"><i class="fas fa-exclamation-triangle" style="color: red;"></i><div style="color: #000000;"><strong>ERROR:</strong> <b>There was an error retraining the model</b></div></div>';
+                        retrained_card.classList.remove('ripple');
+                    }
+                });
+            });
+
+            // Download button functionality
+            document.getElementById('download-button').addEventListener('click', function () {
+                var table = document.querySelector('table');
+
+                // Convert table to workbook
+                var wb = XLSX.utils.table_to_book(table, {
+                    sheet: "Sheet JS"
+                });
+
+                // Assuming Prediction Confidence is in column I and Actual Accuracy is in column M
+                var columns = ['I', 'M'];
+                columns.forEach(function (col) {
+                    for (var row = 2; wb.Sheets["Sheet JS"][col + row]; row++) { // Starts from row 2 assuming row 1 is header
+                        var cellValue = wb.Sheets["Sheet JS"][col + row].v;
+                        if (typeof cellValue === 'number') {
+                            wb.Sheets["Sheet JS"][col + row].v = cellValue * 100;
+                            wb.Sheets["Sheet JS"][col + row].t = 'n'; // Ensure it remains a number
+                        }
+                    }
+                });
+
+                // Get current date and time
+                var now = new Date();
+                var formattedDateTime = now.toLocaleString().replace(/[/,]/g, '-').replace(/:/g, '-');
+
+                // Create the file name
+                var fileName = 'Recent Predictions as of ' + formattedDateTime + '.xlsx';
+
+                // Write the file
+                XLSX.writeFile(wb, fileName);
+            });
+
+            // Closing the retrain confirmation modal
+            var retrainSpan = document.getElementsByClassName("close")[1];
+            retrainSpan.onclick = function () {
+                document.getElementById("retrain-confirmation-modal").style.display = "none";
+            }
+            var retrainCancelBtn = document.querySelector("#retrain-confirmation-modal .cancel-btn");
+            retrainCancelBtn.onclick = function () {
+                document.getElementById("retrain-confirmation-modal").style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                if (event.target == document.getElementById("retrain-confirmation-modal")) {
+                    document.getElementById("retrain-confirmation-modal").style.display = "none";
+                }
+            }
+
+            // Toggle settings menu
+            document.getElementById('settings-button').addEventListener('click', function () {
+                var menu = document.getElementById('settings-menu');
+                if (menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                } else {
+                    menu.style.display = 'block';
+                }
+            });
+
+            // Close the menu when clicking outside
+            document.addEventListener('click', function (event) {
+                var settingsButton = document.getElementById('settings-button');
+                var settingsMenu = document.getElementById('settings-menu');
+
+                if (!settingsButton.contains(event.target) && !settingsMenu.contains(event.target)) {
+                    settingsMenu.style.display = 'none';
+                }
+            });
+
+            // Function to bind the click event to "Save" buttons
+            function bindSaveButton(button, row, dateTime, userName) {
+                button.addEventListener('click', function () {
+                    // Show the loader when the save process begins
+                    document.getElementById('loader').style.display = 'block';
+
+                    // Capture the updated values from the data attributes
+                    var newActualLabourTime = row.dataset.actualLabourTime || '';
+                    var newActualCFPTime = row.dataset.actualCfpTime || '';
+                    var newActualCFPCost = row.dataset.actualCfpCost || '';
+
+                    // Check if the values are empty
+                    if (!newActualLabourTime || !newActualCFPTime || !newActualCFPCost) {
+                        alert('Please fill out all fields before saving.');
+                        // Hide the loader if validation fails
+                        document.getElementById('loader').style.display = 'none';
+                        return; // Stop if any field is empty
+                    }
+
+                    // Send the data to the Flask route using AJAX
+                    $.ajax({
+                        type: "POST",
+                        url: "/save_feedback",
+                        data: JSON.stringify({
+                            date_time: dateTime,
+                            user_name: userName,
+                            actual_labour_time: newActualLabourTime,
+                            actual_cfp_time: newActualCFPTime,
+                            actual_cfp_cost: newActualCFPCost
+                        }),
+                        contentType: "application/json",
+                        success: function (response) {
+                            alert("Feedback saved successfully!");
+
+                            // Reset the stored values
+                            delete row.dataset.actualLabourTime;
+                            delete row.dataset.actualCfpTime;
+                            delete row.dataset.actualCfpCost;
+
+                            // Set the new values to the table cells after saving
+                            row.querySelector('.editable-actual-labour-time').textContent = newActualLabourTime;
+                            row.querySelector('.editable-actual-cfp-time').textContent = newActualCFPTime;
+                            row.querySelector('.editable-actual-cfp-cost').textContent = newActualCFPCost;
+
+                            // Change the save button back to the edit button
+                            button.innerHTML = '<i class="fas fa-pencil-alt"></i>';
+                            button.classList.add('edit-button');
+                            button.classList.remove('save-button');
+                            bindEditButton(button); // Rebind edit functionality
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Error while saving feedback: " + xhr.responseText);
+                        },
+                        complete: function () {
+                            // Hide the loader when the AJAX request completes (success or error)
+                            document.getElementById('loader').style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Function to bind the "Edit" functionality
+            function bindEditButton(button) {
+                button.addEventListener('click', function () {
+                    // Get the row of the clicked edit button
+                    var row = this.closest('tr');
+
+                    // Get values for sending in the AJAX request later
+                    var dateTime = row.querySelector('td:nth-child(2)').textContent.trim(); // Assuming 2nd column is Date & Time
+                    var userName = row.querySelector('td:nth-child(3)').textContent.trim(); // Assuming 3rd column is User Name
+
+                    // Make the Actual Labour Time, Actual CFP Time, and Actual CFP Cost cells editable
+                    var actualLabourTimeCell = row.querySelector('.editable-actual-labour-time');
+                    var actualCFPTimeCell = row.querySelector('.editable-actual-cfp-time');
+                    var actualCFPCostCell = row.querySelector('.editable-actual-cfp-cost');
+
+                    actualLabourTimeCell.innerHTML = '<input type="number" class="editable-input" value="' + actualLabourTimeCell.textContent.trim() + '">';
+                    actualCFPTimeCell.innerHTML = '<input type="number" class="editable-input" value="' + actualCFPTimeCell.textContent.trim() + '">';
+                    actualCFPCostCell.innerHTML = '<input type="number" class="editable-input" value="' + actualCFPCostCell.textContent.trim() + '">';
+
+                    // Focusout events to capture values
+                    actualLabourTimeCell.querySelector('input').addEventListener('focusout', function () {
+                        row.dataset.actualLabourTime = this.value;
+                    });
+                    actualCFPTimeCell.querySelector('input').addEventListener('focusout', function () {
+                        row.dataset.actualCfpTime = this.value;
+                    });
+                    actualCFPCostCell.querySelector('input').addEventListener('focusout', function () {
+                        row.dataset.actualCfpCost = this.value;
+                    });
+
+                    // Change the edit button to a save button after making cells editable
+                    this.innerHTML = '<i class="fas fa-save"></i>';
+                    this.classList.add('save-button');
+                    this.classList.remove('edit-button');
+
+                    // Bind the save functionality to the newly created "Save" button
+                    bindSaveButton(this, row, dateTime, userName);
+                });
+            }
+
+            // Bind the edit functionality to all current edit buttons
+            document.querySelectorAll('.edit-button').forEach(function (button) {
+                bindEditButton(button);
+            });
+        });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1730 @@
+2024-11-06 21:44:15,329 INFO: Opening tunnel named: http-5000-48d09405-8f4e-4e28-b88f-c066eb893401
+2024-11-06 21:44:15,329 INFO: Overriding default auth token
+2024-11-06 21:44:15,334 DEBUG: ngrok process starting with PID: 19509
+2024-11-06 21:44:15,351 INFO: t=2024-11-06T21:44:15+0530 lvl=info msg="no configuration paths supplied"
+2024-11-06 21:44:15,351 INFO: t=2024-11-06T21:44:15+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-06 21:44:15,351 INFO: t=2024-11-06T21:44:15+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-06 21:44:15,351 INFO: t=2024-11-06T21:44:15+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-06 21:44:16,190 INFO: t=2024-11-06T21:44:16+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-06 21:44:16,190 INFO: t=2024-11-06T21:44:16+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-06 21:44:16,217 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-06 21:44:16,217 DEBUG: Monitor thread will be started
+2024-11-06 21:44:16,217 INFO: t=2024-11-06T21:44:16+0530 lvl=info msg=start pg=/api/tunnels id=dbacc97a39b2ec35
+2024-11-06 21:44:16,218 INFO: t=2024-11-06T21:44:16+0530 lvl=info msg=end pg=/api/tunnels id=dbacc97a39b2ec35 status=200 dur=553.542µs
+2024-11-06 21:44:16,218 INFO: t=2024-11-06T21:44:16+0530 lvl=info msg=start pg=/api/tunnels id=e6685807f4dacd85
+2024-11-06 21:44:16,218 INFO: t=2024-11-06T21:44:16+0530 lvl=info msg=end pg=/api/tunnels id=e6685807f4dacd85 status=200 dur=51.917µs
+2024-11-06 21:44:16,218 DEBUG: Creating tunnel with options: {'name': 'http-5000-48d09405-8f4e-4e28-b88f-c066eb893401', 'addr': '5000', 'proto': 'http'}
+2024-11-06 21:44:16,218 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-48d09405-8f4e-4e28-b88f-c066eb893401', 'addr': '5000', 'proto': 'http'}
+2024-11-06 21:44:16,219 INFO: t=2024-11-06T21:44:16+0530 lvl=info msg=start pg=/api/tunnels id=ae0b20e1e0a996f4
+2024-11-06 21:44:16,440 INFO: t=2024-11-06T21:44:16+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-48d09405-8f4e-4e28-b88f-c066eb893401 addr=http://localhost:5000 url=https://2abb-202-134-169-160.ngrok-free.app
+2024-11-06 21:44:16,440 DEBUG: Response 201: {"name":"http-5000-48d09405-8f4e-4e28-b88f-c066eb893401","ID":"c90e871f5b5e38e5d6dd8efe62e6fe77","uri":"/api/tunnels/http-5000-48d09405-8f4e-4e28-b88f-c066eb893401","public_url":"https://2abb-202-134-169-160.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-06 21:44:16,440 INFO: t=2024-11-06T21:44:16+0530 lvl=info msg=end pg=/api/tunnels id=ae0b20e1e0a996f4 status=201 dur=221.129416ms
+2024-11-06 21:44:16,441 INFO: ngrok URL: https://2abb-202-134-169-160.ngrok-free.app
+2024-11-06 21:44:16,475 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-06 21:44:16,475 INFO: [33mPress CTRL+C to quit[0m
+2024-11-06 21:44:16,476 INFO:  * Restarting with stat
+2024-11-06 21:44:17,172 WARNING:  * Debugger is active!
+2024-11-06 21:44:17,177 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 21:44:25,578 INFO: Accessed login page
+2024-11-06 21:44:25,583 INFO: 127.0.0.1 - - [06/Nov/2024 21:44:25] "GET / HTTP/1.1" 200 -
+2024-11-06 21:44:25,592 INFO: 127.0.0.1 - - [06/Nov/2024 21:44:25] "GET /static/images/Sun%20AI%20Logo.png HTTP/1.1" 200 -
+2024-11-06 21:44:25,603 INFO: 127.0.0.1 - - [06/Nov/2024 21:44:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-11-06 21:45:07,574 INFO: Login attempt for user: Dipesh
+2024-11-06 21:45:22,790 INFO: 127.0.0.1 - - [06/Nov/2024 21:45:22] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2024-11-06 21:45:22,803 INFO: 127.0.0.1 - - [06/Nov/2024 21:45:22] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-11-06 21:45:22,803 INFO: 127.0.0.1 - - [06/Nov/2024 21:45:22] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-11-06 21:45:22,817 INFO: 127.0.0.1 - - [06/Nov/2024 21:45:22] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=d7sfMXUKccgSITBYy0j7 HTTP/1.1" 200 -
+2024-11-06 21:48:06,618 INFO: Login attempt for user: Dipesh
+2024-11-06 21:48:11,300 INFO: User Dipesh  managing customer 4121 logged in successfully.
+2024-11-06 21:48:11,300 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:11] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-06 21:48:11,304 INFO: Accessed home page
+2024-11-06 21:48:11,306 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:11] "GET /home HTTP/1.1" 200 -
+2024-11-06 21:48:11,318 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:11] "GET /static/images/btn-1.png HTTP/1.1" 200 -
+2024-11-06 21:48:11,318 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:11] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-06 21:48:11,319 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:11] "GET /static/images/btn-3.png HTTP/1.1" 200 -
+2024-11-06 21:48:11,319 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:11] "GET /static/images/btn-2.png HTTP/1.1" 200 -
+2024-11-06 21:48:11,319 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:11] "GET /static/images/btn-4.png HTTP/1.1" 200 -
+2024-11-06 21:48:11,320 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:11] "GET /static/images/btn-5.png HTTP/1.1" 200 -
+2024-11-06 21:48:11,326 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:11] "GET /static/images/btn-6.png HTTP/1.1" 200 -
+2024-11-06 21:48:13,313 INFO: Dipesh opened AI prediction page.
+2024-11-06 21:48:13,323 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:13] "GET /ai_production_cost_estimate HTTP/1.1" 200 -
+2024-11-06 21:48:13,339 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:13] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-06 21:48:15,202 INFO: Dipesh opened Dashboard page.
+2024-11-06 21:48:16,549 INFO: Fetched product types, customer IDs, references, metals, and other data successfully
+2024-11-06 21:48:16,792 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:16] "POST /get_dropdown_data HTTP/1.1" 200 -
+2024-11-06 21:48:18,234 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:18] "GET /retrain_model HTTP/1.1" 200 -
+2024-11-06 21:48:18,257 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:18] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-06 21:48:18,298 INFO: Dipesh opened Dashboard page.
+2024-11-06 21:48:20,170 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:20] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-06 21:48:20,188 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:20] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-06 21:48:40,856 INFO: 127.0.0.1 - - [06/Nov/2024 21:48:40] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-06 21:48:46,144 INFO: Setting 'is_being_used_for_retraining' to 'Yes' for customer 4294.
+2024-11-06 21:48:46,145 INFO: Determining dataset size change for customer 4294 since last training...
+2024-11-06 21:48:48,426 INFO: Dataset size has changed significantly since last training...
+2024-11-06 21:48:48,427 INFO: Bayesian Optimization will be used for hyperparameter tuning...
+2024-11-06 21:48:48,428 INFO: Started retraining for customer 4294 at Nov 06 2024 (09:48:48 PM)...
+2024-11-06 21:48:48,429 INFO: Fetching data for customer 4294...
+2024-11-06 21:48:50,186 INFO: Loaded data for customer 4294...
+2024-11-06 21:48:50,193 INFO: Data shape: (1629, 16)
+2024-11-06 21:48:50,194 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time'],
+      dtype='object')
+2024-11-06 21:48:50,195 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-06 21:48:50,195 INFO: Preprocessing complete...
+2024-11-06 21:48:50,198 INFO: Removed outliers from the target variable...
+2024-11-06 21:48:50,199 INFO: Split data into training and testing sets...
+2024-11-06 21:48:52,734 INFO: Previously used best parameters from DB: {'depth': 8.0, 'iterations': 200.0, 'l2_leaf_reg': 2.8, 'learning_rate': 0.12000000000000001}
+2024-11-06 21:48:52,739 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=6, high=10, prior='uniform', transform='identity'), 'iterations': Integer(low=100, high=300, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.1, high=0.14, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.5999999999999996, high=3.0, prior='uniform', transform='identity')}
+2024-11-06 21:48:52,741 INFO: Performing Bayesian optimization...
+2024-11-06 21:52:37,460 INFO: Best parameters from Bayesian optimization: OrderedDict([('depth', 10), ('iterations', 300), ('l2_leaf_reg', 3.0), ('learning_rate', 0.14)])
+2024-11-06 21:52:37,460 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-06 21:52:40,990 INFO: Fitted the pipeline with best parameters
+2024-11-06 21:52:41,041 INFO: MAE: 4.46676281326985
+2024-11-06 21:52:41,041 INFO: MSE: 72.13383619408144
+2024-11-06 21:52:41,041 INFO: RMSE: 8.493164086139007
+2024-11-06 21:52:41,041 INFO: R2 Score: 89.50 %
+2024-11-06 21:52:41,049 INFO: Saved the pipeline
+2024-11-06 21:52:41,604 INFO: Updated the previous default model as non-default for target: CFP_time and model type: CatBoost
+2024-11-06 21:52:42,126 INFO: New model registered with Model_ID: 4
+2024-11-06 21:52:42,126 INFO: Saving best parameters into Model_Parameters table...
+2024-11-06 21:52:43,463 INFO: Best parameters saved in Model_Parameters table.
+2024-11-06 21:52:43,756 INFO: Total execution time: 235.33 seconds
+2024-11-06 21:52:43,757 INFO: Retraining completed for CFP_time for Customer ID: 4294
+2024-11-06 21:52:43,757 INFO: Determining dataset size change for customer 4294 since last training...
+2024-11-06 21:52:46,333 INFO: Dataset size has changed significantly since last training...
+2024-11-06 21:52:46,333 INFO: Bayesian Optimization will be used for hyperparameter tuning...
+2024-11-06 21:52:46,334 INFO: Started retraining for customer 4294 at Nov 06 2024 (09:52:46 PM)...
+2024-11-06 21:52:46,334 INFO: Fetching data for customer 4294...
+2024-11-06 21:52:48,167 INFO: Loaded data for customer 4294...
+2024-11-06 21:52:48,181 INFO: Data shape: (1629, 17)
+2024-11-06 21:52:48,181 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-06 21:52:48,183 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-06 21:52:48,183 INFO: Preprocessing complete...
+2024-11-06 21:52:48,185 INFO: Removed outliers from the target variable...
+2024-11-06 21:52:48,186 INFO: Split data into training and testing sets...
+2024-11-06 21:52:51,025 INFO: Previously used best parameters from DB: {'depth': 8.0, 'iterations': 200.0, 'l2_leaf_reg': 2.8, 'learning_rate': 0.12000000000000001}
+2024-11-06 21:52:51,030 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=6, high=10, prior='uniform', transform='identity'), 'iterations': Integer(low=100, high=300, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.1, high=0.14, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.5999999999999996, high=3.0, prior='uniform', transform='identity')}
+2024-11-06 21:52:51,032 INFO: Performing Bayesian optimization...
+2024-11-06 21:54:06,440 ERROR: t=2024-11-06T21:54:06+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=b695c9647d0b clientid=223c60306685ae3bf35828e272340100
+2024-11-06 21:54:06,441 ERROR: t=2024-11-06T21:54:06+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=74311be9cee8 err="session closed"
+2024-11-06 21:54:07,622 INFO: t=2024-11-06T21:54:07+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-06 21:54:07,622 INFO: t=2024-11-06T21:54:07+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-06 21:56:04,186 INFO: Best parameters from Bayesian optimization: OrderedDict([('depth', 9), ('iterations', 300), ('l2_leaf_reg', 3.0), ('learning_rate', 0.14)])
+2024-11-06 21:56:04,187 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-06 21:56:06,562 INFO: Fitted the pipeline with best parameters
+2024-11-06 21:56:06,612 INFO: MAE: 3.15148727628031
+2024-11-06 21:56:06,612 INFO: MSE: 25.47003711797196
+2024-11-06 21:56:06,612 INFO: RMSE: 5.046784829767558
+2024-11-06 21:56:06,612 INFO: R2 Score: 97.91 %
+2024-11-06 21:56:06,619 INFO: Saved the pipeline
+2024-11-06 21:56:06,620 ERROR: Error retraining model: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: Error code 0x20 (32) (SQLExecDirectW)')
+2024-11-06 21:56:06,621 INFO: 127.0.0.1 - - [06/Nov/2024 21:56:06] "[35m[1mPOST /retrain_model HTTP/1.1[0m" 500 -
+2024-11-06 22:02:16,245 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 22:02:16,359 INFO:  * Restarting with stat
+2024-11-06 22:02:17,109 WARNING:  * Debugger is active!
+2024-11-06 22:02:17,115 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:12:46,553 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 22:12:46,664 INFO:  * Restarting with stat
+2024-11-06 22:12:47,427 WARNING:  * Debugger is active!
+2024-11-06 22:12:47,432 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:13:01,811 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 22:13:01,910 INFO:  * Restarting with stat
+2024-11-06 22:13:02,659 WARNING:  * Debugger is active!
+2024-11-06 22:13:02,665 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:15:51,764 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 22:15:51,865 INFO:  * Restarting with stat
+2024-11-06 22:15:52,580 WARNING:  * Debugger is active!
+2024-11-06 22:15:52,586 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:16:57,289 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 22:16:57,388 INFO:  * Restarting with stat
+2024-11-06 22:16:58,105 WARNING:  * Debugger is active!
+2024-11-06 22:16:58,111 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:17:16,033 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 22:17:16,131 INFO:  * Restarting with stat
+2024-11-06 22:17:16,869 WARNING:  * Debugger is active!
+2024-11-06 22:17:16,874 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:17:44,083 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 22:17:44,182 INFO:  * Restarting with stat
+2024-11-06 22:17:44,897 WARNING:  * Debugger is active!
+2024-11-06 22:17:44,902 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:18:45,480 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 22:18:45,580 INFO:  * Restarting with stat
+2024-11-06 22:18:46,289 WARNING:  * Debugger is active!
+2024-11-06 22:18:46,294 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:19:31,075 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 22:19:31,177 INFO:  * Restarting with stat
+2024-11-06 22:19:31,955 WARNING:  * Debugger is active!
+2024-11-06 22:19:31,962 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:22:13,912 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 22:22:14,011 INFO:  * Restarting with stat
+2024-11-06 22:22:14,728 WARNING:  * Debugger is active!
+2024-11-06 22:22:14,733 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:25:34,382 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/1. RK Flask App (demo).py', reloading
+2024-11-06 22:25:34,487 INFO:  * Restarting with stat
+2024-11-06 22:25:35,213 WARNING:  * Debugger is active!
+2024-11-06 22:25:35,218 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:25:41,301 INFO: Opening tunnel named: http-5000-9a139585-d66f-445d-90ac-2881ab5d04dd
+2024-11-06 22:25:41,301 INFO: Overriding default auth token
+2024-11-06 22:25:41,305 DEBUG: ngrok process starting with PID: 22487
+2024-11-06 22:25:41,318 INFO: t=2024-11-06T22:25:41+0530 lvl=info msg="no configuration paths supplied"
+2024-11-06 22:25:41,318 INFO: t=2024-11-06T22:25:41+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-06 22:25:41,318 INFO: t=2024-11-06T22:25:41+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-06 22:25:41,318 INFO: t=2024-11-06T22:25:41+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-06 22:25:42,130 INFO: t=2024-11-06T22:25:42+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-06 22:25:42,130 INFO: t=2024-11-06T22:25:42+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-06 22:25:42,148 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-06 22:25:42,148 DEBUG: Monitor thread will be started
+2024-11-06 22:25:42,149 INFO: t=2024-11-06T22:25:42+0530 lvl=info msg=start pg=/api/tunnels id=ddf085b8ee3f3d1e
+2024-11-06 22:25:42,149 INFO: t=2024-11-06T22:25:42+0530 lvl=info msg=end pg=/api/tunnels id=ddf085b8ee3f3d1e status=200 dur=194.041µs
+2024-11-06 22:25:42,149 DEBUG: Creating tunnel with options: {'name': 'http-5000-9a139585-d66f-445d-90ac-2881ab5d04dd', 'addr': '5000', 'proto': 'http'}
+2024-11-06 22:25:42,149 INFO: t=2024-11-06T22:25:42+0530 lvl=info msg=start pg=/api/tunnels id=e6ed949f0baf6ed0
+2024-11-06 22:25:42,149 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-9a139585-d66f-445d-90ac-2881ab5d04dd', 'addr': '5000', 'proto': 'http'}
+2024-11-06 22:25:42,149 INFO: t=2024-11-06T22:25:42+0530 lvl=info msg=end pg=/api/tunnels id=e6ed949f0baf6ed0 status=200 dur=33.208µs
+2024-11-06 22:25:42,150 INFO: t=2024-11-06T22:25:42+0530 lvl=info msg=start pg=/api/tunnels id=5b7fa8bbbb4f9291
+2024-11-06 22:25:42,375 INFO: t=2024-11-06T22:25:42+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-9a139585-d66f-445d-90ac-2881ab5d04dd addr=http://localhost:5000 url=https://c2c5-202-134-169-160.ngrok-free.app
+2024-11-06 22:25:42,375 INFO: t=2024-11-06T22:25:42+0530 lvl=info msg=end pg=/api/tunnels id=5b7fa8bbbb4f9291 status=201 dur=224.771125ms
+2024-11-06 22:25:42,375 DEBUG: Response 201: {"name":"http-5000-9a139585-d66f-445d-90ac-2881ab5d04dd","ID":"c8e4020c268c5c300a0bd717f307c752","uri":"/api/tunnels/http-5000-9a139585-d66f-445d-90ac-2881ab5d04dd","public_url":"https://c2c5-202-134-169-160.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-06 22:25:42,376 INFO: ngrok URL: https://c2c5-202-134-169-160.ngrok-free.app
+2024-11-06 22:25:42,408 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-06 22:25:42,409 INFO: [33mPress CTRL+C to quit[0m
+2024-11-06 22:25:42,410 INFO:  * Restarting with stat
+2024-11-06 22:25:43,151 WARNING:  * Debugger is active!
+2024-11-06 22:25:43,156 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:25:45,533 INFO: Dipesh opened Dashboard page.
+2024-11-06 22:26:15,776 INFO: Dipesh opened Dashboard page.
+2024-11-06 22:26:24,320 INFO: Accessed login page
+2024-11-06 22:26:24,329 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:24] "GET / HTTP/1.1" 200 -
+2024-11-06 22:26:24,339 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:24] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-06 22:26:33,454 INFO: Login attempt for user: Dipesh
+2024-11-06 22:26:36,822 INFO: User Dipesh  managing customer 4121 logged in successfully.
+2024-11-06 22:26:36,822 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-06 22:26:36,826 INFO: Accessed home page
+2024-11-06 22:26:36,828 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:36] "GET /home HTTP/1.1" 200 -
+2024-11-06 22:26:36,841 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:36] "[36mGET /static/images/btn-4.png HTTP/1.1[0m" 304 -
+2024-11-06 22:26:36,841 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:36] "[36mGET /static/images/btn-2.png HTTP/1.1[0m" 304 -
+2024-11-06 22:26:36,841 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:36] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-06 22:26:36,842 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:36] "[36mGET /static/images/btn-3.png HTTP/1.1[0m" 304 -
+2024-11-06 22:26:36,842 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:36] "[36mGET /static/images/btn-5.png HTTP/1.1[0m" 304 -
+2024-11-06 22:26:36,842 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:36] "[36mGET /static/images/btn-1.png HTTP/1.1[0m" 304 -
+2024-11-06 22:26:36,842 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:36] "[36mGET /static/images/btn-6.png HTTP/1.1[0m" 304 -
+2024-11-06 22:26:37,922 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:37] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-06 22:26:37,930 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:37] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-06 22:26:38,111 INFO: Dipesh opened AI prediction page.
+2024-11-06 22:26:38,114 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:38] "GET /ai_production_cost_estimate HTTP/1.1" 200 -
+2024-11-06 22:26:38,128 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:38] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-06 22:26:41,512 INFO: Fetched product types, customer IDs, references, metals, and other data successfully
+2024-11-06 22:26:41,731 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:41] "POST /get_dropdown_data HTTP/1.1" 200 -
+2024-11-06 22:26:45,950 INFO: Dipesh opened Dashboard page.
+2024-11-06 22:26:49,294 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:49] "GET /retrain_model HTTP/1.1" 200 -
+2024-11-06 22:26:49,312 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:49] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-06 22:26:49,350 INFO: Dipesh opened Dashboard page.
+2024-11-06 22:26:50,888 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:50] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-06 22:26:53,251 INFO: 127.0.0.1 - - [06/Nov/2024 22:26:53] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-06 22:27:17,619 INFO: 127.0.0.1 - - [06/Nov/2024 22:27:17] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-06 22:27:21,374 INFO: 127.0.0.1 - - [06/Nov/2024 22:27:21] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-06 22:27:28,198 INFO: Determining dataset size change for customer 4294 since last training...
+2024-11-06 22:27:30,653 INFO: Dataset size has changed significantly since last training...
+2024-11-06 22:27:30,653 INFO: Bayesian Optimization will be used for hyperparameter tuning...
+2024-11-06 22:27:30,655 INFO: Started retraining for customer 4294 at Nov 06 2024 (10:27:30 PM)...
+2024-11-06 22:27:30,655 INFO: Fetching data for customer 4294...
+2024-11-06 22:27:34,760 INFO: Loaded data for customer 4294...
+2024-11-06 22:27:34,774 INFO: Data shape: (1629, 17)
+2024-11-06 22:27:34,775 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-06 22:27:34,776 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-06 22:27:34,777 INFO: Preprocessing complete...
+2024-11-06 22:27:34,778 INFO: Removed outliers from the target variable...
+2024-11-06 22:27:34,779 INFO: Split data into training and testing sets...
+2024-11-06 22:27:35,159 INFO: 127.0.0.1 - - [06/Nov/2024 22:27:35] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-06 22:27:35,262 INFO: 127.0.0.1 - - [06/Nov/2024 22:27:35] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-06 22:27:36,491 INFO: Fetched the latest Model_ID: 2 for model type: CatBoost and model for: Total_time
+2024-11-06 22:27:36,759 INFO: Fetched best parameters for Model_ID: 2
+2024-11-06 22:27:37,207 INFO: Previously used best parameters from DB: {'depth': 8.0, 'iterations': 200.0, 'l2_leaf_reg': 2.8, 'learning_rate': 0.12000000000000001}
+2024-11-06 22:27:37,211 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=6, high=10, prior='uniform', transform='identity'), 'iterations': Integer(low=100, high=300, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.1, high=0.14, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.5999999999999996, high=3.0, prior='uniform', transform='identity')}
+2024-11-06 22:27:37,212 INFO: Performing Bayesian optimization...
+2024-11-06 22:32:41,459 INFO: Best parameters from Bayesian optimization: OrderedDict([('depth', 10), ('iterations', 300), ('l2_leaf_reg', 2.5999999999999996), ('learning_rate', 0.14)])
+2024-11-06 22:32:41,459 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-06 22:32:45,276 INFO: Fitted the pipeline with best parameters
+2024-11-06 22:32:45,321 INFO: MAE: 2.8673437721269366
+2024-11-06 22:32:45,322 INFO: MSE: 23.921912837196675
+2024-11-06 22:32:45,322 INFO: RMSE: 4.891003254670424
+2024-11-06 22:32:45,322 INFO: R2 Score: 98.04 %
+2024-11-06 22:32:45,354 INFO: Saved the pipeline
+2024-11-06 22:32:57,824 ERROR: Error retraining model: cannot access local variable 'e' where it is not associated with a value
+2024-11-06 22:32:57,825 INFO: 127.0.0.1 - - [06/Nov/2024 22:32:57] "[35m[1mPOST /retrain_model HTTP/1.1[0m" 500 -
+2024-11-06 22:33:00,690 ERROR: t=2024-11-06T22:33:00+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=c2217ab9570b clientid=d4f99395887080b2dd4b5572777a02b0
+2024-11-06 22:33:00,691 ERROR: t=2024-11-06T22:33:00+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=c4ade261a8b8 err="session closed"
+2024-11-06 22:33:02,052 INFO: t=2024-11-06T22:33:02+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-06 22:33:02,052 INFO: t=2024-11-06T22:33:02+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-06 22:38:04,855 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 22:38:05,002 INFO:  * Restarting with stat
+2024-11-06 22:38:05,762 WARNING:  * Debugger is active!
+2024-11-06 22:38:05,768 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:54:02,246 INFO: Opening tunnel named: http-5000-54092ac7-9718-4b55-921f-a2b833225d11
+2024-11-06 22:54:02,246 INFO: Overriding default auth token
+2024-11-06 22:54:02,251 DEBUG: ngrok process starting with PID: 23175
+2024-11-06 22:54:02,264 INFO: t=2024-11-06T22:54:02+0530 lvl=info msg="no configuration paths supplied"
+2024-11-06 22:54:02,264 INFO: t=2024-11-06T22:54:02+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-06 22:54:02,264 INFO: t=2024-11-06T22:54:02+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-06 22:54:02,264 INFO: t=2024-11-06T22:54:02+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-06 22:54:03,170 INFO: t=2024-11-06T22:54:03+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-06 22:54:03,170 INFO: t=2024-11-06T22:54:03+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-06 22:54:03,192 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-06 22:54:03,192 DEBUG: Monitor thread will be started
+2024-11-06 22:54:03,192 INFO: t=2024-11-06T22:54:03+0530 lvl=info msg=start pg=/api/tunnels id=5f0c5f3b794b6553
+2024-11-06 22:54:03,193 INFO: t=2024-11-06T22:54:03+0530 lvl=info msg=end pg=/api/tunnels id=5f0c5f3b794b6553 status=200 dur=215.25µs
+2024-11-06 22:54:03,193 INFO: t=2024-11-06T22:54:03+0530 lvl=info msg=start pg=/api/tunnels id=1cd5f018c9a33f6e
+2024-11-06 22:54:03,193 INFO: t=2024-11-06T22:54:03+0530 lvl=info msg=end pg=/api/tunnels id=1cd5f018c9a33f6e status=200 dur=59.542µs
+2024-11-06 22:54:03,193 DEBUG: Creating tunnel with options: {'name': 'http-5000-54092ac7-9718-4b55-921f-a2b833225d11', 'addr': '5000', 'proto': 'http'}
+2024-11-06 22:54:03,194 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-54092ac7-9718-4b55-921f-a2b833225d11', 'addr': '5000', 'proto': 'http'}
+2024-11-06 22:54:03,194 INFO: t=2024-11-06T22:54:03+0530 lvl=info msg=start pg=/api/tunnels id=b26e4dcc09a7dc23
+2024-11-06 22:54:03,427 INFO: t=2024-11-06T22:54:03+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-54092ac7-9718-4b55-921f-a2b833225d11 addr=http://localhost:5000 url=https://fa86-202-134-169-160.ngrok-free.app
+2024-11-06 22:54:03,428 DEBUG: Response 201: {"name":"http-5000-54092ac7-9718-4b55-921f-a2b833225d11","ID":"357c7d458cb61849d9dbea00b24e7014","uri":"/api/tunnels/http-5000-54092ac7-9718-4b55-921f-a2b833225d11","public_url":"https://fa86-202-134-169-160.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-06 22:54:03,429 INFO: t=2024-11-06T22:54:03+0530 lvl=info msg=end pg=/api/tunnels id=b26e4dcc09a7dc23 status=201 dur=232.361458ms
+2024-11-06 22:54:03,429 INFO: ngrok URL: https://fa86-202-134-169-160.ngrok-free.app
+2024-11-06 22:54:03,463 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-06 22:54:03,463 INFO: [33mPress CTRL+C to quit[0m
+2024-11-06 22:54:03,463 INFO:  * Restarting with stat
+2024-11-06 22:54:04,178 WARNING:  * Debugger is active!
+2024-11-06 22:54:04,183 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 22:54:07,877 INFO: Dipesh opened Dashboard page.
+2024-11-06 22:54:12,713 INFO: 127.0.0.1 - - [06/Nov/2024 22:54:12] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-06 22:54:12,728 INFO: 127.0.0.1 - - [06/Nov/2024 22:54:12] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-06 22:54:16,998 INFO: 127.0.0.1 - - [06/Nov/2024 22:54:16] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-06 22:54:19,966 INFO: Determining dataset size change for customer 4294 since last training...
+2024-11-06 22:54:22,526 INFO: Dataset size has changed significantly since last training...
+2024-11-06 22:54:22,526 INFO: Bayesian Optimization will be used for hyperparameter tuning...
+2024-11-06 22:54:22,527 INFO: Started retraining for customer 4294 at Nov 06 2024 (10:54:22 PM)...
+2024-11-06 22:54:22,527 INFO: Fetching data for customer 4294...
+2024-11-06 22:54:25,516 INFO: Loaded data for customer 4294...
+2024-11-06 22:54:25,533 INFO: Data shape: (1629, 18)
+2024-11-06 22:54:25,534 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins', 'Actual_CFP_cost'],
+      dtype='object')
+2024-11-06 22:54:25,537 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-06 22:54:25,538 INFO: Preprocessing complete...
+2024-11-06 22:54:25,540 INFO: Removed outliers from the target variable...
+2024-11-06 22:54:25,542 INFO: Split data into training and testing sets...
+2024-11-06 22:54:27,543 INFO: Fetched the latest Model_ID: 3 for model type: CatBoost and model for: CFP_cost
+2024-11-06 22:54:27,851 INFO: Fetched best parameters for Model_ID: 3
+2024-11-06 22:54:28,465 INFO: Previously used best parameters from DB: {'depth': 8.0, 'iterations': 200.0, 'l2_leaf_reg': 2.8, 'learning_rate': 0.12000000000000001}
+2024-11-06 22:54:28,470 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=6, high=10, prior='uniform', transform='identity'), 'iterations': Integer(low=100, high=300, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.1, high=0.14, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.5999999999999996, high=3.0, prior='uniform', transform='identity')}
+2024-11-06 22:54:28,471 INFO: Performing Bayesian optimization...
+2024-11-06 22:58:57,739 INFO: Best parameters from Bayesian optimization: OrderedDict([('depth', 10), ('iterations', 288), ('l2_leaf_reg', 2.5999999999999996), ('learning_rate', 0.14)])
+2024-11-06 22:58:57,739 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-06 22:59:01,815 INFO: Fitted the pipeline with best parameters
+2024-11-06 22:59:01,864 INFO: MAE: 0.5808155391526032
+2024-11-06 22:59:01,864 INFO: MSE: 1.5271004812396227
+2024-11-06 22:59:01,864 INFO: RMSE: 1.2357590708708646
+2024-11-06 22:59:01,864 INFO: R2 Score: 94.35 %
+2024-11-06 22:59:01,897 INFO: Saved the pipeline
+2024-11-06 22:59:02,379 INFO: Updated the previous default model as non-default for target: CFP_cost and model type: CatBoost
+2024-11-06 22:59:02,917 INFO: New model registered with Model_ID: 6
+2024-11-06 22:59:02,917 INFO: Saving best parameters into Model_Parameters table...
+2024-11-06 22:59:03,391 INFO: Parameter depth with value 10 saved successfully.
+2024-11-06 22:59:03,947 INFO: Parameter iterations with value 288 saved successfully.
+2024-11-06 22:59:04,453 INFO: Parameter l2_leaf_reg with value 2.5999999999999996 saved successfully.
+2024-11-06 22:59:05,052 INFO: Parameter learning_rate with value 0.14 saved successfully.
+2024-11-06 22:59:05,052 INFO: All best parameters saved in Model_Parameters table.
+2024-11-06 22:59:05,974 INFO: Updated 'Used_in_Retraining' column to 1 for used rows in customer 4294's retraining.
+2024-11-06 22:59:06,486 INFO: Resetting 'is_being_used_for_retraining' to 'No' for customer 4294 as final retraining is complete.
+2024-11-06 22:59:06,704 ERROR: Error retraining model: 'float' object has no attribute 'total_seconds'
+2024-11-06 22:59:06,710 INFO: 127.0.0.1 - - [06/Nov/2024 22:59:06] "[35m[1mPOST /retrain_model HTTP/1.1[0m" 500 -
+2024-11-06 23:03:43,287 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 23:03:43,585 INFO:  * Restarting with stat
+2024-11-06 23:03:44,296 WARNING:  * Debugger is active!
+2024-11-06 23:03:44,301 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 23:04:12,094 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 23:04:12,194 INFO:  * Restarting with stat
+2024-11-06 23:04:12,933 WARNING:  * Debugger is active!
+2024-11-06 23:04:12,939 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 23:04:28,560 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/1. RK Flask App (demo).py', reloading
+2024-11-06 23:04:28,660 INFO:  * Restarting with stat
+2024-11-06 23:04:29,372 WARNING:  * Debugger is active!
+2024-11-06 23:04:29,378 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 23:04:54,285 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 23:04:54,400 INFO:  * Restarting with stat
+2024-11-06 23:04:55,133 WARNING:  * Debugger is active!
+2024-11-06 23:04:55,139 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 23:05:01,521 INFO: Opening tunnel named: http-5000-563f4e73-3143-4877-a3c5-b7f619c620ac
+2024-11-06 23:05:01,522 INFO: Overriding default auth token
+2024-11-06 23:05:01,526 DEBUG: ngrok process starting with PID: 23699
+2024-11-06 23:05:01,539 INFO: t=2024-11-06T23:05:01+0530 lvl=info msg="no configuration paths supplied"
+2024-11-06 23:05:01,539 INFO: t=2024-11-06T23:05:01+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-06 23:05:01,539 INFO: t=2024-11-06T23:05:01+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-06 23:05:01,539 INFO: t=2024-11-06T23:05:01+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-06 23:05:02,232 INFO: t=2024-11-06T23:05:02+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-06 23:05:02,233 INFO: t=2024-11-06T23:05:02+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-06 23:05:02,253 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-06 23:05:02,253 DEBUG: Monitor thread will be started
+2024-11-06 23:05:02,253 INFO: t=2024-11-06T23:05:02+0530 lvl=info msg=start pg=/api/tunnels id=d747983bf35da538
+2024-11-06 23:05:02,253 INFO: t=2024-11-06T23:05:02+0530 lvl=info msg=end pg=/api/tunnels id=d747983bf35da538 status=200 dur=256.25µs
+2024-11-06 23:05:02,254 INFO: t=2024-11-06T23:05:02+0530 lvl=info msg=start pg=/api/tunnels id=4885211478326414
+2024-11-06 23:05:02,254 INFO: t=2024-11-06T23:05:02+0530 lvl=info msg=end pg=/api/tunnels id=4885211478326414 status=200 dur=63.125µs
+2024-11-06 23:05:02,254 DEBUG: Creating tunnel with options: {'name': 'http-5000-563f4e73-3143-4877-a3c5-b7f619c620ac', 'addr': '5000', 'proto': 'http'}
+2024-11-06 23:05:02,254 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-563f4e73-3143-4877-a3c5-b7f619c620ac', 'addr': '5000', 'proto': 'http'}
+2024-11-06 23:05:02,255 INFO: t=2024-11-06T23:05:02+0530 lvl=info msg=start pg=/api/tunnels id=34611eee6ac203f8
+2024-11-06 23:05:02,482 INFO: t=2024-11-06T23:05:02+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-563f4e73-3143-4877-a3c5-b7f619c620ac addr=http://localhost:5000 url=https://75aa-202-134-169-160.ngrok-free.app
+2024-11-06 23:05:02,483 DEBUG: Response 201: {"name":"http-5000-563f4e73-3143-4877-a3c5-b7f619c620ac","ID":"2db9e54ab77eca910236a74db26a1809","uri":"/api/tunnels/http-5000-563f4e73-3143-4877-a3c5-b7f619c620ac","public_url":"https://75aa-202-134-169-160.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-06 23:05:02,483 INFO: t=2024-11-06T23:05:02+0530 lvl=info msg=end pg=/api/tunnels id=34611eee6ac203f8 status=201 dur=226.793125ms
+2024-11-06 23:05:02,483 INFO: ngrok URL: https://75aa-202-134-169-160.ngrok-free.app
+2024-11-06 23:05:02,514 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-06 23:05:02,514 INFO: [33mPress CTRL+C to quit[0m
+2024-11-06 23:05:02,515 INFO:  * Restarting with stat
+2024-11-06 23:05:03,256 WARNING:  * Debugger is active!
+2024-11-06 23:05:03,262 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 23:05:06,540 INFO: Dipesh opened Dashboard page.
+2024-11-06 23:05:11,571 INFO: 127.0.0.1 - - [06/Nov/2024 23:05:11] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-06 23:05:11,586 INFO: 127.0.0.1 - - [06/Nov/2024 23:05:11] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-06 23:05:15,441 INFO: 127.0.0.1 - - [06/Nov/2024 23:05:15] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-06 23:05:20,970 INFO: Setting 'is_being_used_for_retraining' to 'Yes' for customer 4273.
+2024-11-06 23:05:20,970 INFO: Determining dataset size change for customer 4273 since last training...
+2024-11-06 23:05:23,529 INFO: Dataset size has changed significantly since last training...
+2024-11-06 23:05:23,530 INFO: Bayesian Optimization will be used for hyperparameter tuning...
+2024-11-06 23:05:23,530 INFO: Started retraining for customer 4273 at Nov 06 2024 (11:05:23 PM)...
+2024-11-06 23:05:23,530 INFO: Fetching data for customer 4273...
+2024-11-06 23:05:25,074 INFO: Loaded data for customer 4273...
+2024-11-06 23:05:25,088 INFO: Data shape: (1197, 16)
+2024-11-06 23:05:25,088 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time'],
+      dtype='object')
+2024-11-06 23:05:25,090 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-06 23:05:25,090 INFO: Preprocessing complete...
+2024-11-06 23:05:25,092 INFO: Removed outliers from the target variable...
+2024-11-06 23:05:25,094 INFO: Split data into training and testing sets...
+2024-11-06 23:05:27,140 INFO: Fetched the latest Model_ID: 4 for model type: CatBoost and model for: CFP_time
+2024-11-06 23:05:27,421 INFO: Fetched best parameters for Model_ID: 4
+2024-11-06 23:05:27,848 INFO: Previously used best parameters from DB: {'depth': 10.0, 'iterations': 300.0, 'l2_leaf_reg': 3.0, 'learning_rate': 0.14}
+2024-11-06 23:05:27,854 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=8, high=12, prior='uniform', transform='identity'), 'iterations': Integer(low=200, high=400, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.12000000000000001, high=0.16, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.8, high=3.2, prior='uniform', transform='identity')}
+2024-11-06 23:05:27,856 INFO: Performing Bayesian optimization...
+2024-11-06 23:14:54,659 INFO: Best parameters from Bayesian optimization: OrderedDict([('depth', 10), ('iterations', 400), ('l2_leaf_reg', 2.8), ('learning_rate', 0.16)])
+2024-11-06 23:14:54,659 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-06 23:14:59,360 INFO: Fitted the pipeline with best parameters
+2024-11-06 23:14:59,386 INFO: MAE: 4.264277677078206
+2024-11-06 23:14:59,386 INFO: MSE: 66.57788753722843
+2024-11-06 23:14:59,386 INFO: RMSE: 8.1595274089391
+2024-11-06 23:14:59,386 INFO: R2 Score: 87.72 %
+2024-11-06 23:14:59,418 INFO: Saved the pipeline
+2024-11-06 23:15:00,082 INFO: Updated the previous default model as non-default for target: CFP_time and model type: CatBoost
+2024-11-06 23:15:00,696 INFO: New model registered with Model_ID: 7
+2024-11-06 23:15:00,696 INFO: Saving best parameters into Model_Parameters table...
+2024-11-06 23:15:01,310 INFO: Parameter depth with value 10 saved successfully.
+2024-11-06 23:15:01,925 INFO: Parameter iterations with value 400 saved successfully.
+2024-11-06 23:15:02,391 INFO: Parameter l2_leaf_reg with value 2.8 saved successfully.
+2024-11-06 23:15:02,949 INFO: Parameter learning_rate with value 0.16 saved successfully.
+2024-11-06 23:15:02,949 INFO: All best parameters saved in Model_Parameters table.
+2024-11-06 23:15:03,256 INFO: Total execution time: 579.73 seconds
+2024-11-06 23:15:03,258 INFO: Retraining completed for CFP_time for Customer ID: 4273
+2024-11-06 23:15:03,258 INFO: Determining dataset size change for customer 4273 since last training...
+2024-11-06 23:15:05,918 INFO: Dataset size has changed significantly since last training...
+2024-11-06 23:15:05,919 INFO: Bayesian Optimization will be used for hyperparameter tuning...
+2024-11-06 23:15:05,919 INFO: Started retraining for customer 4273 at Nov 06 2024 (11:15:05 PM)...
+2024-11-06 23:15:05,920 INFO: Fetching data for customer 4273...
+2024-11-06 23:15:07,154 INFO: Loaded data for customer 4273...
+2024-11-06 23:15:07,170 INFO: Data shape: (1197, 17)
+2024-11-06 23:15:07,170 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-06 23:15:07,172 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-06 23:15:07,172 INFO: Preprocessing complete...
+2024-11-06 23:15:07,174 INFO: Removed outliers from the target variable...
+2024-11-06 23:15:07,176 INFO: Split data into training and testing sets...
+2024-11-06 23:15:08,990 INFO: Fetched the latest Model_ID: 5 for model type: CatBoost and model for: Total_time
+2024-11-06 23:15:09,298 INFO: Fetched best parameters for Model_ID: 5
+2024-11-06 23:15:09,912 INFO: Previously used best parameters from DB: {'depth': 10.0, 'iterations': 300.0, 'l2_leaf_reg': 2.5999999999999996, 'learning_rate': 0.14}
+2024-11-06 23:15:09,918 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=8, high=12, prior='uniform', transform='identity'), 'iterations': Integer(low=200, high=400, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.12000000000000001, high=0.16, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.3999999999999995, high=2.8, prior='uniform', transform='identity')}
+2024-11-06 23:15:09,920 INFO: Performing Bayesian optimization...
+2024-11-06 23:21:06,901 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 23:21:28,748 INFO:  * Restarting with stat
+2024-11-06 23:21:29,523 WARNING:  * Debugger is active!
+2024-11-06 23:21:29,529 INFO:  * Debugger PIN: 489-613-874
+2024-11-06 23:33:09,107 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-06 23:33:09,207 INFO:  * Restarting with stat
+2024-11-06 23:33:09,951 WARNING:  * Debugger is active!
+2024-11-06 23:33:09,957 INFO:  * Debugger PIN: 489-613-874
+2024-11-07 00:22:16,682 ERROR: t=2024-11-07T00:22:16+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=6f28e69189dd clientid=bb456032ef42e4c47add8f54e8a65463
+2024-11-07 00:22:16,683 ERROR: t=2024-11-07T00:22:16+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=8d2d9874d41c err="session closed"
+2024-11-07 00:22:17,771 INFO: t=2024-11-07T00:22:17+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-07 00:22:17,772 INFO: t=2024-11-07T00:22:17+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-07 00:23:20,641 ERROR: t=2024-11-07T00:23:20+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=8d2d9874d41c err="read EOF from remote peer"
+2024-11-07 00:23:21,873 INFO: t=2024-11-07T00:23:21+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-07 00:23:21,873 INFO: t=2024-11-07T00:23:21+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-07 00:23:27,770 ERROR: t=2024-11-07T00:23:27+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=da4dc49e1424 clientid=bb456032ef42e4c47add8f54e8a65463
+2024-11-07 00:25:15,878 INFO: t=2024-11-07T00:25:15+0530 lvl=info msg="received stop request" obj=app stopReq="{err:<nil> restart:false}"
+2024-11-07 00:25:15,878 INFO: t=2024-11-07T00:25:15+0530 lvl=info msg="session closing" obj=tunnels.session err=nil
+2024-11-07 00:25:15,878 INFO: t=2024-11-07T00:25:15+0530 lvl=info msg="accept failed" obj=tunnels.session obj=csess id=8d2d9874d41c err="reconnecting session closed"
+2024-11-07 00:25:16,009 INFO: Shutting down ngrok...
+2024-11-07 00:25:16,009 DEBUG: Removing stale process for "ngrok_path" /Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok
+2024-11-07 00:25:16,009 DEBUG: "ngrok_path" /Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok is not running a process
+2024-11-07 07:46:12,038 INFO: Opening tunnel named: http-5000-5c65c9b8-e9d1-4496-b2f5-595d0303d62f
+2024-11-07 07:46:12,038 INFO: Overriding default auth token
+2024-11-07 07:46:12,043 DEBUG: ngrok process starting with PID: 26724
+2024-11-07 07:46:12,056 INFO: t=2024-11-07T07:46:12+0530 lvl=info msg="no configuration paths supplied"
+2024-11-07 07:46:12,056 INFO: t=2024-11-07T07:46:12+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-07 07:46:12,056 INFO: t=2024-11-07T07:46:12+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-07 07:46:12,056 INFO: t=2024-11-07T07:46:12+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-07 07:46:12,783 INFO: t=2024-11-07T07:46:12+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-07 07:46:12,783 INFO: t=2024-11-07T07:46:12+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-07 07:46:12,803 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-07 07:46:12,803 DEBUG: Monitor thread will be started
+2024-11-07 07:46:12,804 INFO: t=2024-11-07T07:46:12+0530 lvl=info msg=start pg=/api/tunnels id=e0918432111a4f6c
+2024-11-07 07:46:12,804 INFO: t=2024-11-07T07:46:12+0530 lvl=info msg=end pg=/api/tunnels id=e0918432111a4f6c status=200 dur=232.708µs
+2024-11-07 07:46:12,805 INFO: t=2024-11-07T07:46:12+0530 lvl=info msg=start pg=/api/tunnels id=57031810c56d78d8
+2024-11-07 07:46:12,805 DEBUG: Creating tunnel with options: {'name': 'http-5000-5c65c9b8-e9d1-4496-b2f5-595d0303d62f', 'addr': '5000', 'proto': 'http'}
+2024-11-07 07:46:12,805 INFO: t=2024-11-07T07:46:12+0530 lvl=info msg=end pg=/api/tunnels id=57031810c56d78d8 status=200 dur=75.833µs
+2024-11-07 07:46:12,805 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-5c65c9b8-e9d1-4496-b2f5-595d0303d62f', 'addr': '5000', 'proto': 'http'}
+2024-11-07 07:46:12,806 INFO: t=2024-11-07T07:46:12+0530 lvl=info msg=start pg=/api/tunnels id=c961aa8b5767a558
+2024-11-07 07:46:13,030 INFO: t=2024-11-07T07:46:13+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-5c65c9b8-e9d1-4496-b2f5-595d0303d62f addr=http://localhost:5000 url=https://4e30-202-134-169-160.ngrok-free.app
+2024-11-07 07:46:13,031 INFO: t=2024-11-07T07:46:13+0530 lvl=info msg=end pg=/api/tunnels id=c961aa8b5767a558 status=201 dur=223.3695ms
+2024-11-07 07:46:13,032 DEBUG: Response 201: {"name":"http-5000-5c65c9b8-e9d1-4496-b2f5-595d0303d62f","ID":"8652822504072cfd25ae3ddfe3676804","uri":"/api/tunnels/http-5000-5c65c9b8-e9d1-4496-b2f5-595d0303d62f","public_url":"https://4e30-202-134-169-160.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-07 07:46:13,032 INFO: ngrok URL: https://4e30-202-134-169-160.ngrok-free.app
+2024-11-07 07:46:13,063 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-07 07:46:13,063 INFO: [33mPress CTRL+C to quit[0m
+2024-11-07 07:46:13,064 INFO:  * Restarting with stat
+2024-11-07 07:46:13,790 WARNING:  * Debugger is active!
+2024-11-07 07:46:13,796 INFO:  * Debugger PIN: 489-613-874
+2024-11-07 07:46:20,369 INFO: Accessed login page
+2024-11-07 07:46:20,374 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:20] "GET / HTTP/1.1" 200 -
+2024-11-07 07:46:20,383 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:20] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-07 07:46:27,561 INFO: Login attempt for user: Dipesh
+2024-11-07 07:46:32,113 INFO: User Dipesh  managing customer 4121 logged in successfully.
+2024-11-07 07:46:32,113 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:32] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-07 07:46:32,118 INFO: Accessed home page
+2024-11-07 07:46:32,120 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:32] "GET /home HTTP/1.1" 200 -
+2024-11-07 07:46:32,131 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:32] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-07 07:46:32,145 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:32] "[36mGET /static/images/btn-1.png HTTP/1.1[0m" 304 -
+2024-11-07 07:46:32,145 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:32] "[36mGET /static/images/btn-2.png HTTP/1.1[0m" 304 -
+2024-11-07 07:46:32,146 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:32] "[36mGET /static/images/btn-3.png HTTP/1.1[0m" 304 -
+2024-11-07 07:46:32,147 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:32] "[36mGET /static/images/btn-4.png HTTP/1.1[0m" 304 -
+2024-11-07 07:46:32,148 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:32] "[36mGET /static/images/btn-5.png HTTP/1.1[0m" 304 -
+2024-11-07 07:46:32,148 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:32] "[36mGET /static/images/btn-6.png HTTP/1.1[0m" 304 -
+2024-11-07 07:46:32,845 INFO: Dipesh opened AI prediction page.
+2024-11-07 07:46:32,853 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:32] "GET /ai_production_cost_estimate HTTP/1.1" 200 -
+2024-11-07 07:46:32,867 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:32] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-07 07:46:34,409 INFO: Dipesh opened Dashboard page.
+2024-11-07 07:46:35,959 INFO: Fetched product types, customer IDs, references, metals, and other data successfully
+2024-11-07 07:46:36,178 INFO: 127.0.0.1 - - [07/Nov/2024 07:46:36] "POST /get_dropdown_data HTTP/1.1" 200 -
+2024-11-07 07:47:02,126 INFO: 127.0.0.1 - - [07/Nov/2024 07:47:02] "GET /retrain_model HTTP/1.1" 200 -
+2024-11-07 07:47:02,153 INFO: 127.0.0.1 - - [07/Nov/2024 07:47:02] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-07 07:47:02,194 INFO: Dipesh opened Dashboard page.
+2024-11-07 07:47:27,545 INFO: 127.0.0.1 - - [07/Nov/2024 07:47:27] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-07 07:47:28,640 INFO: 127.0.0.1 - - [07/Nov/2024 07:47:28] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-07 07:47:28,666 INFO: 127.0.0.1 - - [07/Nov/2024 07:47:28] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-07 07:47:53,728 INFO: 127.0.0.1 - - [07/Nov/2024 07:47:53] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-07 07:48:00,510 INFO: Determining dataset size change for customer 4273 since last training...
+2024-11-07 07:48:02,973 INFO: Dataset size has changed significantly since last training...
+2024-11-07 07:48:02,974 INFO: Bayesian Optimization will be used for hyperparameter tuning...
+2024-11-07 07:48:02,974 INFO: Started retraining for customer 4273 at Nov 07 2024 (07:48:02 AM)...
+2024-11-07 07:48:02,974 INFO: Fetching data for customer 4273...
+2024-11-07 07:48:04,377 INFO: Loaded data for customer 4273...
+2024-11-07 07:48:04,390 INFO: Data shape: (1197, 17)
+2024-11-07 07:48:04,391 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-07 07:48:04,393 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-07 07:48:04,393 INFO: Preprocessing complete...
+2024-11-07 07:48:04,395 INFO: Removed outliers from the target variable...
+2024-11-07 07:48:04,396 INFO: Split data into training and testing sets...
+2024-11-07 07:48:06,479 INFO: Fetched the latest Model_ID: None for model type: CatBoost and model for: Total_time
+2024-11-07 07:48:06,480 ERROR: Error fetching previously used best parameters: No model parameters found in the database.
+2024-11-07 07:48:06,480 INFO: Using default parameters: {'depth': 6, 'iterations': 100, 'learning_rate': 0.1, 'l2_leaf_reg': 3.0}
+2024-11-07 07:48:06,916 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=4, high=8, prior='uniform', transform='identity'), 'iterations': Integer(low=0, high=200, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.08, high=0.12000000000000001, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.8, high=3.2, prior='uniform', transform='identity')}
+2024-11-07 07:48:06,916 INFO: Performing Bayesian optimization...
+2024-11-07 07:48:39,647 ERROR: Error during Bayesian optimization: catboost/private/libs/options/boosting_options.cpp:65: Iterations count should be positive
+2024-11-07 07:48:39,647 ERROR: Error retraining model: catboost/private/libs/options/boosting_options.cpp:65: Iterations count should be positive
+2024-11-07 07:48:39,914 INFO: 127.0.0.1 - - [07/Nov/2024 07:48:39] "[35m[1mPOST /retrain_model HTTP/1.1[0m" 500 -
+2024-11-07 07:54:37,747 ERROR: t=2024-11-07T07:54:37+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=f722888cee17 clientid=b45cc46e3365d818c5be8c9955452e12
+2024-11-07 07:54:37,747 ERROR: t=2024-11-07T07:54:37+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=886edd50f72e err="session closed"
+2024-11-07 07:54:38,749 INFO: t=2024-11-07T07:54:38+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-07 07:54:38,749 INFO: t=2024-11-07T07:54:38+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-07 07:55:54,497 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/RK_SunAI_repository-main/Model_retraining_logic.py', reloading
+2024-11-07 07:55:54,598 INFO:  * Restarting with stat
+2024-11-07 07:55:55,301 WARNING:  * Debugger is active!
+2024-11-07 07:55:55,306 INFO:  * Debugger PIN: 489-613-874
+2024-11-07 07:56:53,548 INFO: Opening tunnel named: http-5000-ad28c838-e1c7-4da6-817a-a2fb3e160363
+2024-11-07 07:56:53,548 INFO: Overriding default auth token
+2024-11-07 07:56:53,552 DEBUG: ngrok process starting with PID: 27209
+2024-11-07 07:56:53,565 INFO: t=2024-11-07T07:56:53+0530 lvl=info msg="no configuration paths supplied"
+2024-11-07 07:56:53,565 INFO: t=2024-11-07T07:56:53+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-07 07:56:53,565 INFO: t=2024-11-07T07:56:53+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-07 07:56:53,565 INFO: t=2024-11-07T07:56:53+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-07 07:56:54,352 INFO: t=2024-11-07T07:56:54+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-07 07:56:54,353 INFO: t=2024-11-07T07:56:54+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-07 07:56:54,376 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-07 07:56:54,376 DEBUG: Monitor thread will be started
+2024-11-07 07:56:54,376 INFO: t=2024-11-07T07:56:54+0530 lvl=info msg=start pg=/api/tunnels id=26c7313292cdd7e7
+2024-11-07 07:56:54,376 INFO: t=2024-11-07T07:56:54+0530 lvl=info msg=end pg=/api/tunnels id=26c7313292cdd7e7 status=200 dur=247µs
+2024-11-07 07:56:54,377 INFO: t=2024-11-07T07:56:54+0530 lvl=info msg=start pg=/api/tunnels id=b9e95c78eb15ab5f
+2024-11-07 07:56:54,377 INFO: t=2024-11-07T07:56:54+0530 lvl=info msg=end pg=/api/tunnels id=b9e95c78eb15ab5f status=200 dur=64.459µs
+2024-11-07 07:56:54,377 DEBUG: Creating tunnel with options: {'name': 'http-5000-ad28c838-e1c7-4da6-817a-a2fb3e160363', 'addr': '5000', 'proto': 'http'}
+2024-11-07 07:56:54,377 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-ad28c838-e1c7-4da6-817a-a2fb3e160363', 'addr': '5000', 'proto': 'http'}
+2024-11-07 07:56:54,378 INFO: t=2024-11-07T07:56:54+0530 lvl=info msg=start pg=/api/tunnels id=18d2587615e42a51
+2024-11-07 07:56:54,607 INFO: t=2024-11-07T07:56:54+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-ad28c838-e1c7-4da6-817a-a2fb3e160363 addr=http://localhost:5000 url=https://f176-202-134-169-160.ngrok-free.app
+2024-11-07 07:56:54,608 INFO: t=2024-11-07T07:56:54+0530 lvl=info msg=end pg=/api/tunnels id=18d2587615e42a51 status=201 dur=228.520583ms
+2024-11-07 07:56:54,608 DEBUG: Response 201: {"name":"http-5000-ad28c838-e1c7-4da6-817a-a2fb3e160363","ID":"612dbe9befb42c1582b617cebd5ad3fa","uri":"/api/tunnels/http-5000-ad28c838-e1c7-4da6-817a-a2fb3e160363","public_url":"https://f176-202-134-169-160.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-07 07:56:54,609 INFO: ngrok URL: https://f176-202-134-169-160.ngrok-free.app
+2024-11-07 07:56:54,642 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-07 07:56:54,642 INFO: [33mPress CTRL+C to quit[0m
+2024-11-07 07:56:54,643 INFO:  * Restarting with stat
+2024-11-07 07:56:55,346 WARNING:  * Debugger is active!
+2024-11-07 07:56:55,351 INFO:  * Debugger PIN: 489-613-874
+2024-11-07 07:56:57,673 INFO: Dipesh opened Dashboard page.
+2024-11-07 07:57:02,566 INFO: 127.0.0.1 - - [07/Nov/2024 07:57:02] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-07 07:57:02,581 INFO: 127.0.0.1 - - [07/Nov/2024 07:57:02] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-07 07:57:06,122 INFO: 127.0.0.1 - - [07/Nov/2024 07:57:06] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-07 07:57:12,026 INFO: Determining dataset size change for customer 4273 since last training...
+2024-11-07 07:57:14,560 INFO: Dataset size has changed significantly since last training...
+2024-11-07 07:57:14,560 INFO: Bayesian Optimization will be used for hyperparameter tuning...
+2024-11-07 07:57:14,560 INFO: Started retraining for customer 4273 at Nov 07 2024 (07:57:14 AM)...
+2024-11-07 07:57:14,560 INFO: Fetching data for customer 4273...
+2024-11-07 07:57:17,768 INFO: Loaded data for customer 4273...
+2024-11-07 07:57:17,785 INFO: Data shape: (1197, 17)
+2024-11-07 07:57:17,785 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-07 07:57:17,787 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-07 07:57:17,787 INFO: Preprocessing complete...
+2024-11-07 07:57:17,789 INFO: Removed outliers from the target variable...
+2024-11-07 07:57:17,791 INFO: Split data into training and testing sets...
+2024-11-07 07:57:19,868 INFO: Fetched the latest Model_ID: None for model type: CatBoost and model for: Total_time
+2024-11-07 07:57:19,868 ERROR: Error fetching previously used best parameters: No model parameters found in the database.
+2024-11-07 07:57:19,869 INFO: Using default parameters: {'depth': 6, 'iterations': 100, 'learning_rate': 0.1, 'l2_leaf_reg': 3.0}
+2024-11-07 07:57:20,424 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=4, high=8, prior='uniform', transform='identity'), 'iterations': Integer(low=0, high=200, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.08, high=0.12000000000000001, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.8, high=3.2, prior='uniform', transform='identity')}
+2024-11-07 07:57:20,425 INFO: Performing Bayesian optimization...
+2024-11-07 07:57:25,076 ERROR: Error during Bayesian optimization: catboost/private/libs/options/boosting_options.cpp:65: Iterations count should be positive
+2024-11-07 07:57:25,076 ERROR: Error retraining model: catboost/private/libs/options/boosting_options.cpp:65: Iterations count should be positive
+2024-11-07 07:57:25,343 INFO: 127.0.0.1 - - [07/Nov/2024 07:57:25] "[35m[1mPOST /retrain_model HTTP/1.1[0m" 500 -
+2024-11-07 08:02:03,395 INFO: Opening tunnel named: http-5000-6ac8c9eb-375f-4737-b563-a419de6ed83d
+2024-11-07 08:02:03,395 INFO: Overriding default auth token
+2024-11-07 08:02:03,399 DEBUG: ngrok process starting with PID: 27635
+2024-11-07 08:02:03,412 INFO: t=2024-11-07T08:02:03+0530 lvl=info msg="no configuration paths supplied"
+2024-11-07 08:02:03,412 INFO: t=2024-11-07T08:02:03+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-07 08:02:03,412 INFO: t=2024-11-07T08:02:03+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-07 08:02:03,412 INFO: t=2024-11-07T08:02:03+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-07 08:02:04,381 INFO: t=2024-11-07T08:02:04+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-07 08:02:04,382 INFO: t=2024-11-07T08:02:04+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-07 08:02:04,406 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-07 08:02:04,406 DEBUG: Monitor thread will be started
+2024-11-07 08:02:04,406 INFO: t=2024-11-07T08:02:04+0530 lvl=info msg=start pg=/api/tunnels id=33fd6f88ad909637
+2024-11-07 08:02:04,407 INFO: t=2024-11-07T08:02:04+0530 lvl=info msg=end pg=/api/tunnels id=33fd6f88ad909637 status=200 dur=228.167µs
+2024-11-07 08:02:04,407 INFO: t=2024-11-07T08:02:04+0530 lvl=info msg=start pg=/api/tunnels id=441cbd743f094aa3
+2024-11-07 08:02:04,408 INFO: t=2024-11-07T08:02:04+0530 lvl=info msg=end pg=/api/tunnels id=441cbd743f094aa3 status=200 dur=66.125µs
+2024-11-07 08:02:04,408 DEBUG: Creating tunnel with options: {'name': 'http-5000-6ac8c9eb-375f-4737-b563-a419de6ed83d', 'addr': '5000', 'proto': 'http'}
+2024-11-07 08:02:04,408 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-6ac8c9eb-375f-4737-b563-a419de6ed83d', 'addr': '5000', 'proto': 'http'}
+2024-11-07 08:02:04,408 INFO: t=2024-11-07T08:02:04+0530 lvl=info msg=start pg=/api/tunnels id=3133ea632c6ffdac
+2024-11-07 08:02:04,644 INFO: t=2024-11-07T08:02:04+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-6ac8c9eb-375f-4737-b563-a419de6ed83d addr=http://localhost:5000 url=https://1d26-202-134-169-160.ngrok-free.app
+2024-11-07 08:02:04,645 INFO: t=2024-11-07T08:02:04+0530 lvl=info msg=end pg=/api/tunnels id=3133ea632c6ffdac status=201 dur=234.796375ms
+2024-11-07 08:02:04,645 DEBUG: Response 201: {"name":"http-5000-6ac8c9eb-375f-4737-b563-a419de6ed83d","ID":"b9ac8f271fe18cae958c1ea85d55a2a0","uri":"/api/tunnels/http-5000-6ac8c9eb-375f-4737-b563-a419de6ed83d","public_url":"https://1d26-202-134-169-160.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-07 08:02:04,646 INFO: ngrok URL: https://1d26-202-134-169-160.ngrok-free.app
+2024-11-07 08:02:04,678 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-07 08:02:04,678 INFO: [33mPress CTRL+C to quit[0m
+2024-11-07 08:02:04,678 INFO:  * Restarting with stat
+2024-11-07 08:02:05,403 WARNING:  * Debugger is active!
+2024-11-07 08:02:05,408 INFO:  * Debugger PIN: 489-613-874
+2024-11-07 08:02:06,765 INFO: Dipesh opened Dashboard page.
+2024-11-07 08:02:11,882 INFO: 127.0.0.1 - - [07/Nov/2024 08:02:11] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-07 08:02:11,902 INFO: 127.0.0.1 - - [07/Nov/2024 08:02:11] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-07 08:02:15,241 INFO: 127.0.0.1 - - [07/Nov/2024 08:02:15] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-07 08:02:21,179 INFO: Determining dataset size change for customer 4273 since last training...
+2024-11-07 08:02:23,944 INFO: Dataset size has changed significantly since last training...
+2024-11-07 08:02:23,944 INFO: Bayesian Optimization will be used for hyperparameter tuning...
+2024-11-07 08:02:23,945 INFO: Started retraining for customer 4273 at Nov 07 2024 (08:02:23 AM)...
+2024-11-07 08:02:23,945 INFO: Fetching data for customer 4273...
+2024-11-07 08:02:25,489 INFO: Loaded data for customer 4273...
+2024-11-07 08:02:25,504 INFO: Data shape: (1197, 17)
+2024-11-07 08:02:25,504 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-07 08:02:25,506 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-07 08:02:25,506 INFO: Preprocessing complete...
+2024-11-07 08:02:25,508 INFO: Removed outliers from the target variable...
+2024-11-07 08:02:25,510 INFO: Split data into training and testing sets...
+2024-11-07 08:02:27,530 INFO: Fetched the latest Model_ID: None for model type: CatBoost and model for: Total_time
+2024-11-07 08:02:27,530 ERROR: Error fetching previously used best parameters: No model parameters found in the database.
+2024-11-07 08:02:27,530 INFO: Using default parameters: {'depth': 6, 'iterations': 100, 'learning_rate': 0.1, 'l2_leaf_reg': 3.0}
+2024-11-07 08:02:28,143 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=4, high=8, prior='uniform', transform='identity'), 'iterations': Integer(low=1, high=200, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.08, high=0.12000000000000001, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.8, high=3.2, prior='uniform', transform='identity')}
+2024-11-07 08:02:28,144 INFO: Performing Bayesian optimization...
+2024-11-07 08:03:25,963 INFO: Best parameters from Bayesian optimization: OrderedDict([('depth', 8), ('iterations', 200), ('l2_leaf_reg', 2.8), ('learning_rate', 0.12000000000000001)])
+2024-11-07 08:03:25,964 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-07 08:03:26,847 INFO: Fitted the pipeline with best parameters
+2024-11-07 08:03:26,871 INFO: MAE: 5.791385688221063
+2024-11-07 08:03:26,871 INFO: MSE: 61.42443859189558
+2024-11-07 08:03:26,871 INFO: RMSE: 7.837374470567013
+2024-11-07 08:03:26,871 INFO: R2 Score: 96.30 %
+2024-11-07 08:03:26,901 INFO: Saved the pipeline
+2024-11-07 08:03:27,536 INFO: Updated the previous default model as non-default for target: Total_time and model type: CatBoost
+2024-11-07 08:03:28,150 INFO: New model registered with Model_ID: 8
+2024-11-07 08:03:28,150 INFO: Saving best parameters into Model_Parameters table...
+2024-11-07 08:03:28,765 INFO: Parameter depth with value 8 saved successfully.
+2024-11-07 08:03:29,366 INFO: Parameter iterations with value 200 saved successfully.
+2024-11-07 08:03:29,905 INFO: Parameter l2_leaf_reg with value 2.8 saved successfully.
+2024-11-07 08:03:30,416 INFO: Parameter learning_rate with value 0.12000000000000001 saved successfully.
+2024-11-07 08:03:30,416 INFO: All best parameters saved in Model_Parameters table.
+2024-11-07 08:03:30,712 INFO: Total execution time: 66.77 seconds
+2024-11-07 08:03:30,714 INFO: Retraining completed for Total_time for Customer ID: 4273
+2024-11-07 08:03:30,714 INFO: Determining dataset size change for customer 4273 since last training...
+2024-11-07 08:03:33,097 INFO: Dataset size has changed significantly since last training...
+2024-11-07 08:03:33,097 INFO: Bayesian Optimization will be used for hyperparameter tuning...
+2024-11-07 08:03:33,098 INFO: Started retraining for customer 4273 at Nov 07 2024 (08:03:33 AM)...
+2024-11-07 08:03:33,098 INFO: Fetching data for customer 4273...
+2024-11-07 08:03:35,302 INFO: Loaded data for customer 4273...
+2024-11-07 08:03:35,311 INFO: Data shape: (1197, 18)
+2024-11-07 08:03:35,311 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins', 'Actual_CFP_cost'],
+      dtype='object')
+2024-11-07 08:03:35,312 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-07 08:03:35,313 INFO: Preprocessing complete...
+2024-11-07 08:03:35,314 INFO: Removed outliers from the target variable...
+2024-11-07 08:03:35,315 INFO: Split data into training and testing sets...
+2024-11-07 08:03:37,089 INFO: Fetched the latest Model_ID: None for model type: CatBoost and model for: CFP_cost
+2024-11-07 08:03:37,089 ERROR: Error fetching previously used best parameters: No model parameters found in the database.
+2024-11-07 08:03:37,089 INFO: Using default parameters: {'depth': 6, 'iterations': 100, 'learning_rate': 0.1, 'l2_leaf_reg': 3.0}
+2024-11-07 08:03:37,585 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=4, high=8, prior='uniform', transform='identity'), 'iterations': Integer(low=1, high=200, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.08, high=0.12000000000000001, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.8, high=3.2, prior='uniform', transform='identity')}
+2024-11-07 08:03:37,586 INFO: Performing Bayesian optimization...
+2024-11-07 08:04:36,196 INFO: Best parameters from Bayesian optimization: OrderedDict([('depth', 8), ('iterations', 200), ('l2_leaf_reg', 2.8), ('learning_rate', 0.12000000000000001)])
+2024-11-07 08:04:36,196 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-07 08:04:37,170 INFO: Fitted the pipeline with best parameters
+2024-11-07 08:04:37,194 INFO: MAE: 1.6450768887359886
+2024-11-07 08:04:37,194 INFO: MSE: 7.848858654424444
+2024-11-07 08:04:37,194 INFO: RMSE: 2.801581455968119
+2024-11-07 08:04:37,195 INFO: R2 Score: 88.11 %
+2024-11-07 08:04:37,200 INFO: Saved the pipeline
+2024-11-07 08:04:37,886 INFO: Updated the previous default model as non-default for target: CFP_cost and model type: CatBoost
+2024-11-07 08:04:38,501 INFO: New model registered with Model_ID: 9
+2024-11-07 08:04:38,501 INFO: Saving best parameters into Model_Parameters table...
+2024-11-07 08:04:39,115 INFO: Parameter depth with value 8 saved successfully.
+2024-11-07 08:04:39,731 INFO: Parameter iterations with value 200 saved successfully.
+2024-11-07 08:04:40,344 INFO: Parameter l2_leaf_reg with value 2.8 saved successfully.
+2024-11-07 08:04:40,868 INFO: Parameter learning_rate with value 0.12000000000000001 saved successfully.
+2024-11-07 08:04:40,868 INFO: All best parameters saved in Model_Parameters table.
+2024-11-07 08:04:41,473 INFO: Updated 'Used_in_Retraining' column to 1 for used rows in customer 4273's retraining.
+2024-11-07 08:04:41,982 INFO: Resetting 'is_being_used_for_retraining' to 'No' for customer 4273 as final retraining is complete.
+2024-11-07 08:04:42,289 INFO: Total execution time: 69.19 seconds
+2024-11-07 08:04:42,290 INFO: Retraining completed for CFP_cost for Customer ID: 4273
+2024-11-07 08:04:42,290 INFO: Retraining for all 3 models completed successfully.
+2024-11-07 08:04:42,290 INFO: 127.0.0.1 - - [07/Nov/2024 08:04:42] "POST /retrain_model HTTP/1.1" 200 -
+2024-11-07 08:13:09,212 ERROR: t=2024-11-07T08:13:09+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=12b945a7d900 err="read tcp 192.168.0.120:51991->3.12.62.205:443: read: connection reset by peer"
+2024-11-07 08:13:10,297 INFO: t=2024-11-07T08:13:10+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-07 08:13:10,297 INFO: t=2024-11-07T08:13:10+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-07 08:13:24,273 ERROR: t=2024-11-07T08:13:24+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=573f80054a40 clientid=a08badf13e19415a3bf83be775cf9bc9
+2024-11-20 17:26:06,001 INFO: Opening tunnel named: http-5000-d48a23cf-1e25-4f8a-9a72-383bc7e08b69
+2024-11-20 17:26:06,002 INFO: Overriding default auth token
+2024-11-20 17:26:06,010 DEBUG: ngrok process starting with PID: 28956
+2024-11-20 17:26:06,087 INFO: t=2024-11-20T17:26:06+0530 lvl=info msg="no configuration paths supplied"
+2024-11-20 17:26:06,087 INFO: t=2024-11-20T17:26:06+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-20 17:26:06,087 INFO: t=2024-11-20T17:26:06+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-20 17:26:06,089 INFO: t=2024-11-20T17:26:06+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-20 17:26:07,190 INFO: t=2024-11-20T17:26:07+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-20 17:26:07,191 INFO: t=2024-11-20T17:26:07+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-20 17:26:07,220 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-20 17:26:07,220 DEBUG: Monitor thread will be started
+2024-11-20 17:26:07,221 INFO: t=2024-11-20T17:26:07+0530 lvl=info msg=start pg=/api/tunnels id=a488a18cba2938e6
+2024-11-20 17:26:07,221 INFO: t=2024-11-20T17:26:07+0530 lvl=info msg=end pg=/api/tunnels id=a488a18cba2938e6 status=200 dur=229.958µs
+2024-11-20 17:26:07,221 INFO: t=2024-11-20T17:26:07+0530 lvl=info msg=start pg=/api/tunnels id=e0d035088302c609
+2024-11-20 17:26:07,221 INFO: t=2024-11-20T17:26:07+0530 lvl=info msg=end pg=/api/tunnels id=e0d035088302c609 status=200 dur=51.875µs
+2024-11-20 17:26:07,222 DEBUG: Creating tunnel with options: {'name': 'http-5000-d48a23cf-1e25-4f8a-9a72-383bc7e08b69', 'addr': '5000', 'proto': 'http'}
+2024-11-20 17:26:07,222 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-d48a23cf-1e25-4f8a-9a72-383bc7e08b69', 'addr': '5000', 'proto': 'http'}
+2024-11-20 17:26:07,222 INFO: t=2024-11-20T17:26:07+0530 lvl=info msg=start pg=/api/tunnels id=f59f2c4ea2bd8a50
+2024-11-20 17:26:07,342 INFO: t=2024-11-20T17:26:07+0530 lvl=info msg="update available" obj=updater
+2024-11-20 17:26:07,687 INFO: t=2024-11-20T17:26:07+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-d48a23cf-1e25-4f8a-9a72-383bc7e08b69 addr=http://localhost:5000 url=https://1342-103-122-6-167.ngrok-free.app
+2024-11-20 17:26:07,688 DEBUG: Response 201: {"name":"http-5000-d48a23cf-1e25-4f8a-9a72-383bc7e08b69","ID":"4cd6415a1fa3a3e25193ae14dc5598de","uri":"/api/tunnels/http-5000-d48a23cf-1e25-4f8a-9a72-383bc7e08b69","public_url":"https://1342-103-122-6-167.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-20 17:26:07,689 INFO: t=2024-11-20T17:26:07+0530 lvl=info msg=end pg=/api/tunnels id=f59f2c4ea2bd8a50 status=201 dur=464.582167ms
+2024-11-20 17:26:07,689 INFO: ngrok URL: https://1342-103-122-6-167.ngrok-free.app
+2024-11-20 17:26:07,760 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-20 17:26:07,760 INFO: [33mPress CTRL+C to quit[0m
+2024-11-20 17:26:07,761 INFO:  * Restarting with stat
+2024-11-20 17:26:08,604 WARNING:  * Debugger is active!
+2024-11-20 17:26:08,611 INFO:  * Debugger PIN: 391-655-605
+2024-11-20 17:26:27,157 WARNING: Unauthorized access attempt to home page
+2024-11-20 17:26:27,157 INFO: 127.0.0.1 - - [20/Nov/2024 17:26:27] "[32mGET /home HTTP/1.1[0m" 302 -
+2024-11-20 17:26:27,161 INFO: Accessed login page
+2024-11-20 17:26:27,164 INFO: 127.0.0.1 - - [20/Nov/2024 17:26:27] "GET / HTTP/1.1" 200 -
+2024-11-20 17:26:27,169 INFO: 127.0.0.1 - - [20/Nov/2024 17:26:27] "GET /static/images/Sun%20AI%20Logo.png HTTP/1.1" 200 -
+2024-11-20 17:26:27,174 INFO: 127.0.0.1 - - [20/Nov/2024 17:26:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-11-20 17:26:48,496 INFO: Login attempt for user: User_4294
+2024-11-20 17:27:03,719 INFO: 127.0.0.1 - - [20/Nov/2024 17:27:03] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2024-11-20 17:27:03,732 INFO: 127.0.0.1 - - [20/Nov/2024 17:27:03] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-11-20 17:27:03,733 INFO: 127.0.0.1 - - [20/Nov/2024 17:27:03] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-11-20 17:27:03,737 INFO: 127.0.0.1 - - [20/Nov/2024 17:27:03] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=auCdgOn2SXC0rrLtO8cA HTTP/1.1" 200 -
+2024-11-20 17:27:03,750 INFO: 127.0.0.1 - - [20/Nov/2024 17:27:03] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-11-20 17:30:14,164 INFO: Login attempt for user: User_4294
+2024-11-20 17:30:18,517 INFO: User User_4294  managing customer 4294 logged in successfully.
+2024-11-20 17:30:18,518 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:18] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-11-20 17:30:21,261 INFO: Accessed home page
+2024-11-20 17:30:21,268 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:21] "GET /home HTTP/1.1" 200 -
+2024-11-20 17:30:21,275 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:21] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-20 17:30:21,279 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:21] "GET /static/images/btn-1.png HTTP/1.1" 200 -
+2024-11-20 17:30:21,279 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:21] "GET /static/images/btn-5.png HTTP/1.1" 200 -
+2024-11-20 17:30:21,279 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:21] "GET /static/images/btn-2.png HTTP/1.1" 200 -
+2024-11-20 17:30:21,282 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:21] "GET /static/images/btn-4.png HTTP/1.1" 200 -
+2024-11-20 17:30:21,283 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:21] "GET /static/images/btn-3.png HTTP/1.1" 200 -
+2024-11-20 17:30:21,283 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:21] "GET /static/images/btn-6.png HTTP/1.1" 200 -
+2024-11-20 17:30:23,317 INFO: User_4294 opened AI prediction page.
+2024-11-20 17:30:23,326 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:23] "GET /ai_production_cost_estimate HTTP/1.1" 200 -
+2024-11-20 17:30:23,334 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:23] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-20 17:30:27,061 INFO: Fetched product types, customer IDs, references, metals, and other data successfully
+2024-11-20 17:30:27,276 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:27] "POST /get_dropdown_data HTTP/1.1" 200 -
+2024-11-20 17:30:29,520 INFO: User_4294 opened Dashboard page.
+2024-11-20 17:30:33,426 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:33] "GET /retrain_model HTTP/1.1" 200 -
+2024-11-20 17:30:33,439 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:33] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-20 17:30:33,563 INFO: User_4294 opened Dashboard page.
+2024-11-20 17:30:35,877 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:35] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-20 17:30:35,896 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:35] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-20 17:30:39,564 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:39] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-20 17:30:52,057 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 17:30:54,514 INFO: Dataset size has changed minimally since last training...
+2024-11-20 17:30:54,514 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 17:30:54,514 INFO: Started retraining for Total_time model for customer Generic at Nov 20 2024 (05:30:54 PM)...
+2024-11-20 17:30:54,514 INFO: Fetching data for customer Generic...
+2024-11-20 17:30:54,803 INFO: Loaded data for customer Generic...
+2024-11-20 17:30:54,805 INFO: Data shape: Empty DataFrame
+Columns: [Prod_type, Cust_id, Prod_volume_mm3, Prod_surface_area_mm2, Prod_weight_gms, Design_ref, Assembly_type, RH_type, Enamel_coat, Ceramic_coat, Alloy-1, Metal-1, Alloy-2, Metal-2, PL_material_type, Actual_CFP_time, Actual_production_labour_time_mins]
+Index: []
+2024-11-20 17:30:54,805 INFO: Data shape: (0, 17)
+2024-11-20 17:30:54,805 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-20 17:30:54,807 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 17:30:54,807 INFO: Preprocessing complete...
+2024-11-20 17:30:54,808 INFO: Removed outliers from the target variable...
+2024-11-20 17:30:54,808 ERROR: Error splitting data into train and test sets
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 993, in start_generic_model_training
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2785, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2415, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+2024-11-20 17:30:55,435 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 17:30:55,653 ERROR: Error occured during preprocessing pipelines (fit_transform): 
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 1061, in start_generic_model_training
+    X_train_preprocessed = preprocessor.fit_transform(X_train)
+                                                      ^^^^^^^
+UnboundLocalError: cannot access local variable 'X_train' where it is not associated with a value
+2024-11-20 17:30:56,155 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 17:30:56,642 INFO: Retraining completed for Total_time for Customer: Generic
+2024-11-20 17:30:56,643 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 17:30:57,120 INFO: Dataset size has changed minimally since last training...
+2024-11-20 17:30:57,120 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 17:30:57,120 INFO: Started retraining for CFP_cost model for customer Generic at Nov 20 2024 (05:30:57 PM)...
+2024-11-20 17:30:57,120 INFO: Fetching data for customer Generic...
+2024-11-20 17:30:57,354 INFO: Loaded data for customer Generic...
+2024-11-20 17:30:57,355 INFO: Data shape: Empty DataFrame
+Columns: [Prod_type, Cust_id, Prod_volume_mm3, Prod_surface_area_mm2, Prod_weight_gms, Design_ref, Assembly_type, RH_type, Enamel_coat, Ceramic_coat, Alloy-1, Metal-1, Alloy-2, Metal-2, PL_material_type, Actual_CFP_time, Actual_production_labour_time_mins, Actual_CFP_cost]
+Index: []
+2024-11-20 17:30:57,356 INFO: Data shape: (0, 18)
+2024-11-20 17:30:57,357 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins', 'Actual_CFP_cost'],
+      dtype='object')
+2024-11-20 17:30:57,359 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 17:30:57,360 INFO: Preprocessing complete...
+2024-11-20 17:30:57,367 INFO: Removed outliers from the target variable...
+2024-11-20 17:30:57,368 ERROR: Error splitting data into train and test sets
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 993, in start_generic_model_training
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2785, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2415, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+2024-11-20 17:30:57,996 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 17:30:58,303 ERROR: Error occured during preprocessing pipelines (fit_transform): 
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 1061, in start_generic_model_training
+    X_train_preprocessed = preprocessor.fit_transform(X_train)
+                                                      ^^^^^^^
+UnboundLocalError: cannot access local variable 'X_train' where it is not associated with a value
+2024-11-20 17:30:58,919 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 17:30:59,532 INFO: Retraining completed for CFP_cost for Customer: Generic
+2024-11-20 17:30:59,532 INFO: 127.0.0.1 - - [20/Nov/2024 17:30:59] "POST /retrain_model HTTP/1.1" 200 -
+2024-11-20 17:31:05,734 INFO: Opening tunnel named: http-5000-ac53a2c5-6034-4bc6-aadd-e0d779675e9c
+2024-11-20 17:31:05,734 INFO: Overriding default auth token
+2024-11-20 17:31:05,739 DEBUG: ngrok process starting with PID: 29346
+2024-11-20 17:31:05,752 INFO: t=2024-11-20T17:31:05+0530 lvl=info msg="no configuration paths supplied"
+2024-11-20 17:31:05,752 INFO: t=2024-11-20T17:31:05+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-20 17:31:05,752 INFO: t=2024-11-20T17:31:05+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-20 17:31:05,752 INFO: t=2024-11-20T17:31:05+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-20 17:31:06,456 INFO: t=2024-11-20T17:31:06+0530 lvl=info msg="update available" obj=updater
+2024-11-20 17:31:06,471 INFO: t=2024-11-20T17:31:06+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-20 17:31:06,471 INFO: t=2024-11-20T17:31:06+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-20 17:31:06,484 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-20 17:31:06,484 DEBUG: Monitor thread will be started
+2024-11-20 17:31:06,484 INFO: t=2024-11-20T17:31:06+0530 lvl=info msg=start pg=/api/tunnels id=171dccda749c1897
+2024-11-20 17:31:06,485 INFO: t=2024-11-20T17:31:06+0530 lvl=info msg=end pg=/api/tunnels id=171dccda749c1897 status=200 dur=167.791µs
+2024-11-20 17:31:06,485 INFO: t=2024-11-20T17:31:06+0530 lvl=info msg=start pg=/api/tunnels id=224f1d5250d8638f
+2024-11-20 17:31:06,485 INFO: t=2024-11-20T17:31:06+0530 lvl=info msg=end pg=/api/tunnels id=224f1d5250d8638f status=200 dur=42.75µs
+2024-11-20 17:31:06,485 DEBUG: Creating tunnel with options: {'name': 'http-5000-ac53a2c5-6034-4bc6-aadd-e0d779675e9c', 'addr': '5000', 'proto': 'http'}
+2024-11-20 17:31:06,485 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-ac53a2c5-6034-4bc6-aadd-e0d779675e9c', 'addr': '5000', 'proto': 'http'}
+2024-11-20 17:31:06,486 INFO: t=2024-11-20T17:31:06+0530 lvl=info msg=start pg=/api/tunnels id=497504c63f0bb3d7
+2024-11-20 17:31:06,709 INFO: t=2024-11-20T17:31:06+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-ac53a2c5-6034-4bc6-aadd-e0d779675e9c addr=http://localhost:5000 url=https://47a4-103-122-6-167.ngrok-free.app
+2024-11-20 17:31:06,710 INFO: t=2024-11-20T17:31:06+0530 lvl=info msg=end pg=/api/tunnels id=497504c63f0bb3d7 status=201 dur=222.273ms
+2024-11-20 17:31:06,710 DEBUG: Response 201: {"name":"http-5000-ac53a2c5-6034-4bc6-aadd-e0d779675e9c","ID":"9a039bd781ed92dc4cfc184303f767e9","uri":"/api/tunnels/http-5000-ac53a2c5-6034-4bc6-aadd-e0d779675e9c","public_url":"https://47a4-103-122-6-167.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-20 17:31:06,711 INFO: ngrok URL: https://47a4-103-122-6-167.ngrok-free.app
+2024-11-20 17:31:06,746 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-20 17:31:06,746 INFO: [33mPress CTRL+C to quit[0m
+2024-11-20 17:31:06,747 INFO:  * Restarting with stat
+2024-11-20 17:31:07,564 WARNING:  * Debugger is active!
+2024-11-20 17:31:07,569 INFO:  * Debugger PIN: 391-655-605
+2024-11-20 18:22:00,874 ERROR: t=2024-11-20T18:22:00+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=a9c060ecd3db err="read tcp 192.168.0.120:51043->3.133.228.214:443: read: connection reset by peer"
+2024-11-20 18:22:01,821 INFO: t=2024-11-20T18:22:01+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-20 18:22:01,821 INFO: t=2024-11-20T18:22:01+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-20 18:22:26,785 ERROR: t=2024-11-20T18:22:26+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=a9c060ecd3db err="read EOF from remote peer"
+2024-11-20 18:22:27,683 INFO: t=2024-11-20T18:22:27+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-20 18:22:27,683 INFO: t=2024-11-20T18:22:27+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-20 18:22:37,884 ERROR: t=2024-11-20T18:22:37+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=874cd6a4dc9f clientid=ef30bf76756066bea8e98d04f8a7aa31
+2024-11-20 18:22:48,136 ERROR: t=2024-11-20T18:22:48+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=8e2fa257932e clientid=ef30bf76756066bea8e98d04f8a7aa31
+2024-11-20 18:45:56,247 ERROR: t=2024-11-20T18:45:56+0530 lvl=eror msg="session closed, starting reconnect loop" obj=tunnels.session obj=csess id=a9c060ecd3db err="read tcp 192.168.0.120:51114->3.20.27.198:443: read: connection reset by peer"
+2024-11-20 18:45:57,288 INFO: t=2024-11-20T18:45:57+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-20 18:45:57,288 INFO: t=2024-11-20T18:45:57+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-20 18:46:10,604 ERROR: t=2024-11-20T18:46:10+0530 lvl=eror msg="heartbeat timeout, terminating session" obj=tunnels.session obj=csess id=20d240288b97 clientid=ef30bf76756066bea8e98d04f8a7aa31
+2024-11-20 18:47:05,226 INFO: User_4294 opened Dashboard page.
+2024-11-20 18:47:05,558 INFO: 127.0.0.1 - - [20/Nov/2024 18:47:05] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-20 18:47:09,317 INFO: 127.0.0.1 - - [20/Nov/2024 18:47:09] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-20 18:47:09,336 INFO: 127.0.0.1 - - [20/Nov/2024 18:47:09] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-20 18:47:12,946 INFO: 127.0.0.1 - - [20/Nov/2024 18:47:12] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-20 18:47:16,737 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 18:47:18,727 INFO: Dataset size has changed minimally since last training...
+2024-11-20 18:47:18,727 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 18:47:18,729 INFO: Started retraining for Total_time model for customer Generic at Nov 20 2024 (06:47:18 PM)...
+2024-11-20 18:47:18,729 INFO: Fetching data for customer Generic...
+2024-11-20 18:47:19,028 INFO: Loaded data for customer Generic...
+2024-11-20 18:47:19,029 INFO: Data shape: Empty DataFrame
+Columns: [Prod_type, Cust_id, Prod_volume_mm3, Prod_surface_area_mm2, Prod_weight_gms, Design_ref, Assembly_type, RH_type, Enamel_coat, Ceramic_coat, Alloy-1, Metal-1, Alloy-2, Metal-2, PL_material_type, Actual_CFP_time, Actual_production_labour_time_mins]
+Index: []
+2024-11-20 18:47:19,029 INFO: Data shape: (0, 17)
+2024-11-20 18:47:19,029 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-20 18:47:19,030 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 18:47:19,030 INFO: Preprocessing complete...
+2024-11-20 18:47:19,031 INFO: Removed outliers from the target variable...
+2024-11-20 18:47:19,031 ERROR: Error splitting data into train and test sets
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 993, in start_generic_model_training
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2785, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2415, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+2024-11-20 18:47:21,279 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 18:47:21,495 ERROR: Error occured during preprocessing pipelines (fit_transform): 
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 1061, in start_generic_model_training
+    X_train_preprocessed = preprocessor.fit_transform(X_train)
+                                                      ^^^^^^^
+UnboundLocalError: cannot access local variable 'X_train' where it is not associated with a value
+2024-11-20 18:47:22,007 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 18:47:22,609 INFO: Retraining completed for Total_time for Customer: Generic
+2024-11-20 18:47:22,609 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 18:47:23,076 INFO: Dataset size has changed minimally since last training...
+2024-11-20 18:47:23,076 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 18:47:23,076 INFO: Started retraining for CFP_cost model for customer Generic at Nov 20 2024 (06:47:23 PM)...
+2024-11-20 18:47:23,077 INFO: Fetching data for customer Generic...
+2024-11-20 18:47:23,432 INFO: Loaded data for customer Generic...
+2024-11-20 18:47:23,432 INFO: Data shape: Empty DataFrame
+Columns: [Prod_type, Cust_id, Prod_volume_mm3, Prod_surface_area_mm2, Prod_weight_gms, Design_ref, Assembly_type, RH_type, Enamel_coat, Ceramic_coat, Alloy-1, Metal-1, Alloy-2, Metal-2, PL_material_type, Actual_CFP_time, Actual_production_labour_time_mins, Actual_CFP_cost]
+Index: []
+2024-11-20 18:47:23,433 INFO: Data shape: (0, 18)
+2024-11-20 18:47:23,433 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins', 'Actual_CFP_cost'],
+      dtype='object')
+2024-11-20 18:47:23,435 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 18:47:23,435 INFO: Preprocessing complete...
+2024-11-20 18:47:23,436 INFO: Removed outliers from the target variable...
+2024-11-20 18:47:23,437 ERROR: Error splitting data into train and test sets
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 993, in start_generic_model_training
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2785, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2415, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+2024-11-20 18:47:24,043 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 18:47:24,350 ERROR: Error occured during preprocessing pipelines (fit_transform): 
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 1061, in start_generic_model_training
+    X_train_preprocessed = preprocessor.fit_transform(X_train)
+                                                      ^^^^^^^
+UnboundLocalError: cannot access local variable 'X_train' where it is not associated with a value
+2024-11-20 18:47:24,965 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 18:47:25,396 INFO: Retraining completed for CFP_cost for Customer: Generic
+2024-11-20 18:47:25,398 INFO: 127.0.0.1 - - [20/Nov/2024 18:47:25] "POST /retrain_model HTTP/1.1" 200 -
+2024-11-20 18:48:11,352 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py', reloading
+2024-11-20 18:48:11,481 INFO:  * Restarting with stat
+2024-11-20 18:48:12,264 WARNING:  * Debugger is active!
+2024-11-20 18:48:12,271 INFO:  * Debugger PIN: 391-655-605
+2024-11-20 18:54:40,231 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py', reloading
+2024-11-20 18:54:40,367 INFO:  * Restarting with stat
+2024-11-20 18:54:41,187 WARNING:  * Debugger is active!
+2024-11-20 18:54:41,192 INFO:  * Debugger PIN: 391-655-605
+2024-11-20 18:54:49,237 INFO: User_4294 opened Dashboard page.
+2024-11-20 18:54:54,830 INFO: 127.0.0.1 - - [20/Nov/2024 18:54:54] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-20 18:54:54,847 INFO: 127.0.0.1 - - [20/Nov/2024 18:54:54] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-20 18:54:59,738 INFO: 127.0.0.1 - - [20/Nov/2024 18:54:59] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-20 18:55:08,028 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 18:55:10,484 INFO: Dataset size has changed minimally since last training...
+2024-11-20 18:55:10,485 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 18:55:10,486 INFO: Started retraining for Total_time model for customer Generic at Nov 20 2024 (06:55:10 PM)...
+2024-11-20 18:55:10,487 INFO: Fetching data for customer Generic...
+2024-11-20 18:55:10,780 INFO: Loaded data for customer Generic...
+2024-11-20 18:55:10,782 INFO: Data shape: Empty DataFrame
+Columns: [Prod_type, Cust_id, Prod_volume_mm3, Prod_surface_area_mm2, Prod_weight_gms, Design_ref, Assembly_type, RH_type, Enamel_coat, Ceramic_coat, Alloy-1, Metal-1, Alloy-2, Metal-2, PL_material_type, Actual_CFP_time, Actual_production_labour_time_mins]
+Index: []
+2024-11-20 18:55:10,782 INFO: Data shape: (0, 17)
+2024-11-20 18:55:10,782 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-20 18:55:10,784 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 18:55:10,785 INFO: Preprocessing complete...
+2024-11-20 18:55:10,786 INFO: Removed outliers from the target variable...
+2024-11-20 18:55:10,787 ERROR: Error splitting data into train and test sets
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 995, in start_generic_model_training
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2785, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2415, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+2024-11-20 18:55:11,279 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 18:55:11,279 ERROR: Error occured during preprocessing pipelines (fit_transform): 
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 1063, in start_generic_model_training
+    X_train_preprocessed = preprocessor.fit_transform(X_train)
+                                                      ^^^^^^^
+UnboundLocalError: cannot access local variable 'X_train' where it is not associated with a value
+2024-11-20 18:55:11,917 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 18:55:12,227 INFO: Retraining completed for Total_time for Customer: Generic
+2024-11-20 18:55:12,227 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 18:55:14,478 INFO: Dataset size has changed minimally since last training...
+2024-11-20 18:55:14,478 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 18:55:14,478 INFO: Started retraining for CFP_cost model for customer Generic at Nov 20 2024 (06:55:14 PM)...
+2024-11-20 18:55:14,479 INFO: Fetching data for customer Generic...
+2024-11-20 18:55:14,785 INFO: Loaded data for customer Generic...
+2024-11-20 18:55:14,786 INFO: Data shape: Empty DataFrame
+Columns: [Prod_type, Cust_id, Prod_volume_mm3, Prod_surface_area_mm2, Prod_weight_gms, Design_ref, Assembly_type, RH_type, Enamel_coat, Ceramic_coat, Alloy-1, Metal-1, Alloy-2, Metal-2, PL_material_type, Actual_CFP_time, Actual_production_labour_time_mins, Actual_CFP_cost]
+Index: []
+2024-11-20 18:55:14,786 INFO: Data shape: (0, 18)
+2024-11-20 18:55:14,786 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins', 'Actual_CFP_cost'],
+      dtype='object')
+2024-11-20 18:55:14,787 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 18:55:14,787 INFO: Preprocessing complete...
+2024-11-20 18:55:14,787 INFO: Removed outliers from the target variable...
+2024-11-20 18:55:14,788 ERROR: Error splitting data into train and test sets
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 995, in start_generic_model_training
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2785, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2415, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+2024-11-20 18:55:15,400 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 18:55:15,400 ERROR: Error occured during preprocessing pipelines (fit_transform): 
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 1063, in start_generic_model_training
+    X_train_preprocessed = preprocessor.fit_transform(X_train)
+                                                      ^^^^^^^
+UnboundLocalError: cannot access local variable 'X_train' where it is not associated with a value
+2024-11-20 18:55:16,016 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 18:55:16,246 INFO: Retraining completed for CFP_cost for Customer: Generic
+2024-11-20 18:55:16,247 INFO: 127.0.0.1 - - [20/Nov/2024 18:55:16] "POST /retrain_model HTTP/1.1" 200 -
+2024-11-20 18:55:41,986 INFO: Opening tunnel named: http-5000-a211fcac-03e3-474e-a8be-d40a974d491d
+2024-11-20 18:55:41,986 INFO: Overriding default auth token
+2024-11-20 18:55:41,991 DEBUG: ngrok process starting with PID: 30634
+2024-11-20 18:55:42,004 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg="no configuration paths supplied"
+2024-11-20 18:55:42,004 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-20 18:55:42,004 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-20 18:55:42,004 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-20 18:55:42,752 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-20 18:55:42,752 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-20 18:55:42,771 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-20 18:55:42,771 DEBUG: Monitor thread will be started
+2024-11-20 18:55:42,772 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg=start pg=/api/tunnels id=40d2a172ac9ecb4f
+2024-11-20 18:55:42,772 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg=end pg=/api/tunnels id=40d2a172ac9ecb4f status=200 dur=187.042µs
+2024-11-20 18:55:42,772 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg=start pg=/api/tunnels id=007c0262ba35eeca
+2024-11-20 18:55:42,772 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg=end pg=/api/tunnels id=007c0262ba35eeca status=200 dur=55.959µs
+2024-11-20 18:55:42,772 DEBUG: Creating tunnel with options: {'name': 'http-5000-a211fcac-03e3-474e-a8be-d40a974d491d', 'addr': '5000', 'proto': 'http'}
+2024-11-20 18:55:42,772 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-a211fcac-03e3-474e-a8be-d40a974d491d', 'addr': '5000', 'proto': 'http'}
+2024-11-20 18:55:42,773 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg=start pg=/api/tunnels id=677a650d113c5ccd
+2024-11-20 18:55:42,961 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg="update available" obj=updater
+2024-11-20 18:55:43,000 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-a211fcac-03e3-474e-a8be-d40a974d491d addr=http://localhost:5000 url=https://d59a-103-122-6-167.ngrok-free.app
+2024-11-20 18:55:43,001 INFO: t=2024-11-20T18:55:42+0530 lvl=info msg=end pg=/api/tunnels id=677a650d113c5ccd status=201 dur=226.34925ms
+2024-11-20 18:55:43,001 DEBUG: Response 201: {"name":"http-5000-a211fcac-03e3-474e-a8be-d40a974d491d","ID":"22715f3819f908ee16d885625447980b","uri":"/api/tunnels/http-5000-a211fcac-03e3-474e-a8be-d40a974d491d","public_url":"https://d59a-103-122-6-167.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-20 18:55:43,002 INFO: ngrok URL: https://d59a-103-122-6-167.ngrok-free.app
+2024-11-20 18:55:43,033 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-20 18:55:43,033 INFO: [33mPress CTRL+C to quit[0m
+2024-11-20 18:55:43,034 INFO:  * Restarting with stat
+2024-11-20 18:55:43,826 WARNING:  * Debugger is active!
+2024-11-20 18:55:43,831 INFO:  * Debugger PIN: 391-655-605
+2024-11-20 18:56:25,154 INFO: User_4294 opened Dashboard page.
+2024-11-20 18:56:30,775 INFO: 127.0.0.1 - - [20/Nov/2024 18:56:30] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-20 18:56:30,792 INFO: 127.0.0.1 - - [20/Nov/2024 18:56:30] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-20 18:56:34,966 INFO: 127.0.0.1 - - [20/Nov/2024 18:56:34] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-20 19:03:10,975 INFO: User_4294 opened Dashboard page.
+2024-11-20 19:03:14,846 INFO: 127.0.0.1 - - [20/Nov/2024 19:03:14] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-20 19:03:14,866 INFO: 127.0.0.1 - - [20/Nov/2024 19:03:14] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-20 19:06:36,143 INFO: 127.0.0.1 - - [20/Nov/2024 19:06:36] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-20 19:06:41,841 INFO: Setting 'is_being_used_for_retraining' to Yes for customer 4294.
+2024-11-20 19:06:41,841 INFO: Determining dataset size change for customer 4294 since last training...
+2024-11-20 19:06:42,607 INFO: Dataset size has changed minimally since last training...
+2024-11-20 19:06:42,608 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 19:06:42,610 INFO: Started retraining for customer 4294 at Nov 20 2024 (07:06:42 PM)...
+2024-11-20 19:06:42,610 INFO: Fetching data for customer 4294...
+2024-11-20 19:06:44,858 INFO: Loaded data for customer 4294...
+2024-11-20 19:06:44,869 INFO: Data shape:         Prod_type Cust_id  Prod_volume_mm3  Prod_surface_area_mm2  Prod_weight_gms   Design_ref Assembly_type RH_type Enamel_coat Ceramic_coat      Alloy-1      Metal-1 Alloy-2 Metal-2 PL_material_type  Actual_CFP_time
+0  Single Earring    4294             7.86                  31.74             0.06  SE103398001          Post    NORH        NOEN        NOCER  LegOr SCA1V  14kt Yellow   NOAL2    NOM2             NOPL            42.31
+1  Single Earring    4294             7.86                  31.74             0.07  SE103398001          Post     Dip        NOEN        NOCER  LegOr SCA1V  14kt Yellow   NOAL2    NOM2             NOPL            42.31
+2  Single Earring    4294            23.91                 120.00             0.09  SE103156001          Post    NORH        NOEN        NOCER  LegOr SCA1V  14kt Yellow   NOAL2    NOM2             NOPL            40.21
+3  Single Earring    4294            35.40                 203.56             0.15  SE104282001          Post     Pen        NOEN        NOCER  LegOr SCA1V  14kt Yellow   NOAL2    NOM2             NOPL            52.77
+4  Single Earring    4294            36.58                 146.48             0.15  SE104560001          Post     Pen        NOEN        NOCER  LegOr SCA1V  14kt Yellow   NOAL2    NOM2             NOPL            65.17
+2024-11-20 19:06:44,875 INFO: Data shape: (1631, 16)
+2024-11-20 19:06:44,875 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time'],
+      dtype='object')
+2024-11-20 19:06:44,876 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 19:06:44,877 INFO: Preprocessing complete...
+2024-11-20 19:06:44,878 INFO: Removed outliers from the target variable...
+2024-11-20 19:06:44,880 INFO: Split data into training and testing sets...
+2024-11-20 19:06:46,793 INFO: Fetched the latest Model_ID: 4 for model type: CatBoost and model for: CFP_time
+2024-11-20 19:06:47,100 INFO: Fetched best parameters for Model_ID: 4
+2024-11-20 19:06:47,715 INFO: Previously used best parameters from DB: {'depth': 10.0, 'iterations': 300.0, 'l2_leaf_reg': 3.0, 'learning_rate': 0.14}
+2024-11-20 19:06:47,715 INFO: Param grid for minimal dataset size change: {'depth': [10], 'iterations': [290, 300, 310], 'learning_rate': [0.135, 0.14, 0.14500000000000002], 'l2_leaf_reg': [2.95, 3.0, 3.05]}
+2024-11-20 19:06:47,715 INFO: Performing Randomized Search for CatBoost...
+2024-11-20 19:08:35,542 INFO: Best parameters from Randomized Search: {'learning_rate': 0.14500000000000002, 'l2_leaf_reg': 3.05, 'iterations': 300, 'depth': 10}
+2024-11-20 19:08:35,542 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-20 19:08:39,000 INFO: Fitted the pipeline with best parameters
+2024-11-20 19:08:39,045 INFO: MAE: 4.065676105673418
+2024-11-20 19:08:39,045 INFO: MSE: 50.58112423963345
+2024-11-20 19:08:39,045 INFO: RMSE: 7.112040792883112
+2024-11-20 19:08:39,045 INFO: R2 Score: 92.16 %
+2024-11-20 19:08:39,054 INFO: Saved the pipeline
+2024-11-20 19:08:39,513 INFO: Updated the previous default model as non-default for target: CFP_time and model type: CatBoost
+2024-11-20 19:08:40,049 INFO: New model registered with Model_ID: 13
+2024-11-20 19:08:40,049 INFO: Saving best parameters into Model_Parameters table...
+2024-11-20 19:08:40,663 INFO: Parameter learning_rate with value 0.14500000000000002 saved successfully.
+2024-11-20 19:08:41,279 INFO: Parameter l2_leaf_reg with value 3.05 saved successfully.
+2024-11-20 19:08:41,893 INFO: Parameter iterations with value 300 saved successfully.
+2024-11-20 19:08:42,506 INFO: Parameter depth with value 10 saved successfully.
+2024-11-20 19:08:42,507 INFO: All best parameters saved in Model_Parameters table.
+2024-11-20 19:08:42,509 INFO: Total execution time: 119.90 seconds
+2024-11-20 19:08:42,723 INFO: Retraining completed for CFP_time for Customer: 4294
+2024-11-20 19:08:42,724 INFO: Determining dataset size change for customer 4294 since last training...
+2024-11-20 19:08:45,476 INFO: Dataset size has changed minimally since last training...
+2024-11-20 19:08:45,476 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 19:08:45,476 INFO: Started retraining for customer 4294 at Nov 20 2024 (07:08:45 PM)...
+2024-11-20 19:08:45,476 INFO: Fetching data for customer 4294...
+2024-11-20 19:08:49,062 INFO: Loaded data for customer 4294...
+2024-11-20 19:08:49,067 INFO: Data shape:         Prod_type Cust_id  Prod_volume_mm3  Prod_surface_area_mm2  Prod_weight_gms   Design_ref Assembly_type  ...      Alloy-1      Metal-1 Alloy-2 Metal-2 PL_material_type Actual_CFP_time Actual_production_labour_time_mins
+0  Single Earring    4294             7.86                  31.74             0.06  SE103398001          Post  ...  LegOr SCA1V  14kt Yellow   NOAL2    NOM2             NOPL           42.31                              47.31
+1  Single Earring    4294             7.86                  31.74             0.07  SE103398001          Post  ...  LegOr SCA1V  14kt Yellow   NOAL2    NOM2             NOPL           42.31                              47.31
+2  Single Earring    4294            23.91                 120.00             0.09  SE103156001          Post  ...  LegOr SCA1V  14kt Yellow   NOAL2    NOM2             NOPL           40.21                              45.21
+3  Single Earring    4294            35.40                 203.56             0.15  SE104282001          Post  ...  LegOr SCA1V  14kt Yellow   NOAL2    NOM2             NOPL           52.77                              63.77
+4  Single Earring    4294            36.58                 146.48             0.15  SE104560001          Post  ...  LegOr SCA1V  14kt Yellow   NOAL2    NOM2             NOPL           65.17                              82.17
+
+[5 rows x 17 columns]
+2024-11-20 19:08:49,070 INFO: Data shape: (1631, 17)
+2024-11-20 19:08:49,070 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-20 19:08:49,071 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 19:08:49,071 INFO: Preprocessing complete...
+2024-11-20 19:08:49,073 INFO: Removed outliers from the target variable...
+2024-11-20 19:08:49,073 INFO: Split data into training and testing sets...
+2024-11-20 19:08:50,637 INFO: Fetched the latest Model_ID: 5 for model type: CatBoost and model for: Total_time
+2024-11-20 19:08:50,903 INFO: Fetched best parameters for Model_ID: 5
+2024-11-20 19:08:51,517 INFO: Previously used best parameters from DB: {'depth': 10.0, 'iterations': 300.0, 'l2_leaf_reg': 2.5999999999999996, 'learning_rate': 0.14}
+2024-11-20 19:08:51,517 INFO: Param grid for minimal dataset size change: {'depth': [10], 'iterations': [290, 300, 310], 'learning_rate': [0.135, 0.14, 0.14500000000000002], 'l2_leaf_reg': [2.55, 2.5999999999999996, 2.6499999999999995]}
+2024-11-20 19:08:51,518 INFO: Performing Randomized Search for CatBoost...
+2024-11-20 19:10:57,381 INFO: Best parameters from Randomized Search: {'learning_rate': 0.135, 'l2_leaf_reg': 2.55, 'iterations': 300, 'depth': 10}
+2024-11-20 19:10:57,381 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-20 19:11:01,092 INFO: Fitted the pipeline with best parameters
+2024-11-20 19:11:01,137 INFO: MAE: 3.65325264093649
+2024-11-20 19:11:01,137 INFO: MSE: 36.735859838265156
+2024-11-20 19:11:01,137 INFO: RMSE: 6.061011453401582
+2024-11-20 19:11:01,137 INFO: R2 Score: 97.28 %
+2024-11-20 19:11:01,145 INFO: Saved the pipeline
+2024-11-20 19:11:01,771 INFO: Updated the previous default model as non-default for target: Total_time and model type: CatBoost
+2024-11-20 19:11:02,385 INFO: New model registered with Model_ID: 14
+2024-11-20 19:11:02,386 INFO: Saving best parameters into Model_Parameters table...
+2024-11-20 19:11:03,015 INFO: Parameter learning_rate with value 0.135 saved successfully.
+2024-11-20 19:11:03,616 INFO: Parameter l2_leaf_reg with value 2.55 saved successfully.
+2024-11-20 19:11:04,230 INFO: Parameter iterations with value 300 saved successfully.
+2024-11-20 19:11:04,749 INFO: Parameter depth with value 10 saved successfully.
+2024-11-20 19:11:04,749 INFO: All best parameters saved in Model_Parameters table.
+2024-11-20 19:11:04,751 INFO: Total execution time: 139.28 seconds
+2024-11-20 19:11:04,967 INFO: Retraining completed for Total_time for Customer: 4294
+2024-11-20 19:11:04,968 INFO: Determining dataset size change for customer 4294 since last training...
+2024-11-20 19:11:07,608 INFO: Dataset size has changed minimally since last training...
+2024-11-20 19:11:07,608 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 19:11:07,608 INFO: Started retraining for customer 4294 at Nov 20 2024 (07:11:07 PM)...
+2024-11-20 19:11:07,608 INFO: Fetching data for customer 4294...
+2024-11-20 19:11:12,320 INFO: Loaded data for customer 4294...
+2024-11-20 19:11:12,324 INFO: Data shape:         Prod_type Cust_id  Prod_volume_mm3  Prod_surface_area_mm2  Prod_weight_gms   Design_ref Assembly_type  ...      Metal-1 Alloy-2 Metal-2 PL_material_type Actual_CFP_time Actual_production_labour_time_mins Actual_CFP_cost
+0  Single Earring    4294             7.86                  31.74             0.06  SE103398001          Post  ...  14kt Yellow   NOAL2    NOM2             NOPL           42.31                              47.31            5.00
+1  Single Earring    4294             7.86                  31.74             0.07  SE103398001          Post  ...  14kt Yellow   NOAL2    NOM2             NOPL           42.31                              47.31            5.00
+2  Single Earring    4294            23.91                 120.00             0.09  SE103156001          Post  ...  14kt Yellow   NOAL2    NOM2             NOPL           40.21                              45.21            6.00
+3  Single Earring    4294            35.40                 203.56             0.15  SE104282001          Post  ...  14kt Yellow   NOAL2    NOM2             NOPL           52.77                              63.77            7.75
+4  Single Earring    4294            36.58                 146.48             0.15  SE104560001          Post  ...  14kt Yellow   NOAL2    NOM2             NOPL           65.17                              82.17            6.00
+
+[5 rows x 18 columns]
+2024-11-20 19:11:12,328 INFO: Data shape: (1631, 18)
+2024-11-20 19:11:12,328 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins', 'Actual_CFP_cost'],
+      dtype='object')
+2024-11-20 19:11:12,329 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 19:11:12,329 INFO: Preprocessing complete...
+2024-11-20 19:11:12,330 INFO: Removed outliers from the target variable...
+2024-11-20 19:11:12,331 INFO: Split data into training and testing sets...
+2024-11-20 19:11:14,059 INFO: Fetched the latest Model_ID: 6 for model type: CatBoost and model for: CFP_cost
+2024-11-20 19:11:14,366 INFO: Fetched best parameters for Model_ID: 6
+2024-11-20 19:11:14,981 INFO: Previously used best parameters from DB: {'depth': 10.0, 'iterations': 288.0, 'l2_leaf_reg': 2.5999999999999996, 'learning_rate': 0.14}
+2024-11-20 19:11:14,982 INFO: Param grid for minimal dataset size change: {'depth': [10], 'iterations': [278, 288, 298], 'learning_rate': [0.135, 0.14, 0.14500000000000002], 'l2_leaf_reg': [2.55, 2.5999999999999996, 2.6499999999999995]}
+2024-11-20 19:11:14,982 INFO: Performing Randomized Search for CatBoost...
+2024-11-20 19:13:37,644 INFO: Best parameters from Randomized Search: {'learning_rate': 0.14, 'l2_leaf_reg': 2.5999999999999996, 'iterations': 288, 'depth': 10}
+2024-11-20 19:13:37,645 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-20 19:13:41,615 INFO: Fitted the pipeline with best parameters
+2024-11-20 19:13:41,660 INFO: MAE: 0.6487874936596892
+2024-11-20 19:13:41,660 INFO: MSE: 1.7807470412592021
+2024-11-20 19:13:41,660 INFO: RMSE: 1.334446342592763
+2024-11-20 19:13:41,660 INFO: R2 Score: 93.94 %
+2024-11-20 19:13:41,670 INFO: Saved the pipeline
+2024-11-20 19:13:42,233 INFO: Updated the previous default model as non-default for target: CFP_cost and model type: CatBoost
+2024-11-20 19:13:42,757 INFO: New model registered with Model_ID: 15
+2024-11-20 19:13:42,757 INFO: Saving best parameters into Model_Parameters table...
+2024-11-20 19:13:43,257 INFO: Parameter learning_rate with value 0.14 saved successfully.
+2024-11-20 19:13:43,872 INFO: Parameter l2_leaf_reg with value 2.5999999999999996 saved successfully.
+2024-11-20 19:13:44,487 INFO: Parameter iterations with value 288 saved successfully.
+2024-11-20 19:13:45,102 INFO: Parameter depth with value 10 saved successfully.
+2024-11-20 19:13:45,103 INFO: All best parameters saved in Model_Parameters table.
+2024-11-20 19:13:45,715 INFO: Updated 'Used_in_Retraining' column to 1 for used rows in customer 4294's retraining.
+2024-11-20 19:13:47,865 INFO: Setting 'is_being_used_for_retraining' to No for customer 4294.
+2024-11-20 19:13:47,866 INFO: Resetting 'is_being_used_for_retraining' to 'No' for customer 4294 as final retraining is complete.
+2024-11-20 19:13:47,866 INFO: Retraining for all 3 models completed successfully.
+2024-11-20 19:13:47,868 INFO: Total execution time: 160.26 seconds
+2024-11-20 19:13:48,084 INFO: Retraining completed for CFP_cost for Customer: 4294
+2024-11-20 19:13:48,085 INFO: 127.0.0.1 - - [20/Nov/2024 19:13:48] "POST /retrain_model HTTP/1.1" 200 -
+2024-11-20 19:32:59,022 INFO: 127.0.0.1 - - [20/Nov/2024 19:32:59] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-20 19:33:03,004 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 19:33:05,474 INFO: Dataset size has changed minimally since last training...
+2024-11-20 19:33:05,474 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 19:33:05,474 INFO: Started retraining for Total_time model for customer Generic at Nov 20 2024 (07:33:05 PM)...
+2024-11-20 19:33:05,475 INFO: Fetching data for customer Generic...
+2024-11-20 19:33:05,821 INFO: Loaded data for customer Generic...
+2024-11-20 19:33:05,821 INFO: Data shape: Empty DataFrame
+Columns: [Prod_type, Cust_id, Prod_volume_mm3, Prod_surface_area_mm2, Prod_weight_gms, Design_ref, Assembly_type, RH_type, Enamel_coat, Ceramic_coat, Alloy-1, Metal-1, Alloy-2, Metal-2, PL_material_type, Actual_CFP_time, Actual_production_labour_time_mins]
+Index: []
+2024-11-20 19:33:05,822 INFO: Data shape: (0, 17)
+2024-11-20 19:33:05,822 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-20 19:33:05,823 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 19:33:05,823 INFO: Preprocessing complete...
+2024-11-20 19:33:05,823 INFO: Removed outliers from the target variable...
+2024-11-20 19:33:05,823 ERROR: Error splitting data into train and test sets
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 995, in start_generic_model_training
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2785, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2415, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+2024-11-20 19:33:06,331 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 19:33:06,332 ERROR: Error occured during preprocessing pipelines (fit_transform): 
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 1063, in start_generic_model_training
+    X_train_preprocessed = preprocessor.fit_transform(X_train)
+                                                      ^^^^^^^
+UnboundLocalError: cannot access local variable 'X_train' where it is not associated with a value
+2024-11-20 19:33:06,946 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 19:33:07,168 INFO: Retraining completed for Total_time for Customer: Generic
+2024-11-20 19:33:07,168 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 19:33:08,877 INFO: Dataset size has changed minimally since last training...
+2024-11-20 19:33:08,877 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 19:33:08,878 INFO: Started retraining for CFP_cost model for customer Generic at Nov 20 2024 (07:33:08 PM)...
+2024-11-20 19:33:08,878 INFO: Fetching data for customer Generic...
+2024-11-20 19:33:09,127 INFO: Loaded data for customer Generic...
+2024-11-20 19:33:09,127 INFO: Data shape: Empty DataFrame
+Columns: [Prod_type, Cust_id, Prod_volume_mm3, Prod_surface_area_mm2, Prod_weight_gms, Design_ref, Assembly_type, RH_type, Enamel_coat, Ceramic_coat, Alloy-1, Metal-1, Alloy-2, Metal-2, PL_material_type, Actual_CFP_time, Actual_production_labour_time_mins, Actual_CFP_cost]
+Index: []
+2024-11-20 19:33:09,127 INFO: Data shape: (0, 18)
+2024-11-20 19:33:09,127 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins', 'Actual_CFP_cost'],
+      dtype='object')
+2024-11-20 19:33:09,128 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 19:33:09,128 INFO: Preprocessing complete...
+2024-11-20 19:33:09,129 INFO: Removed outliers from the target variable...
+2024-11-20 19:33:09,129 ERROR: Error splitting data into train and test sets
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 995, in start_generic_model_training
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2785, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2415, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+2024-11-20 19:33:10,875 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 19:33:10,875 ERROR: Error occured during preprocessing pipelines (fit_transform): 
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 1063, in start_generic_model_training
+    X_train_preprocessed = preprocessor.fit_transform(X_train)
+                                                      ^^^^^^^
+UnboundLocalError: cannot access local variable 'X_train' where it is not associated with a value
+2024-11-20 19:33:11,328 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 19:33:11,547 INFO: Retraining completed for CFP_cost for Customer: Generic
+2024-11-20 19:33:11,548 INFO: 127.0.0.1 - - [20/Nov/2024 19:33:11] "POST /retrain_model HTTP/1.1" 200 -
+2024-11-20 19:33:18,151 INFO: Opening tunnel named: http-5000-6348ce30-a690-4558-8f0d-a4481aef5a77
+2024-11-20 19:33:18,152 INFO: Overriding default auth token
+2024-11-20 19:33:18,158 DEBUG: ngrok process starting with PID: 31294
+2024-11-20 19:33:18,171 INFO: t=2024-11-20T19:33:18+0530 lvl=info msg="no configuration paths supplied"
+2024-11-20 19:33:18,171 INFO: t=2024-11-20T19:33:18+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-20 19:33:18,171 INFO: t=2024-11-20T19:33:18+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-20 19:33:18,171 INFO: t=2024-11-20T19:33:18+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-20 19:33:19,010 INFO: t=2024-11-20T19:33:19+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-20 19:33:19,011 INFO: t=2024-11-20T19:33:19+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-20 19:33:19,033 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-20 19:33:19,033 DEBUG: Monitor thread will be started
+2024-11-20 19:33:19,033 INFO: t=2024-11-20T19:33:19+0530 lvl=info msg=start pg=/api/tunnels id=a8b5405a27931cbe
+2024-11-20 19:33:19,034 INFO: t=2024-11-20T19:33:19+0530 lvl=info msg=end pg=/api/tunnels id=a8b5405a27931cbe status=200 dur=197.833µs
+2024-11-20 19:33:19,034 INFO: t=2024-11-20T19:33:19+0530 lvl=info msg=start pg=/api/tunnels id=5d3bac13db8128fd
+2024-11-20 19:33:19,034 INFO: t=2024-11-20T19:33:19+0530 lvl=info msg=end pg=/api/tunnels id=5d3bac13db8128fd status=200 dur=43.583µs
+2024-11-20 19:33:19,034 DEBUG: Creating tunnel with options: {'name': 'http-5000-6348ce30-a690-4558-8f0d-a4481aef5a77', 'addr': '5000', 'proto': 'http'}
+2024-11-20 19:33:19,034 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-6348ce30-a690-4558-8f0d-a4481aef5a77', 'addr': '5000', 'proto': 'http'}
+2024-11-20 19:33:19,035 INFO: t=2024-11-20T19:33:19+0530 lvl=info msg=start pg=/api/tunnels id=0bb7d189fd28f116
+2024-11-20 19:33:19,125 INFO: t=2024-11-20T19:33:19+0530 lvl=info msg="update available" obj=updater
+2024-11-20 19:33:19,259 INFO: t=2024-11-20T19:33:19+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-6348ce30-a690-4558-8f0d-a4481aef5a77 addr=http://localhost:5000 url=https://c125-103-122-6-167.ngrok-free.app
+2024-11-20 19:33:19,260 INFO: t=2024-11-20T19:33:19+0530 lvl=info msg=end pg=/api/tunnels id=0bb7d189fd28f116 status=201 dur=223.862708ms
+2024-11-20 19:33:19,261 DEBUG: Response 201: {"name":"http-5000-6348ce30-a690-4558-8f0d-a4481aef5a77","ID":"ddde65ddea79a4219256287dcf0a9625","uri":"/api/tunnels/http-5000-6348ce30-a690-4558-8f0d-a4481aef5a77","public_url":"https://c125-103-122-6-167.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-20 19:33:19,261 INFO: ngrok URL: https://c125-103-122-6-167.ngrok-free.app
+2024-11-20 19:33:19,295 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-20 19:33:19,295 INFO: [33mPress CTRL+C to quit[0m
+2024-11-20 19:33:19,296 INFO:  * Restarting with stat
+2024-11-20 19:33:20,071 WARNING:  * Debugger is active!
+2024-11-20 19:33:20,078 INFO:  * Debugger PIN: 391-655-605
+2024-11-20 20:28:07,308 INFO: Opening tunnel named: http-5000-c229638d-e6c3-4364-9c02-b2fc15800388
+2024-11-20 20:28:07,308 INFO: Overriding default auth token
+2024-11-20 20:28:07,313 DEBUG: ngrok process starting with PID: 31712
+2024-11-20 20:28:07,326 INFO: t=2024-11-20T20:28:07+0530 lvl=info msg="no configuration paths supplied"
+2024-11-20 20:28:07,326 INFO: t=2024-11-20T20:28:07+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-20 20:28:07,326 INFO: t=2024-11-20T20:28:07+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-20 20:28:07,326 INFO: t=2024-11-20T20:28:07+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-20 20:28:08,184 INFO: t=2024-11-20T20:28:08+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-20 20:28:08,185 INFO: t=2024-11-20T20:28:08+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-20 20:28:08,208 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-20 20:28:08,208 DEBUG: Monitor thread will be started
+2024-11-20 20:28:08,208 INFO: t=2024-11-20T20:28:08+0530 lvl=info msg=start pg=/api/tunnels id=609fd557d5c8bf89
+2024-11-20 20:28:08,208 INFO: t=2024-11-20T20:28:08+0530 lvl=info msg=end pg=/api/tunnels id=609fd557d5c8bf89 status=200 dur=213.875µs
+2024-11-20 20:28:08,209 INFO: t=2024-11-20T20:28:08+0530 lvl=info msg=start pg=/api/tunnels id=96f2d05ef4400d3d
+2024-11-20 20:28:08,209 INFO: t=2024-11-20T20:28:08+0530 lvl=info msg=end pg=/api/tunnels id=96f2d05ef4400d3d status=200 dur=50.167µs
+2024-11-20 20:28:08,209 DEBUG: Creating tunnel with options: {'name': 'http-5000-c229638d-e6c3-4364-9c02-b2fc15800388', 'addr': '5000', 'proto': 'http'}
+2024-11-20 20:28:08,209 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-c229638d-e6c3-4364-9c02-b2fc15800388', 'addr': '5000', 'proto': 'http'}
+2024-11-20 20:28:08,210 INFO: t=2024-11-20T20:28:08+0530 lvl=info msg=start pg=/api/tunnels id=3e30b76f9867a845
+2024-11-20 20:28:08,433 INFO: t=2024-11-20T20:28:08+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-c229638d-e6c3-4364-9c02-b2fc15800388 addr=http://localhost:5000 url=https://8a94-103-122-6-167.ngrok-free.app
+2024-11-20 20:28:08,434 DEBUG: Response 201: {"name":"http-5000-c229638d-e6c3-4364-9c02-b2fc15800388","ID":"a0436e8e3d91a84c7c8665c122cf43ff","uri":"/api/tunnels/http-5000-c229638d-e6c3-4364-9c02-b2fc15800388","public_url":"https://8a94-103-122-6-167.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-20 20:28:08,434 INFO: t=2024-11-20T20:28:08+0530 lvl=info msg=end pg=/api/tunnels id=3e30b76f9867a845 status=201 dur=223.357166ms
+2024-11-20 20:28:08,434 INFO: ngrok URL: https://8a94-103-122-6-167.ngrok-free.app
+2024-11-20 20:28:08,464 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-20 20:28:08,464 INFO: [33mPress CTRL+C to quit[0m
+2024-11-20 20:28:08,465 INFO:  * Restarting with stat
+2024-11-20 20:28:08,743 INFO: t=2024-11-20T20:28:08+0530 lvl=info msg="update available" obj=updater
+2024-11-20 20:28:09,264 WARNING:  * Debugger is active!
+2024-11-20 20:28:09,271 INFO:  * Debugger PIN: 391-655-605
+2024-11-20 20:28:13,117 INFO: User_4294 opened Dashboard page.
+2024-11-20 20:28:18,395 INFO: 127.0.0.1 - - [20/Nov/2024 20:28:18] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-20 20:28:18,412 INFO: 127.0.0.1 - - [20/Nov/2024 20:28:18] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-20 20:28:22,143 INFO: 127.0.0.1 - - [20/Nov/2024 20:28:22] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-20 20:28:26,342 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 20:28:28,558 INFO: Dataset size has changed minimally since last training...
+2024-11-20 20:28:28,559 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 20:28:28,561 INFO: Started retraining for Total_time model for customer Generic at Nov 20 2024 (08:28:28 PM)...
+2024-11-20 20:28:28,561 INFO: Fetching data for customer Generic...
+2024-11-20 20:28:28,904 INFO: Loaded data for customer Generic...
+2024-11-20 20:28:28,904 INFO: Data shape: Empty DataFrame
+Columns: [Prod_type, Cust_id, Prod_volume_mm3, Prod_surface_area_mm2, Prod_weight_gms, Design_ref, Assembly_type, RH_type, Enamel_coat, Ceramic_coat, Alloy-1, Metal-1, Alloy-2, Metal-2, PL_material_type, Actual_CFP_time, Actual_production_labour_time_mins]
+Index: []
+2024-11-20 20:28:28,904 INFO: Data shape: (0, 17)
+2024-11-20 20:28:28,905 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-20 20:28:28,905 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 20:28:28,905 INFO: Preprocessing complete...
+2024-11-20 20:28:28,906 INFO: Removed outliers from the target variable...
+2024-11-20 20:28:28,906 ERROR: Error splitting data into train and test sets
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 995, in start_generic_model_training
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2785, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2415, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+2024-11-20 20:28:29,517 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 20:28:29,517 ERROR: Error occured during preprocessing pipelines (fit_transform): 
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 1063, in start_generic_model_training
+    X_train_preprocessed = preprocessor.fit_transform(X_train)
+                                                      ^^^^^^^
+UnboundLocalError: cannot access local variable 'X_train' where it is not associated with a value
+2024-11-20 20:28:30,080 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 20:28:30,289 INFO: Retraining completed for Total_time for Customer: Generic
+2024-11-20 20:28:30,289 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 20:28:30,847 INFO: Dataset size has changed minimally since last training...
+2024-11-20 20:28:30,848 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 20:28:30,848 INFO: Started retraining for CFP_cost model for customer Generic at Nov 20 2024 (08:28:30 PM)...
+2024-11-20 20:28:30,848 INFO: Fetching data for customer Generic...
+2024-11-20 20:28:31,156 INFO: Loaded data for customer Generic...
+2024-11-20 20:28:31,157 INFO: Data shape: Empty DataFrame
+Columns: [Prod_type, Cust_id, Prod_volume_mm3, Prod_surface_area_mm2, Prod_weight_gms, Design_ref, Assembly_type, RH_type, Enamel_coat, Ceramic_coat, Alloy-1, Metal-1, Alloy-2, Metal-2, PL_material_type, Actual_CFP_time, Actual_production_labour_time_mins, Actual_CFP_cost]
+Index: []
+2024-11-20 20:28:31,157 INFO: Data shape: (0, 18)
+2024-11-20 20:28:31,157 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins', 'Actual_CFP_cost'],
+      dtype='object')
+2024-11-20 20:28:31,159 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 20:28:31,159 INFO: Preprocessing complete...
+2024-11-20 20:28:31,161 INFO: Removed outliers from the target variable...
+2024-11-20 20:28:31,161 ERROR: Error splitting data into train and test sets
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 995, in start_generic_model_training
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2785, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 2415, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+2024-11-20 20:28:33,202 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 20:28:33,203 ERROR: Error occured during preprocessing pipelines (fit_transform): 
+Traceback (most recent call last):
+  File "/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py", line 1063, in start_generic_model_training
+    X_train_preprocessed = preprocessor.fit_transform(X_train)
+                                                      ^^^^^^^
+UnboundLocalError: cannot access local variable 'X_train' where it is not associated with a value
+2024-11-20 20:28:33,715 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 20:28:34,022 INFO: Retraining completed for CFP_cost for Customer: Generic
+2024-11-20 20:28:34,024 INFO: 127.0.0.1 - - [20/Nov/2024 20:28:34] "POST /retrain_model HTTP/1.1" 200 -
+2024-11-20 20:32:56,416 INFO: Opening tunnel named: http-5000-aa885e49-0c12-4cb7-84df-4c156976c3d6
+2024-11-20 20:32:56,417 INFO: Overriding default auth token
+2024-11-20 20:32:56,422 DEBUG: ngrok process starting with PID: 32108
+2024-11-20 20:32:56,435 INFO: t=2024-11-20T20:32:56+0530 lvl=info msg="no configuration paths supplied"
+2024-11-20 20:32:56,436 INFO: t=2024-11-20T20:32:56+0530 lvl=info msg="using configuration at default config path" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml"
+2024-11-20 20:32:56,436 INFO: t=2024-11-20T20:32:56+0530 lvl=info msg="open config file" path="/Users/dipeshchandiramani/Library/Application Support/ngrok/ngrok.yml" err=nil
+2024-11-20 20:32:56,436 INFO: t=2024-11-20T20:32:56+0530 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+2024-11-20 20:32:57,106 INFO: t=2024-11-20T20:32:57+0530 lvl=info msg="update available" obj=updater
+2024-11-20 20:32:57,149 INFO: t=2024-11-20T20:32:57+0530 lvl=info msg="client session established" obj=tunnels.session
+2024-11-20 20:32:57,150 INFO: t=2024-11-20T20:32:57+0530 lvl=info msg="tunnel session started" obj=tunnels.session
+2024-11-20 20:32:57,158 DEBUG: ngrok process has started with API URL: http://127.0.0.1:4040
+2024-11-20 20:32:57,158 DEBUG: Monitor thread will be started
+2024-11-20 20:32:57,158 INFO: t=2024-11-20T20:32:57+0530 lvl=info msg=start pg=/api/tunnels id=8a4e74cf0a929bf0
+2024-11-20 20:32:57,158 INFO: t=2024-11-20T20:32:57+0530 lvl=info msg=end pg=/api/tunnels id=8a4e74cf0a929bf0 status=200 dur=86.667µs
+2024-11-20 20:32:57,159 INFO: t=2024-11-20T20:32:57+0530 lvl=info msg=start pg=/api/tunnels id=e231da205c81ed18
+2024-11-20 20:32:57,159 INFO: t=2024-11-20T20:32:57+0530 lvl=info msg=end pg=/api/tunnels id=e231da205c81ed18 status=200 dur=26.792µs
+2024-11-20 20:32:57,159 DEBUG: Creating tunnel with options: {'name': 'http-5000-aa885e49-0c12-4cb7-84df-4c156976c3d6', 'addr': '5000', 'proto': 'http'}
+2024-11-20 20:32:57,159 DEBUG: Making POST request to http://127.0.0.1:4040/api/tunnels with data: {'name': 'http-5000-aa885e49-0c12-4cb7-84df-4c156976c3d6', 'addr': '5000', 'proto': 'http'}
+2024-11-20 20:32:57,159 INFO: t=2024-11-20T20:32:57+0530 lvl=info msg=start pg=/api/tunnels id=d5e901876d9c7057
+2024-11-20 20:32:57,381 INFO: t=2024-11-20T20:32:57+0530 lvl=info msg="started tunnel" obj=tunnels name=http-5000-aa885e49-0c12-4cb7-84df-4c156976c3d6 addr=http://localhost:5000 url=https://32ae-103-122-6-167.ngrok-free.app
+2024-11-20 20:32:57,383 INFO: t=2024-11-20T20:32:57+0530 lvl=info msg=end pg=/api/tunnels id=d5e901876d9c7057 status=201 dur=221.001917ms
+2024-11-20 20:32:57,383 DEBUG: Response 201: {"name":"http-5000-aa885e49-0c12-4cb7-84df-4c156976c3d6","ID":"06ab0c614a7c1e88d6348862738460d3","uri":"/api/tunnels/http-5000-aa885e49-0c12-4cb7-84df-4c156976c3d6","public_url":"https://32ae-103-122-6-167.ngrok-free.app","proto":"https","config":{"addr":"http://localhost:5000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+2024-11-20 20:32:57,383 INFO: ngrok URL: https://32ae-103-122-6-167.ngrok-free.app
+2024-11-20 20:32:57,416 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-20 20:32:57,416 INFO: [33mPress CTRL+C to quit[0m
+2024-11-20 20:32:57,417 INFO:  * Restarting with stat
+2024-11-20 20:32:58,256 WARNING:  * Debugger is active!
+2024-11-20 20:32:58,262 INFO:  * Debugger PIN: 391-655-605
+2024-11-20 20:33:34,246 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/1. RK Flask App (demo).py', reloading
+2024-11-20 20:33:34,381 INFO:  * Restarting with stat
+2024-11-20 20:33:35,193 WARNING:  * Debugger is active!
+2024-11-20 20:33:35,199 INFO:  * Debugger PIN: 391-655-605
+2024-11-20 20:33:50,908 INFO:  * Detected change in '/Users/dipeshchandiramani/Desktop/Projects/sunai-november-2024-main/Model_retraining_logic.py', reloading
+2024-11-20 20:33:51,044 INFO:  * Restarting with stat
+2024-11-20 20:33:51,920 WARNING:  * Debugger is active!
+2024-11-20 20:33:51,925 INFO:  * Debugger PIN: 391-655-605
+2024-11-20 20:34:01,914 INFO: User_4294 opened Dashboard page.
+2024-11-20 20:34:07,756 INFO: 127.0.0.1 - - [20/Nov/2024 20:34:07] "GET /retrain_model?limit=20 HTTP/1.1" 200 -
+2024-11-20 20:34:07,775 INFO: 127.0.0.1 - - [20/Nov/2024 20:34:07] "[36mGET /static/images/Sun%20AI%20Logo.png HTTP/1.1[0m" 304 -
+2024-11-20 20:34:11,438 INFO: 127.0.0.1 - - [20/Nov/2024 20:34:11] "GET /get_customer_ids HTTP/1.1" 200 -
+2024-11-20 20:34:17,685 INFO: Setting 'is_being_used_for_retraining' to Yes for customer Generic.
+2024-11-20 20:34:17,686 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 20:34:18,298 INFO: Dataset size has changed minimally since last training...
+2024-11-20 20:34:18,298 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 20:34:18,299 INFO: Started retraining for CFP_time model for customer Generic at Nov 20 2024 (08:34:18 PM)...
+2024-11-20 20:34:18,300 INFO: Fetching data for customer Generic...
+2024-11-20 20:34:21,839 INFO: Loaded data for customer Generic...
+2024-11-20 20:34:21,844 INFO: Data shape:   Prod_type Cust_id  Prod_volume_mm3  Prod_surface_area_mm2  Prod_weight_gms   Design_ref Assembly_type RH_type Enamel_coat Ceramic_coat      Alloy-1      Metal-1   Alloy-2      Metal-2 PL_material_type  Actual_CFP_time
+0  Bracelet    4121       320.000000             975.000000            10.27  SB012567002         CABLE     Dip        NOEN        NOCER  UPMR S-97NA       Silver     NOAL2         NOM2             NOPL           115.10
+1  Bracelet    4121       135.549785             483.185716            17.83  SB013343004          NOAS    NORH        NOEN        NOCER  LegOr C18VN  18kt Yellow     NOAL2         NOM2             NOPL            91.49
+2  Bracelet    4121        75.980000             359.740000             5.21  SB013670002          NOAS     Dip        NOEN        NOCER  LegOr NF509   18kt White     NOAL2         NOM2             NOPL            66.01
+3  Bracelet    4121       605.140000            1885.480000            30.02  SB014212010          NOAS     Pen        NOEN        NOCER  UPMR S-97NA       Silver  UPMR 720  18kt Yellow             NOPL            75.65
+4  Bracelet    4121       237.930000             883.310000             7.20  SB014890001          NOAS     Dip        NOEN        NOCER     UPMR 720  18kt Yellow     NOAL2         NOM2             NOPL            74.71
+2024-11-20 20:34:21,848 INFO: Data shape: (4880, 16)
+2024-11-20 20:34:21,848 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time'],
+      dtype='object')
+2024-11-20 20:34:21,850 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 20:34:21,850 INFO: Preprocessing complete...
+2024-11-20 20:34:21,852 INFO: Removed outliers from the target variable...
+2024-11-20 20:34:21,854 INFO: Split data into training and testing sets...
+2024-11-20 20:34:23,931 INFO: Fetched the latest Model_ID: 13 for model type: CatBoost and model for: CFP_time
+2024-11-20 20:34:24,238 INFO: Fetched best parameters for Model_ID: 13
+2024-11-20 20:34:24,853 INFO: Previously used best parameters from DB: {'learning_rate': 0.14500000000000002, 'l2_leaf_reg': 3.05, 'iterations': 300.0, 'depth': 10.0}
+2024-11-20 20:34:24,859 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=8, high=12, prior='uniform', transform='identity'), 'iterations': Integer(low=200, high=400, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.12500000000000003, high=0.165, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.8499999999999996, high=3.25, prior='uniform', transform='identity')}
+2024-11-20 20:34:24,861 INFO: Performing Bayesian optimization...
+2024-11-20 20:48:33,058 INFO: Best parameters from Bayesian optimization: OrderedDict([('depth', 12), ('iterations', 400), ('l2_leaf_reg', 2.8499999999999996), ('learning_rate', 0.165)])
+2024-11-20 20:48:33,059 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-20 20:48:54,610 INFO: Fitted the pipeline with best parameters
+2024-11-20 20:48:54,897 INFO: MAE: 4.231886826529887
+2024-11-20 20:48:54,897 INFO: MSE: 45.823422803647105
+2024-11-20 20:48:54,897 INFO: RMSE: 6.7693000231668785
+2024-11-20 20:48:54,897 INFO: R2 Score: 93.23 %
+2024-11-20 20:48:54,919 INFO: Saved the pipeline
+2024-11-20 20:48:55,575 INFO: Updated the previous default model as non-default for target: CFP_time and model type: CatBoost
+2024-11-20 20:48:56,189 INFO: New model registered with Model_ID: 16
+2024-11-20 20:48:56,189 INFO: Saving best parameters into Model_Parameters table...
+2024-11-20 20:48:56,804 INFO: Parameter depth with value 12 saved successfully.
+2024-11-20 20:48:57,255 INFO: Parameter iterations with value 400 saved successfully.
+2024-11-20 20:48:57,829 INFO: Parameter l2_leaf_reg with value 2.8499999999999996 saved successfully.
+2024-11-20 20:48:58,443 INFO: Parameter learning_rate with value 0.165 saved successfully.
+2024-11-20 20:48:58,443 INFO: All best parameters saved in Model_Parameters table.
+2024-11-20 20:48:58,445 INFO: Total execution time: 880.15 seconds
+2024-11-20 20:48:58,753 INFO: Retraining completed for CFP_time for Customer: Generic
+2024-11-20 20:48:58,753 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 20:49:01,106 INFO: Dataset size has changed minimally since last training...
+2024-11-20 20:49:01,106 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 20:49:01,107 INFO: Started retraining for Total_time model for customer Generic at Nov 20 2024 (08:49:01 PM)...
+2024-11-20 20:49:01,107 INFO: Fetching data for customer Generic...
+2024-11-20 20:49:04,183 INFO: Loaded data for customer Generic...
+2024-11-20 20:49:04,193 INFO: Data shape:   Prod_type Cust_id  Prod_volume_mm3  Prod_surface_area_mm2  Prod_weight_gms   Design_ref Assembly_type  ...      Alloy-1      Metal-1   Alloy-2      Metal-2 PL_material_type Actual_CFP_time Actual_production_labour_time_mins
+0  Bracelet    4121       320.000000             975.000000            10.27  SB012567002         CABLE  ...  UPMR S-97NA       Silver     NOAL2         NOM2             NOPL          115.10                             134.11
+1  Bracelet    4121       135.549785             483.185716            17.83  SB013343004          NOAS  ...  LegOr C18VN  18kt Yellow     NOAL2         NOM2             NOPL           91.49                             226.61
+2  Bracelet    4121        75.980000             359.740000             5.21  SB013670002          NOAS  ...  LegOr NF509   18kt White     NOAL2         NOM2             NOPL           66.01                             143.01
+3  Bracelet    4121       605.140000            1885.480000            30.02  SB014212010          NOAS  ...  UPMR S-97NA       Silver  UPMR 720  18kt Yellow             NOPL           75.65                             188.65
+4  Bracelet    4121       237.930000             883.310000             7.20  SB014890001          NOAS  ...     UPMR 720  18kt Yellow     NOAL2         NOM2             NOPL           74.71                             218.71
+
+[5 rows x 17 columns]
+2024-11-20 20:49:04,200 INFO: Data shape: (4880, 17)
+2024-11-20 20:49:04,200 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins'],
+      dtype='object')
+2024-11-20 20:49:04,202 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 20:49:04,203 INFO: Preprocessing complete...
+2024-11-20 20:49:04,206 INFO: Removed outliers from the target variable...
+2024-11-20 20:49:04,207 INFO: Split data into training and testing sets...
+2024-11-20 20:49:05,954 INFO: Fetched the latest Model_ID: 14 for model type: CatBoost and model for: Total_time
+2024-11-20 20:49:06,227 INFO: Fetched best parameters for Model_ID: 14
+2024-11-20 20:49:06,651 INFO: Previously used best parameters from DB: {'learning_rate': 0.135, 'l2_leaf_reg': 2.55, 'iterations': 300.0, 'depth': 10.0}
+2024-11-20 20:49:06,657 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=8, high=12, prior='uniform', transform='identity'), 'iterations': Integer(low=200, high=400, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.115, high=0.155, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.3499999999999996, high=2.75, prior='uniform', transform='identity')}
+2024-11-20 20:49:06,658 INFO: Performing Bayesian optimization...
+2024-11-20 21:19:09,673 INFO: Best parameters from Bayesian optimization: OrderedDict([('depth', 12), ('iterations', 400), ('l2_leaf_reg', 2.3499999999999996), ('learning_rate', 0.14410117183994253)])
+2024-11-20 21:19:09,673 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-20 21:19:34,292 INFO: Fitted the pipeline with best parameters
+2024-11-20 21:19:34,566 INFO: MAE: 4.935349583238465
+2024-11-20 21:19:34,566 INFO: MSE: 109.57563399832911
+2024-11-20 21:19:34,566 INFO: RMSE: 10.467838076619694
+2024-11-20 21:19:34,566 INFO: R2 Score: 95.08 %
+2024-11-20 21:19:34,590 INFO: Saved the pipeline
+2024-11-20 21:19:35,225 INFO: Updated the previous default model as non-default for target: Total_time and model type: CatBoost
+2024-11-20 21:19:35,839 INFO: New model registered with Model_ID: 17
+2024-11-20 21:19:35,839 INFO: Saving best parameters into Model_Parameters table...
+2024-11-20 21:19:36,454 INFO: Parameter depth with value 12 saved successfully.
+2024-11-20 21:19:37,068 INFO: Parameter iterations with value 400 saved successfully.
+2024-11-20 21:19:37,528 INFO: Parameter l2_leaf_reg with value 2.3499999999999996 saved successfully.
+2024-11-20 21:19:37,992 INFO: Parameter learning_rate with value 0.14410117183994253 saved successfully.
+2024-11-20 21:19:37,992 INFO: All best parameters saved in Model_Parameters table.
+2024-11-20 21:19:37,994 INFO: Total execution time: 1836.89 seconds
+2024-11-20 21:19:38,307 INFO: Retraining completed for Total_time for Customer: Generic
+2024-11-20 21:19:38,308 INFO: Determining dataset size change for customer Generic since last training...
+2024-11-20 21:19:40,489 INFO: Dataset size has changed minimally since last training...
+2024-11-20 21:19:40,489 INFO: Random Search will be used for hyperparameter tuning...
+2024-11-20 21:19:40,490 INFO: Started retraining for CFP_cost model for customer Generic at Nov 20 2024 (09:19:40 PM)...
+2024-11-20 21:19:40,490 INFO: Fetching data for customer Generic...
+2024-11-20 21:19:43,528 INFO: Loaded data for customer Generic...
+2024-11-20 21:19:43,534 INFO: Data shape:   Prod_type Cust_id  Prod_volume_mm3  Prod_surface_area_mm2  Prod_weight_gms   Design_ref Assembly_type  ...      Metal-1   Alloy-2      Metal-2 PL_material_type Actual_CFP_time Actual_production_labour_time_mins Actual_CFP_cost
+0  Bracelet    4121       320.000000             975.000000            10.27  SB012567002         CABLE  ...       Silver     NOAL2         NOM2             NOPL          115.10                             134.11            32.0
+1  Bracelet    4121       135.549785             483.185716            17.83  SB013343004          NOAS  ...  18kt Yellow     NOAL2         NOM2             NOPL           91.49                             226.61            32.0
+2  Bracelet    4121        75.980000             359.740000             5.21  SB013670002          NOAS  ...   18kt White     NOAL2         NOM2             NOPL           66.01                             143.01            32.0
+3  Bracelet    4121       605.140000            1885.480000            30.02  SB014212010          NOAS  ...       Silver  UPMR 720  18kt Yellow             NOPL           75.65                             188.65            32.0
+4  Bracelet    4121       237.930000             883.310000             7.20  SB014890001          NOAS  ...  18kt Yellow     NOAL2         NOM2             NOPL           74.71                             218.71            32.0
+
+[5 rows x 18 columns]
+2024-11-20 21:19:43,539 INFO: Data shape: (4880, 18)
+2024-11-20 21:19:43,539 INFO: Data columns retrieved: Index(['Prod_type', 'Cust_id', 'Prod_volume_mm3', 'Prod_surface_area_mm2',
+       'Prod_weight_gms', 'Design_ref', 'Assembly_type', 'RH_type',
+       'Enamel_coat', 'Ceramic_coat', 'Alloy-1', 'Metal-1', 'Alloy-2',
+       'Metal-2', 'PL_material_type', 'Actual_CFP_time',
+       'Actual_production_labour_time_mins', 'Actual_CFP_cost'],
+      dtype='object')
+2024-11-20 21:19:43,541 INFO: Calculated ratios: Volume_Area_Ratio, Weight_Area_Ratio, and Weight_Volume_Ratio...
+2024-11-20 21:19:43,541 INFO: Preprocessing complete...
+2024-11-20 21:19:43,543 INFO: Removed outliers from the target variable...
+2024-11-20 21:19:43,544 INFO: Split data into training and testing sets...
+2024-11-20 21:19:45,168 INFO: Fetched the latest Model_ID: 15 for model type: CatBoost and model for: CFP_cost
+2024-11-20 21:19:45,383 INFO: Fetched best parameters for Model_ID: 15
+2024-11-20 21:19:45,804 INFO: Previously used best parameters from DB: {'learning_rate': 0.14, 'l2_leaf_reg': 2.5999999999999996, 'iterations': 288.0, 'depth': 10.0}
+2024-11-20 21:19:45,805 INFO: Param grid for Bayesian optimization: {'depth': Integer(low=8, high=12, prior='uniform', transform='identity'), 'iterations': Integer(low=188, high=388, prior='uniform', transform='identity'), 'learning_rate': Real(low=0.12000000000000001, high=0.16, prior='uniform', transform='identity'), 'l2_leaf_reg': Real(low=2.3999999999999995, high=2.8, prior='uniform', transform='identity')}
+2024-11-20 21:19:45,805 INFO: Performing Bayesian optimization...
+2024-11-20 21:39:40,514 INFO: Best parameters from Bayesian optimization: OrderedDict([('depth', 12), ('iterations', 388), ('l2_leaf_reg', 2.3999999999999995), ('learning_rate', 0.16)])
+2024-11-20 21:39:40,515 INFO: Saved the best parameters from hyperparameter tuning...
+2024-11-20 21:40:10,747 INFO: Fitted the pipeline with best parameters
+2024-11-20 21:40:11,051 INFO: MAE: 1.1588076818551185
+2024-11-20 21:40:11,051 INFO: MSE: 5.612177539895559
+2024-11-20 21:40:11,051 INFO: RMSE: 2.3690034908998254
+2024-11-20 21:40:11,051 INFO: R2 Score: 94.66 %
+2024-11-20 21:40:11,075 INFO: Saved the pipeline
+2024-11-20 21:40:11,692 INFO: Updated the previous default model as non-default for target: CFP_cost and model type: CatBoost
+2024-11-20 21:40:12,424 INFO: New model registered with Model_ID: 18
+2024-11-20 21:40:12,424 INFO: Saving best parameters into Model_Parameters table...
+2024-11-20 21:40:13,037 INFO: Parameter depth with value 12 saved successfully.
+2024-11-20 21:40:13,497 INFO: Parameter iterations with value 388 saved successfully.
+2024-11-20 21:40:13,959 INFO: Parameter l2_leaf_reg with value 2.3999999999999995 saved successfully.
+2024-11-20 21:40:14,573 INFO: Parameter learning_rate with value 0.16 saved successfully.
+2024-11-20 21:40:14,573 INFO: All best parameters saved in Model_Parameters table.
+2024-11-20 21:40:15,508 INFO: Updated 'Used_in_Retraining' column to 1 for used rows in customer Generic's retraining.
+2024-11-20 21:40:17,775 INFO: Setting 'is_being_used_for_retraining' to No for customer Generic.
+2024-11-20 21:40:17,775 INFO: Resetting 'is_being_used_for_retraining' to 'No' for customer Generic as final retraining is complete.
+2024-11-20 21:40:17,775 INFO: Retraining for all 3 models completed successfully.
+2024-11-20 21:40:17,775 INFO: Total execution time: 1237.29 seconds
+2024-11-20 21:40:17,778 INFO: Retraining completed for CFP_cost for Customer: Generic
+2024-11-20 21:40:17,778 INFO: 127.0.0.1 - - [20/Nov/2024 21:40:17] "POST /retrain_model HTTP/1.1" 200 -

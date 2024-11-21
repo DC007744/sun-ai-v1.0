@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun AI - Production Cost Estimator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header, footer {
+            width: 100%;
+            background-color: #0a1a24;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        footer {
+            justify-content: center;
+        }
+        header .logo {
+            height: 65px;
+            margin-left: 10px;
+            margin-right: 180px;
+            margin-top: 2px;
+        }
+        .title {
+            font-size: 2.0em;
+            color: white;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+            margin-right: 10px;
+        }
+        .header-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: #0a1a24;
+            color: white;
+            border: 2px solid transparent;
+            transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+            border-color: #19303c;
+        }
+        .header-buttons a:hover {
+            background-color: white;
+            color: #0a1a24;
+            border: 2px solid #9aa2a6;
+        }
+        .submit-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .menu a {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .menu a:hover {
+            background-color: #555;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding-top: 100px;
+            padding-bottom: 60px;
+            box-sizing: border-box;
+            text-align: center;
+            overflow: initial;
+        }
+        .container {
+            max-width: 625px;
+            width: 100%;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .form-title-container {
+            background-color: #f4f4f4;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            padding-right: 30px;
+        }
+        .form-group label {
+            width: 40%;
+            margin-right: -20px;
+            text-align: left;
+            padding-left: 30px;
+        }
+        .form-group select,
+        .form-group input[type="file"] {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .form-group select:hover,
+        .form-group input[type="file"]:hover,
+        .form-group input[type="text"]:hover {
+            background-color: #f9f9f9;
+        }
+        .form-group button {
+            background-color: #28a745;
+            font-size: medium;
+            font-weight: bold;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-left: 30px;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+        .form-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-style: italic;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 15px;
+            height: 15px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            position: absolute;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .form-control:disabled {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+        }
+        .form-group-checkbox {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-bottom: 15px;
+        }
+        .prediction-container {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            text-align: center;
+            padding-top: 200px;
+        }
+        .loading-overlay .spinner {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <img src="{{ url_for('static', filename='images/Sun AI Logo.png') }}" alt="Sun AI Logo" class="logo">
+        <h1 class="title">AI Production Cost Estimator</h1>
+        <div class="header-buttons">
+            <a href="{{ url_for('retrain_model') }}"><i class="fas fa-external-link-alt" style="margin-right: 7px;"></i>Go to Dashboard</a>
+            <a href="{{ url_for('edit_dataset') }}">Edit dataset</a>
+        </div>
+        <nav class="menu" id="menu">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About Sun AI</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <h2 style="margin-top: -50px;">Fill up and submit the below form to get an estimated bill of materials (E-BOM)</h2>
+        <div class="container">
+            <div class="form-title-container">
+                <h2 class="form-title">Generate E-BOM</h2>
+            </div>
+            <form id="bomForm" action="/ai_production_cost_estimate" method="post" enctype="multipart/form-data" onsubmit="resetForm(event)">
+                <div class="form-group">
+                    <label for="customer_id">Customer ID:</label>
+                    <select id="customer_id" name="customer_id" class="form-control" required>
+                        <option value="">Select customer ID</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product_type">Product Type:</label>
+                    <select id="product_type" name="product_type" class="form-control" required>
+                        <option value="">Select product type</option>
+                    </select>
+                </div>
+
+                <div id="product_type_loader" class="loader" style="display: none; margin-top: -42px; margin-left: 295px;"></div>
+
+                <div class="form-group">
+                    <label for="reference">Reference:</label>
+                    <select id="reference" name="reference" class="form-control" required>
+                        <option value="">Select reference type</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="assembly_type">Assembly Type:</label>
+                    <select id="assembly_type" name="assembly_type" class="form-control" required>
+                        <option value="">Select assembly type</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rhodium_plating_type">Rhodium Plating Type:</label>
+                    <select id="rhodium_plating_type" name="rhodium_plating_type" class="form-control" required>
+                        <option value="">Select Rhodium plating type</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="metal_plating_type">Metal Plating Type:</label>
+                    <select id="metal_plating_type" name="metal_plating_type" class="form-control" required>
+                        <option value="">Select metal plating type</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="product_weight">New Product Weight (in gms):</label>
+                    <input type="number" id="product_weight" name="product_weight" class="form-control" style="width: 55%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" step="0.001" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product_area">Product Area (cm²):</label>
+                    <input type="number" id="product_area" name="product_area" class="form-control" style="width: 55%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" step="0.001" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product_volume">Product Volume (cm³):</label>
+                    <input type="number" id="product_volume" name="product_volume" class="form-control" style="width: 55%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" step="0.001" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="metal-1">Metal-1:</label>
+                    <select id="metal-1" name="metal-1" class="form-control" required onchange="updateAlloyOptions('metal-1', 'alloy-1')">
+                        <option value="">Select Metal-1</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="alloy-1">Alloy-1:</label>
+                    <select id="alloy-1" name="alloy-1" class="form-control" required>
+                        <option value="">Select Alloy-1</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="metal-2">Metal-2:</label>
+                    <select id="metal-2" name="metal-2" class="form-control" required onchange="updateAlloyOptions('metal-2', 'alloy-2')">
+                        <option value="">Select Metal-2</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="alloy-2">Alloy-2:</label>
+                    <select id="alloy-2" name="alloy-2" class="form-control" required>
+                        <option value="">Select Alloy-2</option>
+                    </select>
+                </div>
+
+                <div class="form-group-checkbox">
+                    <label for="enamel_coat">Enamel:</label>
+                    <input type="checkbox" id="enamel_coat" name="enamel_coat" value="YESEN" onchange="toggleHiddenInput(this, 'hidden_enamel_coat')">
+                    <input type="hidden" id="hidden_enamel_coat" name="enamel_coat" value="NOEN">
+
+                    <label for="ceramic_coat">Ceramic:</label>
+                    <input type="checkbox" id="ceramic_coat" name="ceramic_coat" value="YESCER" onchange="toggleHiddenInput(this, 'hidden_ceramic_coat')">
+                    <input type="hidden" id="hidden_ceramic_coat" name="ceramic_coat" value="NOCER">
+                </div>
+
+                <div class="form-group">
+                    <button style="margin-top: 20px;" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        @ 2024 Sunjewels. All Rights Reserved.
+    </footer>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <p style="color: white; font-size: 1.5em; margin-top: 20px;">Processing, please wait...</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // ------- Function to toggle the menu -------
+            function toggleMenu() {
+                var menu = document.getElementById('menu');
+                if (menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                } else {
+                    menu.style.display = 'block';
+                }
+            }
+        
+            document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+            document.addEventListener('click', function(event) {
+                var isClickInside = document.querySelector('.hamburger').contains(event.target) || document.getElementById('menu').contains(event.target);
+                var menu = document.getElementById('menu');
+                if (!isClickInside && menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                }
+            });
+
+
+            // Fetch product types and customer IDs from the server on page load ---------------------------- only customer id! -----------------------------
+            fetch('/get_dropdown_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    // // Populate product types
+                    // const productTypeSelect = document.getElementById('product_type');
+                    // data.product_types.forEach(productType => {
+                    //     const option = document.createElement('option');
+                    //     option.value = productType;
+                    //     option.textContent = productType;
+                    //     productTypeSelect.appendChild(option);
+                    // });
+
+                    // Populate customer IDs
+                    const customerIdSelect = document.getElementById('customer_id');
+                    data.customer_ids.forEach(customerId => {
+                        const option = document.createElement('option');
+                        option.value = customerId;
+                        option.textContent = customerId;
+                        customerIdSelect.appendChild(option);
+                    });
+
+                    // Listen for changes on the customer ID dropdown
+                    customerIdSelect.addEventListener('change', function() {
+                        const selectedCustomerId = this.value;
+                        updateProductType(selectedCustomerId)           // Fetch and update the product types based on customer ID
+                        updateReferences(selectedCustomerId);           // Fetch and update references based on customer ID
+                        updateAssemblyType(selectedCustomerId);         // Fetch and update assembly types based on customer ID
+                        updateRhodiumPlatingType(selectedCustomerId);   // Fetch and update rhodium plating types based on customer ID
+                        updateMetalPlatingType(selectedCustomerId);     // Fetch and update metal plating types based on customer ID
+                        updateMetal1(selectedCustomerId);               // Fetch and update Metal-1 based on customer ID
+                        updateMetal2(selectedCustomerId);               // Fetch and update Metal-2 based on customer ID
+                    });
+                } else {
+                    console.error('Error fetching Customer IDs');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+        // Function to update product type based on selected customer ID
+        function updateProductType(selectedCustomerId) {
+            const productSelect = document.getElementById('product_type');
+            const loader = document.getElementById('product_type_loader');
+
+            productSelect.disabled = true;  // Disable product_type dropdown while loading
+            loader.style.display = 'inline-block';  // Show the loader
+
+            fetch('/get_dropdown_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ customer_id: selectedCustomerId })  // Send selected customer_id to server
+            })
+            .then(response => response.json())
+            .then(data => {
+                productSelect.innerHTML = '';  // Clear existing options
+                productSelect.appendChild(new Option('Select product type', ''));
+
+                if (data.product_types && data.product_types.length > 0) {
+                    data.product_types.forEach(product_types => {
+                        const option = document.createElement('option');
+                        option.value = product_types;
+                        option.textContent = product_types;
+                        productSelect.appendChild(option);
+                    });
+                }
+
+                productSelect.disabled = false;  // Re-enable the reference dropdown
+                loader.style.display = 'none';  // Hide the loader
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                loader.style.display = 'none';  // Hide the loader in case of error
+                productSelect.disabled = false;  // Enable reference dropdown in case of error
+            });
+        }
+
+        // Function to update references based on selected customer ID
+        function updateReferences(selectedCustomerId) {
+            const referenceSelect = document.getElementById('reference');
+            const loader = document.getElementById('product_type_loader');
+
+            referenceSelect.disabled = true;  // Disable reference dropdown while loading
+            loader.style.display = 'inline-block';  // Show the loader
+
+            fetch('/get_dropdown_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ customer_id: selectedCustomerId })  // Send selected customer_id to server
+            })
+            .then(response => response.json())
+            .then(data => {
+                referenceSelect.innerHTML = '';  // Clear existing options
+                referenceSelect.appendChild(new Option('Select reference type', ''));
+
+                if (data.references && data.references.length > 0) {
+                    data.references.forEach(reference => {
+                        const option = document.createElement('option');
+                        option.value = reference;
+                        option.textContent = reference;
+                        referenceSelect.appendChild(option);
+                    });
+                }
+
+                referenceSelect.disabled = false;  // Re-enable the reference dropdown
+                loader.style.display = 'none';  // Hide the loader
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                loader.style.display = 'none';  // Hide the loader in case of error
+                referenceSelect.disabled = false;  // Enable reference dropdown in case of error
+            });
+        }
+
+        // Function to update assembly types based on selected customer ID
+        function updateAssemblyType(selectedCustomerId) {
+            const assemblyTypeSelect = document.getElementById('assembly_type');
+
+            // Disable assembly type dropdown while loading
+            assemblyTypeSelect.disabled = true;
+
+            fetch('/get_dropdown_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ customer_id: selectedCustomerId })  // Send selected customer_id to server
+            })
+            .then(response => response.json())
+            .then(data => {
+                assemblyTypeSelect.innerHTML = '';  // Clear existing options
+                assemblyTypeSelect.appendChild(new Option('Select assembly type', ''));
+
+                if (data.assembly_types && data.assembly_types.length > 0) {
+                    data.assembly_types.forEach(assemblyType => {
+                        const option = document.createElement('option');
+                        option.value = assemblyType;
+                        option.textContent = assemblyType;
+                        assemblyTypeSelect.appendChild(option);
+                    });
+                }
+
+                // Re-enable the assembly type dropdown
+                assemblyTypeSelect.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                assemblyTypeSelect.disabled = false;  // Enable assembly type dropdown in case of error
+            });
+        }
+
+        // Function to update rhodium plating types based on selected customer ID
+        function updateRhodiumPlatingType(selectedCustomerId) {
+            const rhodiumPlatingSelect = document.getElementById('rhodium_plating_type');
+
+            // Disable rhodium plating dropdown while loading
+            rhodiumPlatingSelect.disabled = true;
+
+            fetch('/get_dropdown_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ customer_id: selectedCustomerId })  // Send selected customer_id to server
+            })
+            .then(response => response.json())
+            .then(data => {
+                rhodiumPlatingSelect.innerHTML = '';  // Clear existing options
+                rhodiumPlatingSelect.appendChild(new Option('Select Rhodium plating type', ''));
+
+                if (data.rhodium_plating_types && data.rhodium_plating_types.length > 0) {
+                    data.rhodium_plating_types.forEach(rhodiumType => {
+                        const option = document.createElement('option');
+                        option.value = rhodiumType;
+                        option.textContent = rhodiumType;
+                        rhodiumPlatingSelect.appendChild(option);
+                    });
+                }
+
+                // Re-enable the rhodium plating dropdown
+                rhodiumPlatingSelect.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                rhodiumPlatingSelect.disabled = false;  // Enable rhodium plating dropdown in case of error
+            });
+        }
+
+        // Function to update metal plating types based on selected customer ID
+        function updateMetalPlatingType(selectedCustomerId) {
+            const metalPlatingSelect = document.getElementById('metal_plating_type');
+
+            // Disable metal plating dropdown while loading
+            metalPlatingSelect.disabled = true;
+
+            fetch('/get_dropdown_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ customer_id: selectedCustomerId })  // Send selected customer_id to server
+            })
+            .then(response => response.json())
+            .then(data => {
+                metalPlatingSelect.innerHTML = '';  // Clear existing options
+                metalPlatingSelect.appendChild(new Option('Select metal plating type', ''));
+
+                if (data.metal_plating_types && data.metal_plating_types.length > 0) {
+                    data.metal_plating_types.forEach(metalType => {
+                        const option = document.createElement('option');
+                        option.value = metalType;
+                        option.textContent = metalType;
+                        metalPlatingSelect.appendChild(option);
+                    });
+                }
+
+                // Re-enable the metal plating dropdown
+                metalPlatingSelect.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                metalPlatingSelect.disabled = false;  // Enable metal plating dropdown in case of error
+            });
+        }
+
+        // Function to update Metal-1 values based on selected customer ID
+        function updateMetal1(selectedCustomerId) {
+            const metal1Select = document.getElementById('metal-1');
+
+            // Disable metal-1 dropdown while loading
+            metal1Select.disabled = true;
+
+            fetch('/get_dropdown_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ customer_id: selectedCustomerId })  // Send selected customer_id to server
+            })
+            .then(response => response.json())
+            .then(data => {
+                metal1Select.innerHTML = '';  // Clear existing options
+                metal1Select.appendChild(new Option('Select Metal-1', ''));
+
+                if (data.metal_1_values && data.metal_1_values.length > 0) {
+                    data.metal_1_values.forEach(metal => {
+                        const option = document.createElement('option');
+                        option.value = metal;
+                        option.textContent = metal;
+                        metal1Select.appendChild(option);
+                    });
+                }
+
+                // Re-enable the metal-1 dropdown
+                metal1Select.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                metal1Select.disabled = false;  // Enable metal-1 dropdown in case of error
+            });
+        }
+
+        // Function to update Metal-2 values based on selected customer ID
+        function updateMetal2(selectedCustomerId) {
+            const metal2Select = document.getElementById('metal-2');
+
+            // Disable metal-2 dropdown while loading
+            metal2Select.disabled = true;
+
+            fetch('/get_dropdown_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ customer_id: selectedCustomerId })  // Send selected customer_id to server
+            })
+            .then(response => response.json())
+            .then(data => {
+                metal2Select.innerHTML = '';  // Clear existing options
+                metal2Select.appendChild(new Option('Select Metal-2', ''));
+
+                if (data.metal_2_values && data.metal_2_values.length > 0) {
+                    data.metal_2_values.forEach(metal => {
+                        const option = document.createElement('option');
+                        option.value = metal;
+                        option.textContent = metal;
+                        metal2Select.appendChild(option);
+                    });
+                }
+
+                // Re-enable the metal-2 dropdown
+                metal2Select.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                metal2Select.disabled = false;  // Enable metal-2 dropdown in case of error
+            });
+        }
+
+        // ------- Function to update alloy-metal combinations -------
+        function updateAlloyOptions(metalDropdownId, alloyDropdownId) {
+            var selectedMetal = $('#' + metalDropdownId).val();
+            var alloyDropdown = $('#' + alloyDropdownId);
+
+            if (selectedMetal) {
+                // Make AJAX request to get alloys for the selected metal
+                $.ajax({
+                    type: 'POST',
+                    url: '/get_alloy',  // Flask endpoint to fetch alloys
+                    data: { 'fg_metal_kt': selectedMetal }, // Pass the selected metal to the server
+                    success: function(response) {
+                        alloyDropdown.empty();  // Clear current alloy options
+                        alloyDropdown.append('<option value="">Select Alloy</option>');  // Add default option
+                        if (response.alloys && response.alloys.length > 0) {
+                            // Populate new options
+                            response.alloys.forEach(function(alloy) {
+                                alloyDropdown.append('<option value="' + alloy + '">' + alloy + '</option>');
+                            });
+                        } else {
+                            alert('No alloys found for the selected metal.');
+                        }
+                        alloyDropdown.trigger('change');  // If using Select2, trigger change
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Error fetching alloys. Please try again.');
+                    }
+                });
+            } else {
+                // Clear alloy dropdown if no metal is selected
+                alloyDropdown.empty();
+                alloyDropdown.append('<option value="">Select Alloy</option>');
+            }
+        }
+
+        // ------- Enamel and Ceramic checkboxes -------
+        function toggleHiddenInput(checkbox, hiddenInputId) {
+            var hiddenInput = document.getElementById(hiddenInputId);
+            if (checkbox.checked) {
+                hiddenInput.disabled = true;
+            } else {
+                hiddenInput.disabled = false;
+            }
+        }
+
+        // ------- Function to reset form and download prediction -------
+        function resetForm(event) {
+            event.preventDefault();
+            document.getElementById('loadingOverlay').style.display = 'block'; // Show loading overlay
+
+            var form = document.getElementById('bomForm');
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', form.action, true);
+            xhr.responseType = 'blob';
+            xhr.onload = function () {
+                document.getElementById('loadingOverlay').style.display = 'none'; // Hide loading overlay
+                if (xhr.status === 200) {
+                    var link = document.createElement('a');
+                    link.href = window.URL.createObjectURL(xhr.response);
+                    link.download = 'prediction.xlsx';
+                    link.click();
+                    form.reset();
+                    // Reset Select2 fields
+                    $('#product_type').val(null).trigger('change');
+                    $('#customer_id').val(null).trigger('change');
+                    $('#reference').val(null).trigger('change');
+                    $('#assembly_type').val(null).trigger('change');
+                    $('#rhodium_plating_type').val(null).trigger('change');
+                    $('#metal_plating_type').val(null).trigger('change');
+                    $('#metal-1').val(null).trigger('change');
+                    $('#alloy-1').val(null).trigger('change');
+                    $('#metal-2').val(null).trigger('change');
+                    $('#alloy-2').val(null).trigger('change');
+                    alert('Download completed successfully!');
+                } else {
+                    alert('An error occurred while processing your request. Please try again.');
+                }
+            };
+            xhr.onerror = function() {
+                document.getElementById('loadingOverlay').style.display = 'none'; // Hide loading overlay
+                alert('An error occurred. Please try again.');
+            };
+            xhr.send(formData);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun AI - Edit Dataset</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header,
+        footer {
+            width: 100%;
+            background-color: #0a1a24;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        header .logo {
+            height: 65px;
+            margin-left: 10px;
+            margin-right: 150px;
+        }
+
+        .title {
+            font-size: 2.0em;
+            color: white;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .dropdown-button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: #0a1a24;
+            color: white;
+            border: 2px solid transparent;
+            transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+            border-color: #5f7581;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .dropdown-button:hover {
+            background-color: #4CAF50;
+            color: #ffffff;
+        }
+
+        .dropdown-button:after {
+            content: '\25BC';
+            /* Down arrow */
+            margin-left: 10px;
+            font-size: 0.8em;
+        }
+
+        .settings-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: #0a1a24;
+            color: #ffffffd2;
+            border: 1px solid #ccc;
+            padding: 0;
+            border-radius: 4px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+            z-index: 1000;
+            width: 200px;
+        }
+
+        .settings-menu a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #ffffffd2;
+            font-size: 14px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .settings-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .settings-menu a:hover {
+            background-color: #e9e8e8;
+            color: #000;
+        }
+
+        .settings-menu a i {
+            margin-right: 10px;
+            font-size: 16px;
+            width: 20px;
+        }
+
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .menu a {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            background-color: #555;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding-top: 100px;
+            padding-bottom: 60px;
+            box-sizing: border-box;
+            text-align: center;
+            overflow: auto;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-indent: 600px;
+        }
+
+        .custom-file-upload {
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .custom-file-upload:hover {
+            background-color: #45a049;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+        }
+
+        .form-group input[type="file"] {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input[type="file"]:hover {
+            background-color: #f9f9f9;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .buttons-container button {
+            margin-right: 10px;
+        }
+
+        #preview-button {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        .flashes {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .flashes li {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <img src="{{ url_for('static', filename='images/Sun AI Logo.png') }}" alt="Sun AI Logo" class="logo">
+        <h1 class="title">Edit Dataset</h1>
+        <div class="header-buttons">
+            <div class="dropdown-button" id="dropdown-toggle">
+                <span><i class="fas fa-download"></i> Download dataset</span>
+                <div class="settings-menu" id="dropdown-menu">
+                    <a href="{{ url_for('download_format') }}" id="download-dataset-btn"><i class="fas fa-file-alt"></i>
+                        Download dataset template</a>
+
+                    <!-- Dynamically populate customer IDs in the dropdown -->
+                    {% if customer_ids %}
+                    <hr>
+                    <p style="margin: 5px 10px; font-size: 14px;">Select Customer to download their dataset:</p>
+                    {% for cust_id in customer_ids %}
+                    <a href="{{ url_for('download_dataset_by_cust_id', cust_id=cust_id) }}"><i
+                            class="fas fa-download"></i> {{ cust_id }}</a>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <nav class="menu" id="menu">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About Sun AI</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <!-- Display flashed messages -->
+            <div id="flash-messages">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+            </div>
+
+            <form action="{{ url_for('upload_dataset') }}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file-upload">Upload Excel or CSV File:</label>
+                    <input type="file" id="file-upload" name="file" accept=".xlsx, .csv" class="form-control" required>
+                </div>
+
+                <div class="buttons-container">
+                    <button type="submit" class="custom-file-upload">Upload File</button>
+
+                    <!-- Initially hide the Show Preview button and keep it grey/disabled -->
+                    <button type="button" id="preview-button" class="custom-file-upload" style="display: none;">Show
+                        Preview</button>
+                </div>
+
+                <!-- Hidden input to hold the preview_allowed session value -->
+                <input type="hidden" id="preview-allowed" value="{{ file_uploaded|default(False) }}">
+            </form>
+        </div>
+    </main>
+    <footer>
+        @ 2024 Sunjewels. All Rights Reserved.
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+
+            document.addEventListener('click', function (event) {
+                var isClickInside = document.querySelector('.hamburger').contains(event.target) || document.getElementById('menu').contains(event.target);
+                var menu = document.getElementById('menu');
+                if (!isClickInside && menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                }
+            });
+
+            // Dropdown menu toggle logic
+            var dropdownToggle = document.getElementById('dropdown-toggle');
+            var dropdownMenu = document.getElementById('dropdown-menu');
+
+            dropdownToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (dropdownMenu.style.display === 'block') {
+                    dropdownMenu.style.display = 'none';
+                } else {
+                    dropdownMenu.style.display = 'block';
+                }
+            });
+
+            // Close the dropdown menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!dropdownToggle.contains(event.target)) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+
+            // Handle individual customer dataset download
+            var customerLinks = document.querySelectorAll('#dropdown-menu a[data-cust-id]');
+            customerLinks.forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    var custId = e.target.getAttribute('data-cust-id');
+                    window.location.href = `/download_dataset/${custId}`;
+                });
+            });
+
+            var fileUpload = document.getElementById('file-upload');
+            var previewButton = document.getElementById('preview-button');
+            var previewAllowed = document.getElementById('preview-allowed').value;
+
+            // Check the session value and enable the "Show Preview" button accordingly
+            if (previewAllowed === 'True') {
+                previewButton.style.display = 'inline-block'; // Show the preview button if validation passed
+                previewButton.style.backgroundColor = '#4CAF50'; // Make the button green and enabled
+                previewButton.style.cursor = 'pointer'; // Change cursor to pointer
+                previewButton.addEventListener('click', function () {
+                    window.location.href = "{{ url_for('preview_dataset') }}";
+                });
+            } else {
+                previewButton.style.display = 'none'; // Hide the button if validation hasn't passed
+            }
+
+            // Reset flash messages after a few seconds (optional)
+            setTimeout(function () {
+                var flashMessages = document.getElementById('flash-messages');
+                if (flashMessages) {
+                    flashMessages.innerHTML = ''; // Clear flash messages after 5 seconds
+                }
+            }, 5000);
+
+            // Change the button state when a file is selected
+            fileUpload.addEventListener('change', function () {
+                previewButton.style.display = 'none'; // Hide the preview button when a new file is selected
+            });
+        });
+    </script>
+</body>
+
+</html>

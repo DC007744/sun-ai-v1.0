@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun AI - Preview Dataset</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header, footer {
+            width: 100%;
+            background-color: #0a1a24;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        footer {
+            width: 100%;
+            background-color: #0a1a24;
+            color: white;
+            display: flex;
+            justify-content: center; /* Aligns items horizontally at the center */
+            align-items: center; /* Aligns items vertically at the center */
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+        header .logo {
+            height: 65px;
+            position: absolute;
+            left: 20px;
+        }
+
+        .title {
+            font-size: 2.0em;
+            color: white;
+            text-align: center;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+            position: absolute;
+            right: 20px;
+        }
+
+        .header-buttons a, .header-buttons button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: #0a1a24;
+            color: white;
+            border: 2px solid transparent;
+            transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+            border-color: #5f7581;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .header-buttons a i, .header-buttons button i {
+            margin-right: 8px;
+        }
+
+        .header-buttons a:hover, .header-buttons button:hover {
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: 2px solid transparent;
+        }
+
+        .confirm-btn .arrow-icon {
+            display: inline-block;
+            margin-left: 7px;
+            transition: transform 0.3s ease;
+        }
+
+        .confirm-btn:hover .arrow-icon {
+            transform: translateX(10px); /* Move arrow to the right on hover */
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding-top: 100px; /* Adjust for fixed header */
+            padding-bottom: 60px; /* Adjust for fixed footer */
+            box-sizing: border-box;
+            text-align: center;
+            overflow: auto;
+        }
+        
+        .container {
+            max-width: 90%;
+            width: 100%;
+            background: #ffffff; /* Change background color to white */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slightly darker shadow */
+            margin-bottom: 20px;
+            overflow-x: auto; /* Enable horizontal scrolling if needed */
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: auto;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #0a1a24;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .flashes {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .flashes li {
+            padding: 10px;
+            background-color: #f8d7da;
+            color: #721c24;
+            margin-bottom: 10px;
+            border: 1px solid #f5c6cb;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .modal-header {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .modal-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .modal-buttons .confirm {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .modal-buttons .cancel {
+            background-color: #f44336;
+            color: white;
+        }
+
+        /* Loading Spinner and Success Popup */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .loading-overlay .spinner {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-message {
+            color: white;
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .success-popup-overlay, .error-popup-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1100;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .success-popup, .error-popup {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .success-popup .success-icon, .error-popup .error-icon {
+            font-size: 50px;
+        }
+
+        .success-popup .success-icon {
+            color: #4CAF50;
+        }
+
+        .error-popup .error-icon {
+            color: #f44336;
+        }
+
+        .success-popup p, .error-popup p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/Sun AI Logo.png') }}" alt="Sun AI Logo" class="logo">
+        <h1 class="title">Preview Dataset</h1>
+        <div class="header-buttons">
+            <!-- "Go back" button with an icon -->
+            <a href="{{ url_for('edit_dataset') }}">
+                <i class="fas fa-arrow-left" style="margin-right: 7px;"></i>Go back
+            </a>
+
+            <!-- "Confirm data upload" button with animated arrow -->
+            <button type="button" class="confirm-btn" id="confirm-upload">
+                Confirm data upload<i class="fas fa-arrow-right arrow-icon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Display flashed messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              <ul class="flashes">
+              {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+          {% endwith %}
+
+          <!-- Rendering the DataFrame passed from Flask -->
+          {{ data|safe }}
+      </div>
+  </main>
+
+  <footer>
+      @ 2024 Sunjewels. All Rights Reserved.
+  </footer>
+
+  <!-- Modal for confirmation -->
+  <div class="modal" id="confirmation-modal">
+      <div class="modal-content">
+          <div class="modal-header">Confirm Data Upload</div>
+          <p>Are you sure you want to upload this data to the database?</p>
+          <div class="modal-buttons">
+              <button class="confirm" id="confirm-action">Yes</button>
+              <button class="cancel" id="cancel-action">No</button>
+          </div>
+      </div>
+  </div>
+
+  <!-- Loading Spinner Overlay -->
+  <div class="loading-overlay" id="loading-overlay">
+      <div class="spinner"></div>
+      <div class="loading-message">
+          Your latest dataset is being uploaded to the database.<br> Please wait and do not close this page.
+      </div>
+  </div>
+
+  <!-- Success Popup Overlay -->
+  <div class="success-popup-overlay" id="success-popup-overlay">
+      <div class="success-popup" id="success-popup">
+          <div class="success-icon">
+              <i class="fas fa-check-circle"></i>
+          </div>
+          <p>Data successfully uploaded!</p>
+      </div>
+  </div>
+
+  <!-- Error Popup Overlay -->
+  <div class="error-popup-overlay" id="error-popup-overlay">
+      <div class="error-popup" id="error-popup">
+          <div class="error-icon">
+              <i class="fas fa-exclamation-circle"></i>
+          </div>
+          <p>Failed to upload data. Please try again.</p>
+      </div>
+  </div>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          var modal = document.getElementById('confirmation-modal');
+          var loadingOverlay = document.getElementById('loading-overlay');
+          var successPopupOverlay = document.getElementById('success-popup-overlay');
+          var errorPopupOverlay = document.getElementById('error-popup-overlay');
+
+          var confirmUploadButton = document.getElementById('confirm-upload');
+          var confirmActionButton = document.getElementById('confirm-action');
+          var cancelActionButton = document.getElementById('cancel-action');
+
+          confirmUploadButton.addEventListener('click', function () {
+              modal.style.display = 'flex';
+          });
+
+          cancelActionButton.addEventListener('click', function () {
+              modal.style.display = 'none';
+          });
+
+          confirmActionButton.addEventListener('click', function () {
+              modal.style.display = 'none';
+              loadingOverlay.style.display = 'flex'; // Show loading spinner
+
+              // Perform an asynchronous request using fetch API instead of submitting the form traditionally
+              fetch("{{ url_for('confirm_upload') }}", {
+                  method: 'POST',
+                  body: new FormData(), // Include necessary form data here
+              })
+              .then(response => {
+                  loadingOverlay.style.display = 'none'; // Hide loading spinner
+                  if (response.ok) {
+                      showSuccessPopup(); // On successful response
+                  } else {
+                      showErrorPopup(); // On failure response
+                  }
+              })
+              .catch(() => {
+                  loadingOverlay.style.display = 'none'; // Hide loading spinner
+                  showErrorPopup(); // On network error
+              });
+          });
+
+          function showSuccessPopup() {
+              successPopupOverlay.style.display = 'flex'; // Show grey overlay and success message
+
+              setTimeout(function () {
+                  successPopupOverlay.style.display = 'none'; // Hide success message after 3 seconds
+                  window.location.href = "{{ url_for('edit_dataset') }}"; // Redirect to edit dataset page
+              }, 3000); // Show success popup for 3 seconds
+          }
+
+          function showErrorPopup() {
+              errorPopupOverlay.style.display = 'flex'; // Show grey overlay and error message
+
+              setTimeout(function () {
+                  errorPopupOverlay.style.display = 'none'; // Hide error message after 3 seconds
+              }, 3000); // Show error popup for 3 seconds
+          }
+      });
+  </script>
+</body>
+</html>
